@@ -59,9 +59,14 @@ nav{
     text-decoration: none;
     padding: 20px 35px;
     background-color: #393A3B;
+    color: white;
     text-align: center;
     position: absolute;
 
+}
+.button-projetos:hover{
+    background-color: aliceblue;
+    color: #393A3B;
 }
 .contact{
     margin-bottom: 70px;
@@ -206,5 +211,19 @@ nav{
 }
 .link{
     color: #FFA500;
+}
+.button-contato{
+    text-align: center;
+    height: 20px;
+    width: 180px;
+    padding: 20px;
+
+    letter-spacing: 4px;
+    background-color: #393A3B;
+    color: white;
+}
+.button-contato:hover{
+    background-color: aliceblue;
+    color: #393A3B;
 }
 
