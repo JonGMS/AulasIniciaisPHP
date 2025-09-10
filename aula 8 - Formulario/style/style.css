@@ -98,9 +98,9 @@ nav{
     justify-content: space-between;
 }
 .conteudo{
-    --background-color: white;
     height: 450px;
-    width: 1380px;
+    width: 1528px;
+    text-align: center;
 }
 .contact-me{
     height: 5px;
@@ -225,5 +225,78 @@ nav{
 .button-contato:hover{
     background-color: aliceblue;
     color: #393A3B;
+}
+
+/* Formulario */
+.conteudo{
+    position: absolute;
+}
+.titulo-contactme{
+
+    display: inline-flex;
+    align-items: center;
+    gap: 0px;
+    position:relative;
+    width: 390px;
+    
+}
+/* .text-contact{
+    font-size: 30px;
+} */
+.contactme, .text-contact{
+    font-size: 40px;
+
+}
+.retorno{
+    position: absolute;
+    color: #393A3B;
+    left: 68%;
+    top: 50%;
+}
+.contact-titulo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.formulario-contato{
+
+}
+.conjunto-nome{
+
+}
+.empresa-telefone{
+    position: relative;
+    align-items: center;
+    display: inline-flex;
+    
+}
+.formulario{
+    width: 400px;
+    height: 36px;
+    border-radius: 8px;
+    border: solid 0px;
+}
+.formulario-telefone, .formulario-empresa{
+    width: 180px;
+    height: 36px;
+    border-radius: 8px;
+    border: solid 0px;
+    gap: 10px;
+    margin: 0 20px;
+}
+.button-enviar{
+    margin-top: 20px;
+    background-color: #393A3B;
+    color: white;
+    height: 60px;
+    width: 200px;
+}
+.button-enviar:hover{
+    background-color: white;
+    color:#393A3B;
+}
+.container.button{
+    margin-top: 20px;
 }
 
