@@ -46,23 +46,27 @@
             <div class="formulario-contato">
                 <form action="https://sys4soft.com/udemy/forms/index.php" method="post">
                     <div class="conjunto-nome">
-                        <p class="nome-legenda">NOME</p>
-                        <input type="text" name="campo_texto" class="formulario" required placeholder="">
+                        <label for="nome-id" class="nome-legenda">NOME</label><br>
+                        <!-- <p class="nome-legenda">NOME</p> -->
+                        <input type="text" name="campo_texto" class="formulario" required placeholder="" id="nome-id">
                     </div>
                     <div class="conjunto-email">
-                        <p class="email-legenda">E-MAIL</p>
-                        <input type="email" name="campo_email" class="formulario" required placeholder="   @">
+                        <!-- <p class="email-legenda">E-MAIL</p> -->
+                        <label for="email-id" class="email-legenda">E-MAIL</label><br>
+                        <input type="email" name="campo_email" class="formulario" required placeholder="   @" id="email-id">
                     </div>
                     <div class="empresa-telefone">
 
                         <div class="conjunto-telefone">
-                            <p class="telefone-legenda">TELEFONE</p>
-                            <input type="tel" name="campo_tel" class="formulario-telefone" minlength="9" maxlength="13" required placeholder="  +55">
+                            <label for="telefone-id" class="telefone-legenda">TELEFONE</label><br>
+                            <!-- <p class="telefone-legenda">TELEFONE</p> -->
+                            <input type="tel" name="campo_tel" class="formulario-telefone" minlength="9" maxlength="13" required placeholder="  +55" id="telefone-id">
                         </div>
                         <div class="conjunto-empresa">
-                            <p class="empresa-legenda">EMPRESA</p>
+                            <label for="empresa-id" class="empresa-legenda">EMPRESA</label>
+                            <!-- <p class="empresa-legenda">EMPRESA</p> -->
                             <p class="opcional"></p>
-                            <input type="text" name="campo_texto" class="formulario-empresa">
+                            <input type="text" name="campo_texto" class="formulario-empresa" id="empresa-id">
                         </div>
                     </div>
                     
