@@ -22,6 +22,37 @@
         <input type="hidden" name="campo_escondido"> 
         <p id="valor_range"></p>
     </div>
+
+    <div class="form-group">
+        <label for="">Selecione uma opção</label>
+        <select name="campo_selecao" id="">
+            <option value="pt">Portugal</option>
+            <option value="br">Brasil</option>
+            <option value="en">Ingles</option>
+            <option value="es">Espanhol</option>
+            <!-- option*4 -->
+        </select>
+
+    </div>
+        <div class="form-group">
+        <label for="">Selecione varias opções, segurando ctrl</label>
+        <select name="campo_selecao[]" id="" required multiple>
+            <optgroup label="linguas">
+                <option value="pt">Portugal</option>
+                <option value="br">Brasil</option>
+                <option value="en">Ingles</option>
+                <option value="es">Espanhol</option>
+            </optgroup>
+            <optgroup label="outras linguas">
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+            </optgroup>
+
+            <!-- option*4 -->
+        </select>
+    </div>
     <script>
         function mostrar(value)
         {
