@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ButtonReset</title>
+    <style>
+        body{
+            margin-left: 300px;
+        }
+        .form-opcao label{
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulário</h1>
+    <form action="https://www.sys4soft.com/udemy/forms/index.php">
+        <div class="form-usuario">
+            <label for="">Usuário:</label><br>
+            <input type="text" name="name" id="" required>
+        </div>
+        <div class="form-senha">
+            <label for="">Senha:</label><br>
+            <input type="password" name="password" id="" required>
+        </div>
+        <div class="form-opcao">
+            <label>
+                opção 1
+                <input type="radio" name="opcao" checked>
+            </label>
+            <label>
+                opção 2
+                <input type="radio" name="opcao">
+            </label>
+            <label>
+                opção 3
+                <input type="radio" name="opcao">
+            </label>
+        </div>
+        <div class="form-buttons">
+            <button type ="button"></button>
+            <input type="reset" value="Limpar" accesskey="l" title="ctrl + l">
+            <input type="submit" value="Enviar">
+        </div>
+    </form>
+</body>
+</html>
