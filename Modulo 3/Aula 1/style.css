@@ -18,3 +18,19 @@ p{
 
     color: blueviolet;
 }
+li, dt, dd{
+    line-height: 24px;
+}
+.lista-um{
+    /* list-style-type: square; */
+    list-style-type: upper-roman;
+    list-style-position: outside;
+    /* list-style-image: url("icon.jpg"); */
+}
+.lista-um li{
+    background-image: url("icon.jpg");
+    background-position: 0 8px;
+    background-size: 15px;
+    background-repeat: no-repeat;
+    padding-left: 12px;
+}
