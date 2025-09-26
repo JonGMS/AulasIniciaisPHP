@@ -1,13 +1,15 @@
-.atividade1, .atividade2, .atividade3, .tividade4, .atividade5, .atividade6{
+.atividade1, .atividade3, .tividade4, .atividade5, .atividade6{
     height: 400px;
     border: solid 1px;
 }
+.atividade2{
+    height: 800px;
+    border: solid 1px;
+ }
+/* DISPLAYS */
 .displayflex{
     display: flex;
 }
-/* .displayinlineblock{
-
-} */
 span{
     display: block;
 }
@@ -29,4 +31,34 @@ span{
     height: 50px;
     width: 80px;
     border: solid black 1px;
+}
+
+/* FLOATS */
+
+.exemplo1{
+    width: 500px;
+    margin: 50px auto;
+    border: solid black 1px;
+}
+.imgnews{
+    height: 80px;
+    float: left;
+    padding-right: 30px;
+}
+
+.exemplo2{
+  margin:50px auto;  
+  background-color: rgb(203, 201, 201);
+  height: 240px;
+  padding: 50px;
+}
+.destaque{
+    margin:20px;
+    height: 200px;
+    width: 200px;
+    background-color: lightblue;
+    border: solid black 1px;
+    border-radius: 20px;
+    text-align: center;
+    float: left;
 }
