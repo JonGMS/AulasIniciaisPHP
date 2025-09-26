@@ -7,12 +7,17 @@
     <style>
         body{
             display: flex;
+            background: linear-gradient(rgb(11, 0, 34), rgb(9, 3, 17));
         }
-        .div1, .div2, .div3{
+        h1{
+            color: white;
+        }
+        .div1, .div2, .div3, .div4, .div5, .div6{
             width: 200px;
             height: 400px;
             margin-top: 20px;
             border: solid 1px;
+            
             
         }
         .div1{
@@ -27,17 +32,23 @@
            background: linear-gradient(to left top, green, brown , grey);
 
         }
+        .div4{
+            background: linear-gradient(red 0 50%, yellow 50% 100%); 
+            /* Vermelho vai do ponto 0 até a metade (50%) e amarelo vai da metade (50%) até o fim (100%)*/
+        }
+        .div5{
+            background: linear-gradient(red 0 30%, yellow 70% 100%)
+        }
+        /* Vermelho vai do ponto 0 até (30%) e amarelo vai da metade (70%) até o fim (100%) -- sendo assim, metade fica laranja*/
     </style>
 </head>
 <body>
-    <div class="div1">
-
-    </div>
-    <div class="div2">
-        
-    </div>
-    <div class="div3">
-
-    </div>
+    <h1>Exemplo de Gradação</h1>
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+    <div class="div4"></div>
+    <div class="div5"></div>
+    <div class="div6"></div>
 </body>
 </html>
