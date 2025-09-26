@@ -5,7 +5,11 @@
 .atividade2{
     height: 800px;
     border: solid 1px;
- }
+}
+.atividade3{
+    height: 800px;
+    border: solid 1px;
+}
 /* DISPLAYS */
 .displayflex{
     display: flex;
@@ -34,7 +38,6 @@ span{
 }
 
 /* FLOATS */
-
 .exemplo1{
     width: 500px;
     margin: 50px auto;
@@ -61,4 +64,30 @@ span{
     border-radius: 20px;
     text-align: center;
     float: left;
+}
+
+/* POSITION */
+.explicacao{
+    color:grey;
+    font-size: 10px;
+    width: 200px;
+    margin-left:20px;
+    position:absolute;
+}
+.capsula{
+    height: 100px;
+    width: 200px;
+    background-color: aquamarine;
+    margin-top: 100px;
+    margin-left: 200px;
+    overflow: auto;/* tranforma em uma pequena janela */
+}
+.testeposition{
+    position: relative;
+    top: 90px;
+    left: 90px;
+    background-color: yellowgreen;
+}
+code{
+    color:cadetblue;
 }
