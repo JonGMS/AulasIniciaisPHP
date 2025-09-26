@@ -1,0 +1,32 @@
+.atividade1, .atividade2, .atividade3, .tividade4, .atividade5, .atividade6{
+    height: 400px;
+    border: solid 1px;
+}
+.displayflex{
+    display: flex;
+}
+/* .displayinlineblock{
+
+} */
+span{
+    display: block;
+}
+.pinline{
+    display: inline;
+}
+.navegacao{
+    padding: 20px;
+    background-color: aqua;
+    text-align: center;
+    list-style-type: none;
+}
+.navegacao li{
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.quadrados{
+    height: 50px;
+    width: 80px;
+    border: solid black 1px;
+}
