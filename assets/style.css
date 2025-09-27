@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('montserrat/Montserrat-Light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat-thin';
+  src: url('montserrat/Montserrat-Thin.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+body{
+    margin:0;
+    font-family: 'Montserrat', sans-serif;
+}
+.header-tela{
+    background-color: rgb(236, 236, 236);
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+.cabecalho{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.link-header{
+    text-decoration: none;
+    color:inherit;
+}
+.button-header{
+    display: inline;
+    margin-inline: 40px;
+    color: rgb(94, 94, 94);
+}
+.painel-titulo {
+  margin-top: 60px;
+
+  text-align: center;
+}
+.titulo{
+    font-size: 100px;
+    margin-top: 240px;
+    margin-bottom: 0;  color:rgb(152, 146, 164);
+}
+.legenda-titulo{
+    margin:0;
+    color: rgb(94, 94, 94);
+}

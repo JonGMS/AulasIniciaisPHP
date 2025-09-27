@@ -1,7 +1,8 @@
 .atividades{
-    width: 96%;
+    width: 95%;
+
 }
-.atividade1, .atividade3, .tividade4, .atividade5, .atividade6{
+.atividade1, .atividade3, .tividade4, .atividade5{
     height: 400px;
     border: solid 1px;
 }
@@ -95,7 +96,7 @@ code{
     color:cadetblue;
 }
 
-/* Z-index, Fixed & Sticky */
+/* Z-index*/
 .tudo{
     position: relative;
 }
@@ -145,6 +146,30 @@ code{
     font-size: 13px;
     width: 200px;
     margin-left:20px;
-    left: 800px;
+    margin-top: 180px;
     position:absolute;
+}
+/* Sticky */
+
+
+/* Fixed */
+.atividade6{
+    margin-top: 10%;
+    position:absolute;
+    right: 20px;
+    padding: 14px;
+    position: fixed;
+}
+.menu{
+    position: absolute;
+    width: 3%;
+    /* height: ; */
+}
+.opcao{
+    margin: 70px 0px 0 0;
+    background-color: grey;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+
 }
