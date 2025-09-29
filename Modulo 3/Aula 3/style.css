@@ -1,22 +1,49 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../../montserrat/Montserrat-Light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat-thin';
+  src: url('../../montserrat/Montserrat-Thin.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+.explicacao{
+    background-color: rgb(231, 231, 231);
+    padding: 20px;
+    border-left: solid 2px grey;
+}
+.content-wrapper{
+    margin: 68px;
+    padding: 32px;
+}
 .atividades{
-    width: 95%;
-
+    margin-inline: 152px;
 }
-.atividade1, .atividade3, .tividade4, .atividade5{
-    height: 400px;
-    border: solid 1px;
-}
-.atividade2{
-    height: 800px;
-    border: solid 1px;
-}
-.atividade3{
-    height: 800px;
-    border: solid 1px;
+.subtitulo{
+    font-size: 20px;
+    color: rgb(114, 114, 114);
 }
 /* DISPLAYS */
+#displays, #floats, #position, #zindex{
+    text-align: center;
+    padding: 30px;
+}
+.panel-inline{
+    padding-inline: 32px;
+    padding-bottom: 10px;
+    font-size: 10px;
+}
 .displayflex{
     display: flex;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+.comspan{
+    margin-top: 30px;
+    margin-bottom: 10px;
 }
 span{
     display: block;
@@ -71,13 +98,7 @@ span{
 }
 
 /* POSITION */
-.explicacao{
-    color:grey;
-    font-size: 10px;
-    width: 200px;
-    margin-left:20px;
-    position:absolute;
-}
+
 .capsula{
     height: 100px;
     width: 200px;

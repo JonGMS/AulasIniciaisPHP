@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,103 +8,163 @@
     <link rel="stylesheet" href="../../assets/style.css">
     <title>Atividades de Responsividade</title>
 </head>
+
 <body>
 
     <header class="header-tela">
         <div class="cabecalho">
-            <a href="" class="link-header"><div class="button-header">HOME</div></a>
-            <a href="" class="link-header"><div class="button-header">MODULOS</div></a>    
-            <a href="" class="link-header"><div class="button-header">TRABALHOS</div></a>
-            <a href="https://github.com/JonGMS" class="link-header" target="_blak"><div class="button-header">GIT</div></a>
-        </div>   
+            <a href="" class="link-header">
+                <div class="button-header">HOME</div>
+            </a>
+            <a href="" class="link-header">
+                <div class="button-header">MODULOS</div>
+            </a>
+            <a href="" class="link-header">
+                <div class="button-header">TRABALHOS</div>
+            </a>
+            <a href="https://github.com/JonGMS" class="link-header" target="_blak">
+                <div class="button-header">GIT</div>
+            </a>
+        </div>
     </header>
     <div class="atividade6">
         <div class="menu">
-            <a href="#displays"><div class="opcao"></div></a>
-            <a href="#floats"><div class="opcao"></div></a>
-            <a href="#position"><div class="opcao"></div></a>
-            <a href="#zindex"><div class="opcao"></div></a>
-            <a href="#sticky"><div class="opcao"></div></a>
+            <a href="#displays">
+                <div class="opcao"></div>
+            </a>
+            <a href="#floats">
+                <div class="opcao"></div>
+            </a>
+            <a href="#position">
+                <div class="opcao"></div>
+            </a>
+            <a href="#zindex">
+                <div class="opcao"></div>
+            </a>
+            <a href="#sticky">
+                <div class="opcao"></div>
+            </a>
         </div>
     </div>
-    <div class="atividades">
-        <div class="atividade1">
-        <h2 id="displays">Displays</h2>
-        <div class="displayinline">
+    <main class="content-wrapper">
+        <div class="atividades">
+            <div class="atividade1">
+                <h2 id="displays">Displays</h2>
+                <div class="displayinline">
+                    <p class="subtitulo">inline</p>
+                    <div class="panel-inline">
+                        <p class="pinline">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel possimus animi,
+                            quae est perferendis voluptatum tempora tempore, facilis repellat fugit eaque non quos
+                            incidunt, quo veniam rem qui aut doloribus?<code>||</code></p>
+                        <p class="pinline">Non, accusamus inventore corporis cum quos voluptas perferendis? Nemo dolores
+                            cum sapiente distinctio modi? Eligendi aliquid veritatis, error vero repudiandae, voluptas
+                            expedita voluptatibus cupiditate adipisci sapiente omnis possimus nemo incidunt <code>||</code></p>
+                        <p class="pinline">Non, accusamus inventore corporis cum quos voluptas perferendis? Nemo dolores
+                        cum sapiente distinctio modi? Eligendi aliquid veritatis, error vero repudiandae, voluptas
+                        expedita voluptatibus cupiditate adipisci sapiente omnis possimus nemo incidunt.<code>||</code></p>
+                    </div>
 
-            <p class="pinline">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel possimus animi, quae est perferendis voluptatum tempora tempore, facilis repellat fugit eaque non quos incidunt, quo veniam rem qui aut doloribus?||</p>
-            <p class="pinline">Non, accusamus inventore corporis cum quos voluptas perferendis? Nemo dolores cum sapiente distinctio modi? Eligendi aliquid veritatis, error vero repudiandae, voluptas expedita voluptatibus cupiditate adipisci sapiente omnis possimus nemo incidunt.||</p>
-            <p class="pinline">Earum, in facilis? Id, numquam quam a voluptatum corrupti excepturi hic explicabo et quas! Amet et tempore, at, pariatur repellendus hic, sint quidem doloremque voluptatibus esse aut! Veniam, facere laboriosam!||</p>
-            <p class="pinline">In vero repellat nesciunt molestiae dolorem quo aut fugit nemo maiores dolores consequatur quasi aliquid odit tempore, qui ullam illo obcaecati, tenetur distinctio eveniet velit nam. Veniam cum nemo ipsum.||</p>
+                    <div class="explicacao">
+                        Com a propriedade <code>display: inline;</code>, os elementos e textos HTML ficam posicionados lado a lado, sem quebra de linha entre eles. No exemplo acima, quando o símbolo <code>||</code> aparece, normalmente haveria uma quebra de linha. No entanto, como os elementos estão com display: inline, essa quebra não ocorre, mantendo os termos adjacentes.
+                    </div>
+                    <p class="subtitulo">block</p>
+                    <div class="comspan">
+                        <span>Display block no span</span>
+                        <span>Display block no span</span>
+                        <span>Display block no span</span>
+                    </div>
+                    <div class="explicacao">
+                        Normalmente, o elemento <code>span</code> não provoca quebras de linha, pois seu comportamento padrão é o de um elemento inline. No entanto, ao aplicar a propriedade <code>display: block;</code>, ele passa a se comportar como um elemento de bloco, ocupando toda a largura disponível e forçando uma quebra de linha antes e depois. Isso altera sua apresentação, mesmo que esteja dentro de um único parágrafo.
+                    </div>
+                </div>
 
-            <div class="comspan">
-                <span>Display block no span</span>
-                <span>Display block no span</span>
-                <span>Display block no span</span>
+                <p class="subtitulo">flex</p>
+                <div class="displayflex">
+                    <div class="quadrados"></div>
+                    <div class="quadrados"></div>
+                    <div class="quadrados"></div>
+                    <div class="quadrados"></div>
+                </div>
+                <div class="explicacao">
+                    Com a propriedade <code>display: flex;</code>, os elementos são organizados de forma adjacente, ou seja, lado a lado, sem quebra de linha automática como ocorre com elementos em bloco. Diferente do comportamento padrão dos elementos block, que ocupam toda a largura e forçam uma nova linha, o flex permite que os itens fiquem alinhados horizontalmente (ou verticalmente, dependendo da direção definida), mantendo o controle total sobre tamanho, espaçamento, alinhamento e distribuição.
+                </div>
+                <p class="subtitulo">inline-block</p>
+                <div class="displayinlineblock">
+                    <ul class="navegacao">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Serviços</a></li>
+                        <li><a href="#">Galeria</a></li>
+                        <li><a href="#">Contatos</a></li>
+                    </ul>
+                </div>
+                <div class="explicacao">
+                    Como inline: os elementos ficam lado a lado, na mesma linha, sem quebra automática.
+                    Como block: você pode aplicar largura (width), altura (height), margens e padding algo que elementos inline não permitem.
+                </div>
+
             </div>
-        </div>
-        <div class="displayflex">
-            <div class="quadrados"></div>
-            <div class="quadrados"></div>
-            <div class="quadrados"></div>
-            <div class="quadrados"></div>
-        </div>
-        <div class="displayinlineblock">
-            <ul class="navegacao">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Serviços</a></li>
-                <li><a href="#">Galeria</a></li>
-                <li><a href="#">Contatos</a></li>
-            </ul>
-        </div>
-
-    </div>
-    <div class="atividade2">
-        <h2 id="floats">Floats</h2>
-        <article class="exemplo1">
-            <h3>Titulo da noticia</h3>              
-            <img src="news.jpg" alt="" class="imgnews">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quasi illo necessitatibus facere iste commodi non, velit similique officia saepe, harum voluptate dolore deserunt culpa? Expedita beatae vel vero modi!
-            </p>
-        </article>
-        <article class="exemplo2">
-            <div class="destaque"> Aq ta em destaque!!</div>
-            <h3>Titulo da Noticia</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda necessitatibus excepturi sapiente ab numquam exercitationem, dicta adipisci error sed impedit voluptatem! Ipsa alias beatae adipisci qui, voluptatibus rerum a assumenda.</p>
-        </article>
+            <div class="atividade2">
+                <h2 id="floats">Floats</h2>
+                <article class="exemplo1">
+                    <h3>Titulo da noticia</h3>
+                    <img src="news.jpg" alt="" class="imgnews">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quasi illo necessitatibus
+                        facere iste commodi non, velit similique officia saepe, harum voluptate dolore deserunt culpa?
+                        Expedita beatae vel vero modi!
+                    </p>
+                </article>
+                <article class="exemplo2">
+                    <div class="destaque"> Aq ta em destaque!!</div>
+                    <h3>Titulo da Noticia</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda necessitatibus excepturi
+                        sapiente ab numquam exercitationem, dicta adipisci error sed impedit voluptatem! Ipsa alias
+                        beatae adipisci qui, voluptatibus rerum a assumenda.</p>
+                </article>
 
 
-    </div>
-    <div class="atividade3">
-        <h2 id="position">Position</h2>
-
-        <div class="position">
-            <p class="">'position: relative' - relativa ao pai.</p>
-            <p class="">'position: absolute' - relativa a tela inteira do HTML. (<code>legenda personalizada com absolute)</code></p>
-            <p class="testeposition">Lorem ipsum dolor sit amet consectetur.</p>
-            <div class="capsula">
-                <p class="testeposition">Lorem ipsum dolor sit amet consectetur.</p>            
             </div>
-            <p class="explicacao">Quando usamos '<code>position: relative</code>', as propriedades <strong>top</strong>, <strong>bottom</strong>, <strong>right</strong> e <strong>left</strong> alteram a posição do elemento em relação ao seu elemento pai. Assim, no primeiro exemplo, a posição é ajustada com referência ao <code>body</code>, enquanto no segundo exemplo, o posicionamento é feito com base na <code>'div'</code>.</p>
-        </div>
-    </div>
-    <div class="atividade4">
-        <h2 id="zindex">Z-index, Fixed & Sticky</h2>
-        <div class="tudo">
-            <div class="area-1">Este é o texto do DIV 1</div>
-            <div class="area-2">Este é o texto do DIV 2</div>
-            <div class="area-3">Este é o texto do DIV 3</div>
-            <div class="area-4">Este é o texto do DIV 4</div>
-            <div class="area-5">Este é o texto do DIV 5</div>
-        </div>
-        <p class="explicacao2">Quando utilizamos a propriedade <code>z-index</code>, os elementos com valores mais altos têm prioridade na ordem de empilhamento, aparecendo acima dos demais. Por exemplo, mesmo que o <code>div.area-1</code> seja o primeiro elemento na hierarquia do HTML, ele pode aparecer por cima dos outros se tiver um <code>z-index</code> maior, como <code>z-index: 5</code>, o que lhe confere maior destaque visual.</p>
+            <div class="atividade3">
+                <h2 id="position">Position</h2>
+
+                <div class="position">
+                    <p class="">'position: relative' - relativa ao pai.</p>
+                    <p class="">'position: absolute' - relativa a tela inteira do HTML.
+                        (<code>legenda personalizada com absolute)</code></p>
+                    <p class="testeposition">Lorem ipsum dolor sit amet consectetur.</p>
+                    <div class="capsula">
+                        <p class="testeposition">Lorem ipsum dolor sit amet consectetur.</p>
+                    </div>
+                    <p class="explicacao">Quando usamos '<code>position: relative</code>', as propriedades
+                        <strong>top</strong>, <strong>bottom</strong>, <strong>right</strong> e <strong>left</strong>
+                        alteram a posição do elemento em relação ao seu elemento pai. Assim, no primeiro exemplo, a
+                        posição é ajustada com referência ao <code>body</code>, enquanto no segundo exemplo, o
+                        posicionamento é feito com base na <code>'div'</code>.</p>
+                </div>
+            </div>
+            <div class="atividade4">
+                <h2 id="zindex">Z-index, Fixed & Sticky</h2>
+                <div class="tudo">
+                    <div class="area-1">Este é o texto do DIV 1</div>
+                    <div class="area-2">Este é o texto do DIV 2</div>
+                    <div class="area-3">Este é o texto do DIV 3</div>
+                    <div class="area-4">Este é o texto do DIV 4</div>
+                    <div class="area-5">Este é o texto do DIV 5</div>
+                </div>
+                <p class="explicacao">Quando utilizamos a propriedade <code>z-index</code>, os elementos com valores
+                    mais altos têm prioridade na ordem de empilhamento, aparecendo acima dos demais. Por exemplo, mesmo
+                    que o <code>div.area-1</code> seja o primeiro elemento na hierarquia do HTML, ele pode aparecer por
+                    cima dos outros se tiver um <code>z-index</code> maior, como <code>z-index: 5</code>, o que lhe
+                    confere maior destaque visual.</p>
 
 
-    </div>
-    <div class="atividade5"></div>
-    
-    
-    
+            </div>
+            <div class="atividade5"></div>
+    </main>
+
+
+
+
 </body>
+
 </html>
