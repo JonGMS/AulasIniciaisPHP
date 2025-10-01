@@ -1,54 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/style.css">
     <title>Document</title>
     <style>
-        body{
-            display: flex;
-            background: linear-gradient(rgb(11, 0, 34), rgb(9, 3, 17));
+        @font-face {
+            font-family: 'Montserrat';
+            src: url('../../montserrat/Montserrat-Light.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
         }
-        h1{
-            color: white;
+        .explicacao{
+            background-color: rgb(231, 231, 231);
+            padding: 20px;
+            border-left: solid 2px grey;
+        }   
+        #gradacao{
+            text-align: center;
+            padding: 30px;
         }
-        .div1, .div2, .div3, .div4, .div5, .div6{
-            width: 200px;
-            height: 400px;
+        .atividades {
+            margin-inline: 152px;
+        }
+
+        .content-wrapper {
+            margin: 68px;
+            padding: 32px;
+        }
+
+        body {
+            font-family: 'Montserrat';
+        }
+
+        .div1,
+        .div2,
+        .div3,
+        .div4,
+        .div5,
+        .div6 {
+            width: 164px;
+            height: 200px;
             margin-top: 20px;
             border: solid 1px;
-            
-            
+            float: left;
+
+
         }
-        .div1{
+
+        .div1 {
             background-image: url(fundo-abstrato-com-linhas-vermelhas_1361-3531.avif);
             /* background-size: 200px; */
             background-size: 100% 100%;
         }
-        .div2{
+
+        .div2 {
             background: linear-gradient(90deg, red, yellow);
         }
-        .div3{
-           background: linear-gradient(to left top, green, brown , grey);
+
+        .div3 {
+            background: linear-gradient(to left top, green, brown, grey);
 
         }
-        .div4{
-            background: linear-gradient(red 0 50%, yellow 50% 100%); 
+
+        .div4 {
+            background: linear-gradient(red 0 50%, yellow 50% 100%);
             /* Vermelho vai do ponto 0 até a metade (50%) e amarelo vai da metade (50%) até o fim (100%)*/
         }
-        .div5{
+
+        .div5 {
             background: linear-gradient(red 0 30%, yellow 70% 100%)
         }
+
         /* Vermelho vai do ponto 0 até (30%) e amarelo vai da metade (70%) até o fim (100%) -- sendo assim, metade fica laranja*/
     </style>
 </head>
+
 <body>
-    <h1>Exemplo de Gradação</h1>
-    <div class="div1"></div>
-    <div class="div2"></div>
-    <div class="div3"></div>
-    <div class="div4"></div>
-    <div class="div5"></div>
-    <div class="div6"></div>
+    <div class="atividades">
+        <div class="content-wrapper">
+            <h2 id="gradacao">Exemplo de Gradação</h2>
+            <div class="div1"></div>
+            <div class="div2"></div>
+            <div class="div3"></div>
+            <div class="div4"></div>
+            <div class="div5"></div>
+
+            <header class="header-tela">
+                <div class="cabecalho">
+                    <a href="" class="link-header">
+                        <div class="button-header">HOME</div>
+                    </a>
+                    <a href="" class="link-header">
+                        <div class="button-header">MODULOS</div>
+                    </a>
+                    <a href="" class="link-header">
+                        <div class="button-header">TRABALHOS</div>
+                    </a>
+                    <a href="https://github.com/JonGMS" class="link-header" target="_blak">
+                        <div class="button-header">GIT</div>
+                    </a>
+                </div>
+            </header>
+        </div>
+
+
 </body>
+
 </html>
