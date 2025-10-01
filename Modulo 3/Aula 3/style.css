@@ -27,7 +27,7 @@
     color: rgb(114, 114, 114);
 }
 /* DISPLAYS */
-#displays, #floats, #position, #zindex{
+#displays, #floats, #position, #zindex, #stick{
     text-align: center;
     padding: 30px;
 }
@@ -75,16 +75,16 @@ span{
     border: solid black 1px;
 }
 .imgnews{
-    height: 80px;
+    height: 200px;
     float: left;
     padding-right: 30px;
 }
 
 .exemplo2{
-  margin:50px auto;  
-  background-color: rgb(203, 201, 201);
-  height: 240px;
-  padding: 50px;
+    margin:50px auto;  
+    border-left: 2px solid gray;
+    height: 240px;
+    padding: 50px;
 }
 .destaque{
     margin:20px;
@@ -118,6 +118,9 @@ code{
 }
 
 /* Z-index*/
+#legenda{
+    margin-top: 210px;
+}
 .tudo{
     position: relative;
 }
