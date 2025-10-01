@@ -1,10 +1,5 @@
-@font-face {
-    font-family: "Montserrat";
-    src: url('../../Modulos%201%20e%202/Trabalho Final/style/montserrat/Montserrat-Thin.otf');
 
-}
 h1{
-    font-family: 'Montserrat';
     text-shadow: 4px 7px 10px;
 }
 p{

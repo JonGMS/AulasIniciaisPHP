@@ -4,6 +4,12 @@
   font-weight: normal;
   font-style: normal;
 }
+body{
+    font-family: 'Montserrat';
+}
+.titulo-aula{
+    font-family: 'Montserrat';
+}
 @font-face {
   font-family: 'Montserrat-thin';
   src: url('../../montserrat/Montserrat-Thin.otf') format('opentype');
