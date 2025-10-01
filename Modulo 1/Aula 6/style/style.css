@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../../montserrat/Montserrat-Light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+body{
+    font-family: 'Montserrat';
+}
 body{
     margin: 0;
     padding: 0;
@@ -16,7 +25,7 @@ header{
     height: 50px;
     background-color: white;
     float: left;
-    
+
     margin-top: 2px;
     margin-left: 5px;
 }
@@ -46,7 +55,7 @@ header{
     border-radius: 50px;
 }
 
-.titulo{
+.titulo-curriculo{
     text-align: center;
     color:black;
 
@@ -71,6 +80,8 @@ header{
     border-radius: 30px;
     border-color: darkgrey;
     position: relative;
+    margin-left: 9px ;
+    margin-top: 9px;
 }
 .combo-perfil{
     background-color: white;
@@ -82,4 +93,17 @@ header{
 .nome{
     position: relative;
     text-align: center;
+}
+.box-resumo{
+    font-size: 25px;
+height: 50px;
+width: 600px;
+float: right;
+}
+.resumo{
+  color:white;
+  margin: 50px;
+}
+.curriculo{
+    display: flex;
 }

@@ -1,8 +1,17 @@
-        .titulo{
-            color: rgb(84, 0, 70);
-            font-size: 30px;
-        }
-        .texto{
-            color: rgb(47, 234, 255);
-            font-size: 16px;
-        }
+        @font-face {
+  font-family: 'Montserrat';
+  src: url('../../montserrat/Montserrat-Light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+body{
+    font-family: 'Montserrat';
+}
+.titulo{
+    color: rgb(84, 0, 70);
+    font-size: 30px;
+}
+.texto{
+    color: rgb(47, 234, 255);
+    font-size: 16px;
+}

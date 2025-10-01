@@ -1,21 +1,23 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../../montserrat/Montserrat-Light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 body{
-    background-color: black;
+    font-family: 'Montserrat';
 }
-*{
-    color:white
-    
-}
-.titulo{
-    background-color: rgb(37, 37, 37);
+.titulo-{
+    background-color: rgb(211, 211, 211);
     text-align: center;
     /* border-radius: 10%; */
     margin:50px;
     padding: 50px;
 }
 .linkGit{
-    color: aquamarine;
+    color: rgb(10, 149, 47);
 
 }
 .linkGit:hover{
-    color:cadetblue;
+    color:rgb(2, 94, 115);
 }

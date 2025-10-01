@@ -1,32 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Primeiro WebSite</title>
+    <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     
-    <h1>Homepage</h1>
+    <header class="header-tela">
+        <div class="cabecalho">
+            <a href="../../index.html" class="link-header">
+                <div class="button-header">HOME</div>
+            </a>
+            <a href="../../modulo.html" class="link-header">
+                <div class="button-header">MODULOS</div>
+            </a>
+            <a href="../../projetos.html" class="link-header">
+                <div class="button-header">TRABALHOS</div>
+            </a>
+            <a href="https://github.com/JonGMS" class="link-header" target="_blak">
+                <div class="button-header">GIT</div>
+            </a>
+        </div>
+    </header>
+    <div class="content-wrapper">
+        <div class="atividades">
+            
+            <h2 class="titulo-aula">Imagem</h2>
+            <p class="explicacao">Clique nos elementos <code>Netuno, Saturno e Marte</code> para navegar pelas paginas.</p>
+            <nav>
+                <a href="index.html">Netuno</a>
+                <a href="index_saturno.html">Saturno</a>
+                <a href="index_marte.html">Marte</a>
+            </nav>
 
-    <nav>
-        <a href="index.html">Netuno</a>
-        <a href="index_saturno.html">Saturno</a>
-        <a href="index_marte.html">Marte</a>
-    </nav>
+            <div class="imagem">
+                <img src="images/netuno.jpg" alt="">
+            </div>
 
-    <div>
-        <img src="images/netuno.jpg" alt="">
+            <article>
+                <h3>Titulo da págia 1</h3>
+                <p class="explicacao">
+                    O elemento <code>img</code> é usado para incorporar imagens em páginas HTML. Ele precisa do atributo src para indicar o caminho da imagem e alt para fornecer uma descrição alternativa.
+                </p>
+            </article>
+            <footer><i>Noticias &copy; 2030</i></footer>
+        </div>
     </div>
 
-    <article>
-        <h3>Titulo da págia 1</h3>
-        <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet id qui labore ea ullam quis quos dicta nesciunt consectetur voluptatem eum quam, quisquam, repudiandae molestias, enim aliquam fuga dolores quaerat?
-            Ad expedita corporis eos dicta autem quis, neque reprehenderit atque iure rerum architecto sed magnam blanditiis distinctio cum. Veritatis ipsum possimus cum placeat ab delectus, maxime ratione nobis necessitatibus repellat?
-            Commodi dolorum, veniam cumque blanditiis quas dignissimos dolores laudantium, voluptate odio iure fugiat dolore. Maxime, expedita labore. Nobis quae, cupiditate aliquid velit ipsam voluptas, at labore provident inventore aut iusto?
-        </p>
-    </article>
-    <footer><i>Noticias &copy; 2030</i></footer>
 </body>
+
 </html>

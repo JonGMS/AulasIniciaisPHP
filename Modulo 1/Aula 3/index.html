@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Styles inline</title>
+    <link rel="stylesheet" href="../../assets/style.css">
     <style>
-        .tituloHead{
+        .tituloHead {
             color: rgb(5, 60, 2);
             font-size: 30px;
         }
-        .textoHead{
+
+        .textoHead {
             color: greenyellow;
             font-size: 16px;
         }
@@ -17,29 +20,64 @@
 
     <link rel="stylesheet" href="estilo.css">
 </head>
+
 <body>
-
-    <p style="color: darkblue; font-size: 30px;">
-        Titulo do meu documento com CSS
-    </p>
-    <p style="color: gray; font-size: 16px;">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, consectetur ducimus iste ab odio eos est, quia, officiis temporibus inventore obcaecati asperiores illo modi dignissimos doloremque error vitae ex necessitatibus.
-    </p>
-
-    <p class="tituloHead">
-        Titulo do meu documento com CSS
-    </p>
-    <p class="textoHead">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, consectetur ducimus iste ab odio eos est, quia, officiis temporibus inventore obcaecati asperiores illo modi dignissimos doloremque error vitae ex necessitatibus.
-    </p>
-    <p class="textoHead">Nesse caso repetimos o mesmo class e ele repetira a personalização pela classe</p>
-
-    <p class="titulo">
-        Titulo do meu documento com CSS
-    </p>
-    <p class="texto">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, consectetur ducimus iste ab odio eos est, quia, officiis temporibus inventore obcaecati asperiores illo modi dignissimos doloremque error vitae ex necessitatibus.
-    </p>
+    <header class="header-tela">
+        <div class="cabecalho">
+            <a href="../../index.html" class="link-header">
+                <div class="button-header">HOME</div>
+            </a>
+            <a href="../../modulo.html" class="link-header">
+                <div class="button-header">MODULOS</div>
+            </a>
+            <a href="../../projetos.html" class="link-header">
+                <div class="button-header">TRABALHOS</div>
+            </a>
+            <a href="https://github.com/JonGMS" class="link-header" target="_blak">
+                <div class="button-header">GIT</div>
+            </a>
+        </div>
+    </header>
     
+    <div class="content-wrapper">
+        <div class="atividades">
+            <h2 class="titulo-aula">Classe</h2>
+            <p style="color: darkblue; font-size: 30px;">
+                Titulo do meu documento com CSS
+            </p>
+            <p style="color: gray; font-size: 16px;">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, consectetur ducimus iste ab odio eos
+                est,
+                quia, officiis temporibus inventore obcaecati asperiores illo modi dignissimos doloremque error vitae ex
+                necessitatibus.
+            </p>
+
+            <p class="tituloHead">
+                Titulo do meu documento com CSS
+            </p>
+            <p class="textoHead">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, consectetur ducimus iste ab odio eos
+                est,
+                quia, officiis temporibus inventore obcaecati asperiores illo modi dignissimos doloremque error vitae ex
+                necessitatibus.
+            </p>
+            <p class="textoHead">Nesse caso repetimos o mesmo class e ele repetira a personalização pela classe</p>
+
+            <p class="titulo-">
+                Titulo do meu documento com CSS
+            </p>
+            <p class="texto">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, consectetur ducimus iste ab odio eos
+                est,
+                quia, officiis temporibus inventore obcaecati asperiores illo modi dignissimos doloremque error vitae ex
+                necessitatibus.
+            </p>
+            <p class="explicacao">A <code>classe</code> em HTML é um atributo usado para agrupar elementos que compartilham o mesmo estilo ou comportamento. Ela permite aplicar regras CSS ou manipulações JavaScript a vários elementos ao mesmo tempo. Basta usar <code>class="nome-da-classe"</code> para identificar os elementos que pertencem àquela categoria.</p>
+        </div>
+
+    </div>
+
+
 </body>
+
 </html>

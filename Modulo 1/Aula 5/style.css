@@ -1,12 +1,19 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../../montserrat/Montserrat-Light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 body{
-    background-color: black;
-    color: whitesmoke;
+    font-family: 'Montserrat';
+}
+body{
     margin: 0px;
     
 }
 .linkGit{
     text-decoration: none;
-    background-color: white;
+    background-color: rgb(183, 183, 183);
     color: grey;
     min-width: 200px;
     padding: 10px 30px;

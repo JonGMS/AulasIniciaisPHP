@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../../montserrat/Montserrat-Light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+body{
+    font-family: 'Montserrat';
+}
+img{
+    height: 500px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.imagem{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+nav{
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(170, 220, 222);
+}
+nav a{
+    padding: 20px;
+    text-decoration: none;
+}
