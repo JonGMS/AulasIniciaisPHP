@@ -1,0 +1,25 @@
+body{
+    background-color: black;
+    color: whitesmoke;
+    margin: 0px;
+    
+}
+.linkGit{
+    text-decoration: none;
+    background-color: white;
+    color: grey;
+    min-width: 200px;
+    padding: 10px 30px;
+    border-radius: 10px;
+}
+.linkGit:hover{
+    background-color: antiquewhite;
+    color: dimgray;
+}
+.layout{
+    text-align: center;
+}
+.texto1{
+    float: left;
+}
+

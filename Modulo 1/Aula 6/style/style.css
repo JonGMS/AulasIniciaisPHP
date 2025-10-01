@@ -1,0 +1,85 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(38, 38, 38);
+}
+header{
+    display: flex;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.button-options{
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    float: left;
+    
+    margin-top: 2px;
+    margin-left: 5px;
+}
+.option-1{
+
+    width: 26px;
+    height: 5px;
+    background-color: black;
+    margin-left: 12px;
+    margin-top: 12px;
+    border-radius: 50px;
+}
+.option-2{
+    width: 26px;
+    height: 5px;
+    background-color: black;
+    margin-left: 12px;
+    margin-top: 5px;
+    border-radius: 50px;
+}
+.option-3{
+    width: 26px;
+    height: 5px;
+    background-color: black;
+    margin-left: 12px;
+    margin-top: 5px;
+    border-radius: 50px;
+}
+
+.titulo{
+    text-align: center;
+    color:black;
+
+}.redes{
+    display: flex;
+}
+.git{
+    height: 30px;
+    margin-top: 2px;
+}
+.instagram{
+    height: 33px;
+    margin-top: 2px;
+}
+.linkedin{
+    height: 38px;
+    margin-top: 0;
+    margin-right: 6px;
+}
+.perfil{
+    height: 200px;
+    border-radius: 30px;
+    border-color: darkgrey;
+    position: relative;
+}
+.combo-perfil{
+    background-color: white;
+    position: auto;
+    width: 200px;
+    border-radius: 30px;
+}
+
+.nome{
+    position: relative;
+    text-align: center;
+}
