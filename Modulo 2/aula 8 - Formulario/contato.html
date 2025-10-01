@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="shortcut icon" href="style/images/icon.webp" type="image/webp">
+    <title>Jon - Contato</title>
+</head>
+<body>
+    <nav>
+        <!-- Arrumar div em cada p \\ :hover -->
+        <div class = "buttons">
+            <a href="index.html"><div class="home"><p class="button">HOME</p></div></a>
+            <a href="sobre.html"><div class="sobre"><p class="button">SOBRE</p></div></a>
+            <a href="projetos.html"><div class="projetos"><p class="button">PROJETOS</p></div></a>
+            <a href="contato.html"><div class="contato"><p class="button">CONTATO</p></div></a>
+        </div>
+
+        <p class="titulo">JON</p>
+    </nav>
+
+    <div class="painel">
+        <div class="contact">
+            <a href="" target="_blank"><img src="style/images/Email - Vetor.png" alt=""  class="email"></a><br>
+            <a href="https://www.linkedin.com/in/jo%C3%A3o-gabriel-santos-690339272/" target="_blank" ><img src="style/images/LinkedIn - Vetor.png" alt="" class="linkedin"></a><br>
+            <a href="https://www.instagram.com/jongms_dev/" target="_blank"><img src="style/images/Instagrem - Vetor.png" alt=""  class="instagram"></a><br>
+            <a href="https://github.com/JonGMS" target="_blank"><img src="style/images/Git - Vetor.png" alt=""  class="git"></a>
+
+            
+        </div>
+        <div class="contact-me">
+            
+        </div>
+
+        
+        <div class="conteudo">
+            <div class="titulo-contactme">
+                <div class="contact-titulo">
+                    <div class="text-contact"><p><strong>CONTACT</strong></p></div>
+                    <div class="contactme"><strong>ME</strong></div>
+                </div>
+                
+                <div class="retorno"><strong>Ja te retorno</strong></div>
+            </div>
+            <div class="formulario-contato">
+                <form action="https://sys4soft.com/udemy/forms/index.php" method="post">
+                    <div class="conjunto-nome">
+                        <label for="nome-id" class="nome-legenda">NOME</label><br>
+                        <!-- <p class="nome-legenda">NOME</p> -->
+                        <input type="text" name="campo_texto" class="formulario" required placeholder="" id="nome-id">
+                    </div>
+                    <div class="conjunto-email">
+                        <!-- <p class="email-legenda">E-MAIL</p> -->
+                        <label for="email-id" class="email-legenda">E-MAIL</label><br>
+                        <input type="email" name="campo_email" class="formulario" required placeholder="   @" id="email-id">
+                    </div>
+                    <div class="empresa-telefone">
+
+                        <div class="conjunto-telefone">
+                            <label for="telefone-id" class="telefone-legenda">TELEFONE</label><br>
+                            <!-- <p class="telefone-legenda">TELEFONE</p> -->
+                            <input type="tel" name="campo_tel" class="formulario-telefone" minlength="9" maxlength="13" required placeholder="  +55" id="telefone-id">
+                        </div>
+                        <div class="conjunto-empresa">
+                            <label for="empresa-id" class="empresa-legenda">EMPRESA</label>
+                            <!-- <p class="empresa-legenda">EMPRESA</p> -->
+                            <p class="opcional"></p>
+                            <input type="text" name="campo_texto" class="formulario-empresa" id="empresa-id">
+                        </div>
+                    </div>
+                    
+
+                    <div class="container-button">
+                        <input type="submit" value="ENVIAR" class="button-enviar">
+                    </div>
+
+                    
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+</html>
