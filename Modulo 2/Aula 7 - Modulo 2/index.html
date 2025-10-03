@@ -1,95 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../../assets/style.css">
     <style>
-
-        table, th, td{
+        table,
+        th,
+        td {
             border: solid 1px;
-            border-collapse: collapse;  /* Une duas linhas adjacentes, tornando só uma */
-           
+            border-collapse: collapse;
+            /* Une duas linhas adjacentes, tornando só uma */
         }
-        th{
-            background-color:midnightblue;
+
+        th {
+            background-color: midnightblue;
             color: white;
         }
-        table{
-            width: 50%;
+
+        table {
+            width: 100%;
+            text-align: center;
+        }
+        .atividades{
+            justify-content: center;
         }
     </style>
 </head>
+
 <body>
-    <div>
+    <header class="header-tela">
+        <div class="cabecalho">
+            <a href="../../index.html" class="link-header">
+                <div class="button-header">HOME</div>
+            </a>
+            <a href="../../modulo.html" class="link-header">
+                <div class="button-header">MODULOS</div>
+            </a>
+            <a href="../../projetos.html" class="link-header">
+                <div class="button-header">TRABALHOS</div>
+            </a>
+            <a href="https://github.com/JonGMS" class="link-header" target="_blak">
+                <div class="button-header">GIT</div>
+            </a>
+        </div>
+    </header>
+    <div class="content-wrapper">
+        <div class="atividades">
+            <h2 class="titulo-aula">Elementos de Tabelas</h2>
+            <caption>Titulo da tabela</caption> <!-- Centraliza automatico  -->
+            <table>
+                <thead>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
 
-        <caption>Titulo da tabela</caption> <!-- Centraliza automatico  -->
-        <table>
-            <thead>
-                <th>1</th>
-                <th>2</th>
-                <th>3</th>
+                </thead>
 
-            </thead>
+                <tbody>
+                    <!-- <tr> = tablerow - Conteudo de uma linha -->
+                    <tr>
+                        <!-- <td> = tabledata - Celula da tabela -->
+                        <td>Austin Melo</td>
+                        <td>Nicolas Danilo</td>
+                        <td>Carol</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>7</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>Persona</td>
+                        <td>Cachorro</td>
+                        <td>Carro</td>
+                    </tr>
 
-            <tbody>
-                <!-- <tr> = tablerow - Conteudo de uma linha -->
-                <tr> 
-                    <!-- <td> = tabledata - Celula da tabela -->
-                    <td>Austin Melo</td>
-                    <td>Nicolas Danilo</td>
-                    <td>Carol</td>
-                </tr>
-                <tr>
-                    <td>12</td>
-                    <td>7</td>
-                    <td>9</td>
-                </tr>
-                <tr>
-                    <td>Persona</td>
-                    <td>Cachorro</td>
-                    <td>Carro</td>
-                </tr>
-            
 
-            </tbody>
-            <tfoot>
-                <td>tabela</td>
-            </tfoot>
-        </table>
+                </tbody>
+                <tfoot>
+                    <td>tabela</td>
+                </tfoot>
+            </table>
+
+            <table>
+                <thead>
+                    <th colspan="3">Com colspan</th>
+
+                </thead>
+
+                <tbody>
+                    <!-- <tr> = tablerow - Conteudo de uma linha -->
+                    <tr>
+                        <!-- <td> = tabledata - Celula da tabela -->
+                        <td>Austin Melo</td>
+                        <td>Nicolas Danilo</td>
+                        <td>Carol</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">com rowspan</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>Persona</td>
+                        <td>Cachorro</td>
+                        <td>Carro</td>
+                    </tr>
+
+
+                </tbody>
+                <tfoot>
+                    <td>tabela</td>
+                </tfoot>
+            </table>
+        </div>
     </div>
-    
-
-    <caption>Titulo da tabela</caption> <!-- Centraliza automatico  -->
-    <table>
-        <thead>
-            <th colspan="3">Com colspan</th>
-
-        </thead>
-
-        <tbody>
-            <!-- <tr> = tablerow - Conteudo de uma linha -->
-            <tr> 
-                <!-- <td> = tabledata - Celula da tabela -->
-                <td>Austin Melo</td>
-                <td>Nicolas Danilo</td>
-                <td>Carol</td>
-            </tr>
-            <tr>
-                <td rowspan="2">com rowspan</td>
-                <td>9</td>
-            </tr>
-            <tr>
-                <td>Persona</td>
-                <td>Cachorro</td>
-                <td>Carro</td>
-            </tr>
-          
-
-        </tbody>
-        <tfoot>
-            <td>tabela</td>
-        </tfoot>
-    </table>
 </body>
+
 </html>

@@ -1,63 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <link rel="stylesheet" href="../../assets/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .atividade {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin: 0 auto;
+            padding: 20px;
+        }
+    </style>
     <title></title>
 </head>
+
 <body>
-    <p>Aqui o numero sobe de um em um de 10 até 2000</p>
-    <div class="form-group">
-        <input type="range" name="campo_inter" id="" min="10" max="2000" oninput="mostrar(this.value)">
-        <p id="valor_range"></p>
-    </div>
-    <p>Aqui o numero sobe de 100 em 100 de 0 até 2000</p>
-    <div class="form-group">
-        <input type="range" name="campo_inter" id="" min="0" max="2000" step="100" oninput="mostrar(this.value)">
-        <p id="valor_range"></p>
+    <header class="header-tela">
+        <div class="cabecalho">
+            <a href="../../index.html" class="link-header">
+                <div class="button-header">HOME</div>
+            </a>
+            <a href="../../modulo.html" class="link-header">
+                <div class="button-header">MODULOS</div>
+            </a>
+            <a href="../../projetos.html" class="link-header">
+                <div class="button-header">TRABALHOS</div>
+            </a>
+            <a href="https://github.com/JonGMS" class="link-header" target="_blak">
+                <div class="button-header">GIT</div>
+            </a>
+        </div>
+    </header>
+    <div class="content-wrapper">
+        <div class="atividades">
+            <h2 class="titulo-aula">Formulario - Elementos</h2>
+            <div class="atividade">
+                <p>Aqui o numero sobe de um em um de 10 até 2000</p>
+                <div class="form-group">
+                    <input type="range" name="campo_inter" id="" min="10" max="2000" oninput="mostrar(this.value)">
+                    <p id="valor_range"></p>
+                </div>
+                <p>Aqui o numero sobe de 100 em 100 de 0 até 2000</p>
+                <div class="form-group">
+                    <input type="range" name="campo_inter" id="" min="0" max="2000" step="100"
+                        oninput="mostrar(this.value)">
+                    <p id="valor_range"></p>
+                </div>
+
+                <!-- "Escondido, só é possivel ver vendo o codigo fonte" -->
+                <div class="form-group">
+                    <input type="hidden" name="campo_escondido">
+                    <p id="valor_range"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="">Selecione uma opção</label>
+                    <select name="campo_selecao" id="">
+                        <option value="pt">Portugal</option>
+                        <option value="br">Brasil</option>
+                        <option value="en">Ingles</option>
+                        <option value="es">Espanhol</option>
+                        <!-- option*4 -->
+                    </select>
+
+                </div>
+                <div class="form-group">
+                    <label for="">Selecione varias opções, segurando ctrl</label>
+                    <select name="campo_selecao[]" id="" required multiple>
+                        <optgroup label="linguas">
+                            <option value="pt">Portugal</option>
+                            <option value="br">Brasil</option>
+                            <option value="en">Ingles</option>
+                            <option value="es">Espanhol</option>
+                        </optgroup>
+                        <optgroup label="outras linguas">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </optgroup>
+
+                        <!-- option*4 -->
+                    </select>
+                </div>
+            </div>
+
+            <form action="">
+                <div class="formgroup">
+                    <textarea name="" id="" cols="=40" rows="4" class="textarea" wrap="hard" readonly>teste</textarea>
+                    <!-- cols e rows são apenas para dimenção do elementos -->
+                </div>
+                <div class="form-group">
+                    <label for="campo-opcoes">Indique a opção:</label>
+                    <input type="text" name="campo_opcao" id="campo-opcoes" list="lista-dados">
+                    <datalist id="lista-dados">
+                        <option value="Portugal">
+                        <option value="Brasil">
+                        <option value="Angola">
+                        <option value="Ilha">
+                    </datalist>
+                </div>
+                <fieldset disabled>
+                    <legend>Dados Pessoais</legend>
+                    <div class="for-group">
+                        <label for="">Nome</label>
+                        <input type="text">
+                    </div>
+                    <div class="for-group">
+                        <label for="">Apelido</label>
+                        <input type="text">
+                    </div>
+                </fieldset>
+            </form>
+
+                <form action="https://www.sys4soft.com/udemy/forms/index.php">
+        <div class="form-usuario">
+            <label for="">Usuário:</label><br>
+            <input type="text" name="name" id="" required>
+        </div>
+        <div class="form-senha">
+            <label for="">Senha:</label><br>
+            <input type="password" name="password" id="" required>
+        </div>
+        <div class="form-opcao">
+            <label>
+                opção 1
+                <input type="radio" name="opcao" checked>
+            </label>
+            <label>
+                opção 2
+                <input type="radio" name="opcao">
+            </label>
+            <label>
+                opção 3
+                <input type="radio" name="opcao">
+            </label>
+        </div>
+        <div class="form-buttons">
+            <button type ="button"></button>
+            <input type="reset" value="Limpar" accesskey="l" title="ctrl + l">
+            <input type="submit" value="Enviar">
+        </div>
+    </form>
+        </div>
     </div>
 
-    <!-- "Escondido, só é possivel ver vendo o codigo fonte" -->
-    <div class="form-group">
-        <input type="hidden" name="campo_escondido"> 
-        <p id="valor_range"></p>
-    </div>
-
-    <div class="form-group">
-        <label for="">Selecione uma opção</label>
-        <select name="campo_selecao" id="">
-            <option value="pt">Portugal</option>
-            <option value="br">Brasil</option>
-            <option value="en">Ingles</option>
-            <option value="es">Espanhol</option>
-            <!-- option*4 -->
-        </select>
-
-    </div>
-        <div class="form-group">
-        <label for="">Selecione varias opções, segurando ctrl</label>
-        <select name="campo_selecao[]" id="" required multiple>
-            <optgroup label="linguas">
-                <option value="pt">Portugal</option>
-                <option value="br">Brasil</option>
-                <option value="en">Ingles</option>
-                <option value="es">Espanhol</option>
-            </optgroup>
-            <optgroup label="outras linguas">
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-            </optgroup>
-
-            <!-- option*4 -->
-        </select>
-    </div>
     <script>
-        function mostrar(value)
-        {
+        function mostrar(value) {
             document.getElementById("valor_range").innerHTML = value
         }
     </script>
 </body>
+
 </html>
