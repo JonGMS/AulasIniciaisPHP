@@ -203,3 +203,6 @@ code{
     border-radius: 100%;
 
 }
+.p-sticky{
+    position: sticky;
+}
