@@ -1,0 +1,74 @@
+body{
+    margin:0;
+    background-color: black;
+}
+header{
+    background-color: black;
+    position: fixed;
+    width: 100%;
+}
+.painel{
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    padding: 50px;
+    height: 50px;
+    background-color: rgb(19, 22, 31);
+    gap: 50px;
+}
+.button-menu{
+    padding: 10px 60px 10px 60px ;
+    background-color: rgb(19, 22, 31);
+    border-radius: 20px;
+    color: white;
+    
+    box-shadow: 0 0 2px grey;
+
+}
+.painel a{
+    text-decoration: none;
+}
+.painel a:hover{
+    text-decoration:underline;
+    color: burlywood;
+
+}
+.button-menu:hover{
+    background-color: darkslategray;
+}
+
+.rede{
+    background-color: rgb(61, 58, 67);
+    height: 400px;
+    width: 300px;
+    box-shadow: 0 0 7px rgb(181, 181, 181);
+    border-radius: 20px;
+    margin-top: 200px;
+}
+.redes{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.redes a{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
+.f{
+    width: 70px;
+    margin-top: 8px;
+}
+.i{
+    width: 100px;
+    margin-top: 8px;
+}
+.y{
+    width: 70px;
+}
+footer{
+    color: white;
+    text-align: center;
+}
