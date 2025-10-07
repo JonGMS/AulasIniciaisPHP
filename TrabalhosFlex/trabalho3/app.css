@@ -8,29 +8,24 @@
 body {
   margin: 0;
   height: 100vh;
-  background: linear-gradient(to left top, rgb(219, 3, 227), rgb(6, 175, 226));
+  background: linear-gradient(to right bottom,rgb(6, 175, 226), rgb(219, 3, 227) );
   font-family: 'Montserrat';
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
-
-.sidebar{
-    padding-inline: 28%;
-
-}
 label{
     text-align: left;
 }
 .painel-formulario{
     height: 400px;
-    margin-top: 100px;
-    margin-inline: 100px;
     background-color: white;
     box-shadow: 0 0 10px  rgb(108, 104, 104);
 }
 form{
     width: 100%;
-    display: absolute;
 
 }
 input{
@@ -46,7 +41,6 @@ input{
     color: white;
 }
 h1{
-    margin-top: 90px;
     text-align: center;
 }
 .conj-input{
