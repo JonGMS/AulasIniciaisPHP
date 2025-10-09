@@ -37,15 +37,33 @@
     align-items: stretch;
 }
 
-.code-explicacao{
-    width: 250px;
-  flex-shrink: 0
-}
 /* 4 */
+
 section{
     display: grid;
     height: 100vh;
+    grid-template-columns: [col1-start] 50% [col1-end col2-start] 50% [col2-end];
+    grid-template-rows: [row] 25vh [row] 50vh [row] auto;
 }
 section div{
     box-shadow: 0 0 2px black;
+}
+.item1{
+    grid-row-start: row 1;
+    grid-column-start:col1-start;
+    grid-column-end: col2-end ;
+}
+.item2{
+    grid-row-start: row 2;
+    grid-column-start: col2-start ;
+
+}
+.item3{
+    grid-row-start: row 2;
+    grid-column-start: col1-start
+}
+.item4{
+    grid-row-start: row 3;
+    grid-column-start: col1-start;
+    grid-column-end: col2-end;
 }
