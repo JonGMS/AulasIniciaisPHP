@@ -72,3 +72,14 @@ body{
 code{
     color:cadetblue;
 }
+.code-explicacao{
+    background-color: rgb(26,26,26);
+    color: #a44f04;
+    padding: 30px;
+}
+.codigo-cor{
+    color: rgb(97, 218, 251);
+}
+.metodo-cor{
+    color:darkkhaki
+}

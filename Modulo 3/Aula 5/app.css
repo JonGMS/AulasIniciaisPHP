@@ -14,3 +14,38 @@
     font-size: 40px;
     box-shadow: inset 0 0 2px black;
 }
+.exemplo3{
+    display: grid;
+    height: 50vh;
+    grid-template-columns:repeat(3,1fr);
+    grid-template-rows: repeat(4,1fr);
+    grid-template-areas: 
+        "header header header"
+        "nav nav nav"
+        "content content content"
+        "footer footer footer"
+    ;
+}
+.area1{
+    grid-area: header;
+    background-color: red;
+}
+.explicacao-completa{
+    display: flex;
+    flex: 1;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.code-explicacao{
+    width: 250px;
+  flex-shrink: 0
+}
+/* 4 */
+section{
+    display: grid;
+    height: 100vh;
+}
+section div{
+    box-shadow: 0 0 2px black;
+}

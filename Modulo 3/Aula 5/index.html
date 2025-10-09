@@ -28,6 +28,7 @@
     </header>
     <div class="content-wrapper">
         <div class="atividades">
+            <h2 class="titulo-aula">Grid</h2>
             <div class="atividade">
                 <div class="exemplo1">
                     <div class="elemento-grid">1</div>
@@ -46,11 +47,62 @@
                     <div class="elemento-grid">2</div>
                     <div class="elemento-grid">
                         <div class="explicacao">
-                            O elemento <code>grid-template-rows</code> , faz alterações nos tamanhos das linhas e o <code>grid-template-columns</code> faz alterações nas formatação da coluna.
+                            O elemento <code>grid-template-rows</code> , faz alterações nos tamanhos das linhas e o
+                            <code>grid-template-columns</code> faz alterações nas formatação da coluna.
                         </div>
                     </div>
-                    
                 </div>
+
+                <br>
+                <hr style="border: solid 1px red;">
+                <br>
+
+                <div class="exemplo3">
+                    <div class="elemento-grid area1">A</div>
+                    <div class="elemento-grid">B</div>
+                    <div class="elemento-grid">C</div>
+                    <div class="elemento-grid">D</div>
+                    <div class="elemento-grid">F</div>
+                    <div class="elemento-grid">G</div>
+                </div>
+
+                <div class="explicacao-completa">
+                    <div class="code-explicacao" style="width: 300px;">
+
+                        <span class="codigo-cor">display:</span> grid;<br>
+                        <span class="codigo-cor">height:</span> 50vh;<br>
+                        <span class="codigo-cor">grid-template-columns:</span><span
+                            class="metodo-cor">repeat</span>(3,1fr);<br>
+                        <span class="codigo-cor">grid-template-rows:</span> <span
+                            class="metodo-cor">repeat</span>(4,1fr);<br>
+                        <span class="codigo-cor">grid-template-areas:</span> <br>
+                        <span class="">"header header header"<br>
+                            "nav nav nav"<br>
+                            "content content content"<br>
+                            "footer footer footer"<br></span>
+
+
+                    </div>
+                    <div class="explicacao" style="margin-left:20px;"><code></code>grid-template-areas</code>
+                        Define áreas nomeadas para facilitar o posicionamento dos elementos filhos. Cada linha tem 3
+                        colunas, mas todas as áreas (header, nav, content, footer) estão ocupando todas as 3 colunas ou
+                        seja, são áreas que se estendem horizontalmente. Então no caso da letra A, o <code>div</code>
+                        que possuia a o <code>grid-area</code> com o termo header, vai se estender pelos 3 espaços que
+                        ele ocupa.</div>
+                </div>
+                 <br>
+                <hr style="border: solid 1px red;">
+                <br>
+
+                <div class="exemplo4">
+                    <section>
+                        <div class="item1">HEADER</div>
+                        <div class="item2">ARTIGO DIREITA</div>
+                        <div class="item3">ARTIGO ESQUERDA</div>
+                        <div class="item4">RODAPÉ</div>
+                    </section>
+                </div>
+
             </div>
         </div>
     </div>
