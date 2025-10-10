@@ -1,0 +1,40 @@
+main {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: [nav-start] 20vw [nav-end content-start] auto [content-end];
+  grid-template-rows: [header-start] 20vh [header-end nav-start] auto [nav-end footer-start] 20vh [footer-end];
+  gap: 10px;
+}
+
+.header {
+  grid-column: nav-start / content-end;
+  grid-row: header-start / header-end;
+  background-color: black;
+  color: white;
+}
+
+.nav {
+  background-color: #444454;
+  color: white;
+  grid-column: nav-start / nav-end;
+  grid-row: nav-start / nav-end;
+}
+
+.content {
+    background-color: rgb(220, 220, 220);
+  grid-column: content-start / content-end;
+  grid-row: nav-start / nav-end;
+  text-align: center;
+}
+
+.footer {
+    background-color: black;
+  grid-column: nav-start / content-end;
+  grid-row: footer-start / footer-end;
+  color: white; 
+}
+.content,.footer,.nav,.header{
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
