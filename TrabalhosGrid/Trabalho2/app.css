@@ -1,0 +1,14 @@
+body{
+    margin:0;
+    padding: 0;
+    text-align: center;
+    display: grid;
+
+    /* 20 auto 10 */
+    grid-template:
+    "header header" 20vh
+    "nav content"
+    "footer footer" 10vh
+    / 30vw auto
+    ;
+}
