@@ -98,3 +98,9 @@
         display: block
     }
 }
+@media print{
+    *{
+        color: black;
+        background-color: aliceblue;
+    }
+}
