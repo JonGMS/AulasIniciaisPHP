@@ -60,7 +60,6 @@
 }
 .artigo{
     min-width: 100%;
-    float: left;
 }
 @media (min-width: 576px) {
     .artigo{
@@ -81,4 +80,21 @@
     .visivel-desk{ display: block;background-color:cadetblue;}
     .visivel-mobile{ display: none;}
     .visivel-tablet{ display: none; }
+}
+
+.formato-a, .formato-b{
+    padding: 20px;
+    text-align: center;
+    background-color:azure
+}
+.formato-b{
+    display: none;
+}
+@media screen and (orientation: landscape) {
+    .formato-a{
+        display: none;
+    }
+    .formato-b{
+        display: block
+    }
 }
