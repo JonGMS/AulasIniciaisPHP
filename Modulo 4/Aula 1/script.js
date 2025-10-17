@@ -42,7 +42,7 @@ switch (valor) {
         //
         break
 }
-let nomes = []
+var nomes = []
 nomes [0]= nome
 nomes [1]= nome2
 
@@ -99,3 +99,17 @@ console.log(em_ordem)
 em_ordem.reverse()
 console.log(em_ordem)
 
+let contagem = 0
+
+while(contagem < 10){
+    console.log(contagem +1)
+    contagem++
+}
+for(let repetidor = 0; repetidor < nomes.length; repetidor++){
+    console.log("ID: ",repetidor , nomes[repetidor])
+}
+for(nome in nomes){
+    console.log(nomes[nome])
+}
+
+nomes.forEach((n) => console.log(n))
