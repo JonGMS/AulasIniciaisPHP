@@ -1,0 +1,72 @@
+.conteudo-variaveis {
+    height: auto;
+    display: grid;
+    grid-template-columns: [var-inicio] 100px [var-end explicacao-inicio] auto [explicacao-end];
+    grid-template-rows:[explicacao-inicio] 80px [explicacao-end var-inicio] 100px [var-end let-inicio] 100px [let-end const-inicio] 100px [const-end];
+}
+
+.explicacao {
+    grid-column: var-inicio / explicacao-end;
+}
+
+.element-var {
+    grid-column: var-inicio / var-end;
+    grid-row: var-inicio / var-end;
+    color: #2596be;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.var-explicacao {
+    grid-column: explicacao-inicio / explicacao-end;
+    grid-row: var-inicio / var-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.element-let{
+    grid-column: var-inicio / var-end;
+    grid-row: let-inicio / let-end;
+    color: #2596be;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.let-explicacao{
+    grid-column: explicacao-inicio / explicacao-end;
+    grid-row: let-inicio / let-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+.element-const{
+    grid-column: var-inicio / var-end;
+    grid-row: const-inicio / const-end;
+
+    color: #2596be;
+    font-size: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.const-explicacao{
+    grid-column: explicacao-inicio / explicacao-end;
+    grid-row: const-inicio / const-end;
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+@media (max-width: 900px) {
+    
+    .conteudo-variaveis{
+        display: block;
+    }
+}

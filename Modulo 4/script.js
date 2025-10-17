@@ -17,4 +17,4 @@ const desc1 = "const é constante e imutavel, quando declarado não pode ser alt
 console.log(desc)
 console.log(desc1)
 
-alert(desc1);
+// alert("Clique com o botão direito do mouse e selecione Inspecionar. Ao abrir, redirecione para a aba console, assim poderá ver o que está sendo feito em js.");
