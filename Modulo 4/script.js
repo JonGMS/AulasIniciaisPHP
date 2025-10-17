@@ -18,3 +18,14 @@ console.log(desc)
 console.log(desc1)
 
 // alert("Clique com o botão direito do mouse e selecione Inspecionar. Ao abrir, redirecione para a aba console, assim poderá ver o que está sendo feito em js.");
+
+if(cidade == "Lisboa"){
+    console.log('Ta dentro do if');
+}
+else{
+    console.log('Como assim não é lisboa?')
+}
+
+let enviar_email = true
+let frase = enviar_email ? "Enviar" : "Não Enviar"
+console.log(frase)

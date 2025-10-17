@@ -70,3 +70,118 @@
         display: block;
     }
 }
+.conteudo-tipos-variaveis{
+    height: auto;
+    display:grid;
+    grid-template-columns: [element-inicio] 100px [element-end explicacao-inicio] auto [explicacao-end];
+    grid-template-rows: [string-inicio] 100px [string-end number-inicio]100px [number-end bool-inicio] 100px [bool-end null-inicio] 100px [null-end big-inicio] 100px [big-end symbol-inicio] 100px [symbol-end];
+
+}
+
+.element-string{
+    color: #2596be;
+    font-size: 40px;
+    grid-column: element-inicio / element-end;
+    grid-row: string-inicio / string-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.string-explicacao{
+    grid-column: explicacao-inicio / explicacao-end;
+    grid-row: string-inicio / string-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.element-number{
+    color: #2596be;
+    font-size: 40px;
+    grid-column: element-inicio / element-end;
+    grid-row: number-inicio / number-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.number-explicacao{
+    grid-column: explicacao-inicio / explicacao-end;
+    grid-row: number-inicio / number-end;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.element-boolean{
+    color: #2596be;
+    font-size: 40px;
+    grid-column: element-inicio / element-end;
+    grid-row: bool-inicio / bool-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.boolean-explicacao{
+    grid-column: explicacao-inicio / explicacao-end;
+    grid-row: bool-inicio / bool-end;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.element-null{
+    color: #2596be;
+    font-size: 40px;
+    grid-column: element-inicio / element-end;
+    grid-row: null-inicio / null-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.null-explicacao{
+    grid-column: explicacao-inicio / explicacao-end;
+    grid-row: null-inicio / null-end;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.element-bigint{
+    color: #2596be;
+    font-size: 40px;
+    grid-column: element-inicio / element-end;
+    grid-row: bigint-inicio / bigint-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bigint-explicacao{
+    grid-column: explicacao-inicio / explicacao-end;
+    grid-row: bigint-inicio / bigint-end;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.element-symbol{
+    color: #2596be;
+    font-size: 40px;
+    grid-column: element-inicio / element-end;
+    grid-row: symbol-inicio / symbol-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.symbol-explicacao{
+    grid-column: explicacao-inicio / explicacao-end;
+    grid-row: symbol-inicio / symbol-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
