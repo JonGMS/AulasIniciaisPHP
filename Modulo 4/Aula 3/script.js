@@ -1,3 +1,8 @@
+let elemento = document.documentElement;
+console.log(elemento)
+elemento = document.head
+console.log(elemento)
+
 let pessoa = {
     nome: "João",
     apelido: "Jon",

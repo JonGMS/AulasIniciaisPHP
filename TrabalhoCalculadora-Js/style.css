@@ -1,0 +1,113 @@
+.body{
+   margin: 0;
+   padding: 0;
+}
+.content-wraper{
+    height: 100vh;
+    padding-inline: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #575D90;
+}
+.teclado-numerico{
+    display:grid;
+    grid-template-columns: [coluna1-start] 100px [coluna1-end coluna2-start] 100px [coluna2-end coluna3-start] 100px [coluna3-end coluna4-start] 100px [coluna4-end] ;
+    grid-template-rows: [row1-start] 70px [row1-end row2-start] 70px [row2-end row3-start] 70px [row3-end row4-start ] 70px [row4-end];
+    gap: 10px;
+}
+.content{
+    background-color: rgb(18, 36, 91);
+    padding: 40px;
+    border-radius: 10px;
+}
+.cabecalho{
+    color: white;
+    font-size: 40px;
+}
+
+.teclado-numerico div{
+    background-color: #595f72;
+    border-radius: 10%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Coluna 1*/
+.tecla7{
+    grid-column: coluna1-start / coluna1-end;
+    grid-row: row1-start / row1-end;
+}
+.tecla4{
+    grid-column: coluna1-start / coluna1-end;
+    grid-row: row2-start / row2-end;
+}
+.tecla1{
+    grid-column: coluna1-start / coluna1-end;
+    grid-row: row3-start/ row3-end;
+}
+.tecla0{
+    grid-column: coluna1-start / coluna1-end;
+    grid-row: row4-start / row4-end
+}
+
+/*Coluna 2*/
+.tecla8{
+    grid-column: coluna2-start / coluna2-end;
+    grid-row: row1-start / row1-end;
+}
+.tecla5{
+    grid-column: coluna2-start / coluna2-end;
+    grid-row: row2-start / row2-end;
+}
+.tecla2{
+    grid-column: coluna2-start / coluna2-end;
+    grid-row: row3-start/ row3-end;
+}
+.tecla-virgula{
+    grid-column: coluna2-start / coluna2-end;
+    grid-row: row4-start / row4-end
+}
+
+/*Coluna 3*/
+.tecla9{
+    grid-column: coluna3-start / coluna3-end;
+    grid-row: row1-start / row1-end;
+}
+.tecla6{
+    grid-column: coluna3-start / coluna3-end;
+    grid-row: row2-start / row2-end;
+}
+.tecla3{
+    grid-column: coluna3-start / coluna3-end;
+    grid-row: row3-start/ row3-end;
+}
+.tecla-soma{
+    grid-column: coluna3-start / coluna3-end;
+    grid-row: row4-start / row4-end
+}
+
+/*Coluna 4*/
+.tecla-sub{
+    grid-column: coluna4-start / coluna4-end;
+    grid-row: row1-start / row1-end;
+}
+.tecla-divisao{
+    grid-column: coluna4-start / coluna4-end;
+    grid-row: row2-start / row2-end;
+}
+
+.teclax{
+    grid-column: coluna4-start / coluna4-end;
+    grid-row: row3-start / row3-end;
+}
+.tecla-resultado{
+    grid-column: coluna4-start / coluna4-end;
+    grid-row: row4-start / row4-end;
+}
+#numeros{
+    font-size: 35px;
+    margin-bottom: 10px;
+}
