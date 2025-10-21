@@ -1,0 +1,11 @@
+.interacao{
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+.button-ex1{
+    padding-inline: 20px;
+    padding: 10px;
+    background-color: cornflowerblue;
+    border-radius: 10%;
+}
