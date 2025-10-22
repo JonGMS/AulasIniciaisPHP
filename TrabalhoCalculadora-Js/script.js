@@ -9,8 +9,8 @@ document.getElementById( )
 /* Calculo de varios números.*/
 var algorismos = []
 var ultimoNumero = 0
-var numero = ObterNumero()
-var operador = ObterOperador()
+var numero
+var operador
 var resultado = EfetuarCalculo(operador)
 
 
@@ -21,24 +21,29 @@ function ObterNumero(){
 }
 
 function ObterOperador(operador){
+    console.log("Operador escolhido: " + operador)
     return operador
 }
 
 function EfetuarCalculo(operador){
     if(operador == "+"){
         resultado = ultimoNumero + numero
+        console.log(ultimo + " + " + numero + " = " + resultado )
         return resultado
     }
     else if(operador == "-"){
         resultado = ultimoNumero - numero
+        console.log(ultimo + " - " + numero + " = " + resultado )
         return resultado;
     }
     else if (operador == "*"){
         resultado = ultimoNumero * numero
+        console.log(ultimo + " x " + numero + " = " + resultado )
         return resultado;
     }
     else if (perador == "/") {
         resultado = ultimoNumero / numero
+        console.log(ultimo + " ÷ " + numero + " = " + resultado )
         return resultado
     }
 }

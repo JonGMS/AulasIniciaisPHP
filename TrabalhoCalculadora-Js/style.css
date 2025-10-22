@@ -35,6 +35,7 @@
     align-items: center;
 }
 
+
 /*Coluna 1*/
 .tecla7{
     grid-column: coluna1-start / coluna1-end;
@@ -106,8 +107,14 @@
 .tecla-resultado{
     grid-column: coluna4-start / coluna4-end;
     grid-row: row4-start / row4-end;
+    background-color: darkgoldenrod; /*Ver pq n esta funcionando*/
 }
 #numeros{
     font-size: 35px;
     margin-bottom: 10px;
+}
+.tecla0:hover, .tecla1:hover, .tecla2:hover, .tecla3:hover, .tecla4:hover, .tecla5:hover, .tecla6:hover, .tecla7:hover, .tecla8:hover, .tecla8:hover, .tecla9:hover, .tecla-virgula:hover{
+    color:white;
+    background-color:#575D90;
+    cursor: pointer;
 }
