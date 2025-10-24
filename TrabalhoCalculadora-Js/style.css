@@ -21,6 +21,14 @@
     padding: 40px;
     border-radius: 10px;
 }
+.calculo{
+    height: 40px;
+    width: 100%;
+    box-shadow: 1 1 black;
+    display: flex;
+    justify-content: end;
+    color: white;
+}
 .cabecalho{
     color: white;
     font-size: 40px;

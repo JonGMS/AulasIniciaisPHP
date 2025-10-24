@@ -1,63 +1,112 @@
 
-
-/*
-1 - Pega os números do input
-2- coloca os numéros e seus operadores (+, - , x , /)
-3 - Faz o calculo 
-*/ 
-
-/* Calculo de varios números.*/
 var algorismos = []
-var ultimoNumero = 0
+
 var numero
 var operador
-var resultado //= EfetuarCalculo(operador)
+var resultado
+var calculo
+
+function ObterNumero(operador) {
+
+    try {
+        numero = document.getElementById("numeros");
+        var numeroValue = parseFloat(numero.value)
+
+        console.log("Operador escolhido: " + operador)
+        EfetuarCalculo( operador, numeroValue)
+    }
+    catch {
+        console.log("Erro no ObeterNumero")
+    }
 
 
-function ObterNumero(){
-    // numero = document.getElementsByName("numeros");
-    // console.log(numero);
-    // return numero;
+
 }
 
-function ObterOperador(operador){
-    console.log("Operador escolhido: " + operador)
-    return operador
+
+function EfetuarCalculo(operador, numero) {
+    console.log( operador, numero)
+    try {
+        if (operador == "+") {
+            
+            calculo = document.getElementById('calculo')
+            nCalculo = parseFloat(calculo.textContent.replace('+')) 
+            
+            resultado = nCalculo + numero
+            console.log(nCalculo + " + " + numero + " = " + resultado)
+
+            calculo.value = resultado + operador
+            
+            //Apresentar na Tela
+            calculo.textContent = resultado + operador
+            ApagarNumeros()
+        }
+        else if (operador == "-") {
+            calculo = document.getElementById('calculo')
+            nCalculo = parseFloat(calculo.textContent.replace('-')) 
+            
+            resultado = nCalculo + numero
+            console.log(nCalculo + " + " + numero + " = " + resultado)
+
+            calculo.value = resultado + operador
+            
+            //Apresentar na Tela
+            calculo.textContent = resultado + operador
+            ApagarNumeros()
+        }
+        else if (operador == "*") {
+            calculo = document.getElementById('calculo')
+            nCalculo = parseFloat(calculo.textContent.replace('*')) 
+            
+            resultado = nCalculo + numero
+            console.log(nCalculo + " x " + numero + " = " + resultado)
+
+            calculo.value = resultado * operador
+            
+            calculo.textContent = resultado + operador
+            ApagarNumeros()
+        }
+        else if (operador == "/") {
+            calculo = document.getElementById('calculo')
+            nCalculo = parseFloat(calculo.textContent.replace('/')) 
+            
+            resultado = nCalculo + numero
+            console.log(nCalculo + " / " + numero + " = " + resultado)
+
+            calculo.value = resultado / operador
+            
+            calculo.textContent = resultado + operador
+            ApagarNumeros()
+
+        }
+    }
+    catch {
+        console.log("Erro no EfetuarCalculo")
+    }
+
+
 }
 
-function EfetuarCalculo(operador){
-    if(operador == "+"){
-        resultado = ultimoNumero + numero
-        console.log(ultimo + " + " + numero + " = " + resultado )
-        return resultado
-    }
-    else if(operador == "-"){
-        resultado = ultimoNumero - numero
-        console.log(ultimo + " - " + numero + " = " + resultado )
-        return resultado;
-    }
-    else if (operador == "*"){
-        resultado = ultimoNumero * numero
-        console.log(ultimo + " x " + numero + " = " + resultado )
-        return resultado;
-    }
-    else if (perador == "/") {
-        resultado = ultimoNumero / numero
-        console.log(ultimo + " ÷ " + numero + " = " + resultado )
-        return resultado
-    }
-}
-
-function CalculoVariosNumeros (){
+function CalculoVariosNumeros() {
 
 }
+
+function EventoTeclado(digito) {
+    let numeros = document.getElementById('numeros')
+    numeros.value = numeros.value + digito
+}
+
 function AlterarTexto(e) {
-  const titulo = document.querySelector("header");
-  if (titulo) {
-    titulo.textContent = "New titulo";
-    console.log(e.target)
-  } else {
-    console.warn("Elemento <h1> não encontrado.");
-  }
-  
+    const titulo = document.querySelector("header");
+    if (titulo) {
+        titulo.textContent = "New titulo";
+        console.log(e.target)
+    } else {
+        console.warn("Elemento <h1> não encontrado.");
+    }
+
+}
+function ApagarNumeros() {
+    let numeros = document.getElementById('numeros')
+    numeros.value = ''
 }
