@@ -1,24 +1,48 @@
 .atividade1{
     display: grid;
-    grid-template-columns: [variant-inicio] auto [variant-end resumo-inicio] 100px [resumo-end];
+    grid-template-columns: [variant-inicio] auto [variant-end resumo-inicio] 250px [resumo-end];
     grid-template-rows:
-    [resumo-inicio] 70px 
-    [resumo-end variant1-inicio] 100px 
-    [variant1-end botao1-inicio] 80px
-    [botao1-end variant2-inicio] 100px
-    [variant2-end botao2-inicio] 100px
-    [botao2-end variant3-inicio] 100px
-    [variant3-end botao3-inicio] 100px
-    [botao3-end variant4-inicio] 100px
-    [variant4-end botao4-inicio] 100px
-    [botao4-end variant5-inicio] 100px
-    [variant5-end botao5-inicio] 100px
-    [botao5-end variant6-inicio] 100px
-    [variant6-end botao6-inicio] 100px
-    [botao6-end variant7-inicio] 100px
-    [variant7-end botao7-inicio] 100px
+    [resumo-inicio] 120px 
+    [resumo-end variant1-inicio] 70px 
+    [variant1-end botao1-inicio] 60px
+    [botao1-end variant2-inicio] 70px
+    [variant2-end botao2-inicio] 60px
+    [botao2-end variant3-inicio] 70px
+    [variant3-end botao3-inicio] 60px
+    [botao3-end variant4-inicio] 70px
+    [variant4-end botao4-inicio] 60px
+    [botao4-end variant5-inicio] 70px
+    [variant5-end botao5-inicio] 60px
+    [botao5-end variant6-inicio] 70px
+    [variant6-end botao6-inicio] 60px
+    [botao6-end variant7-inicio] 70px
+    [variant7-end botao7-inicio] 60px
     [botao7-end]
     ; 
+}
+.metodo{
+    color:#DCDCAA
+}
+.document{
+    color:#9CDCFE;
+}
+.texto{
+    color: #CE9178
+}
+.resume{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-left: 25%;
+}
+.formato{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    padding: 5px;
+    border-radius: 10%;
+    width: 100px;
+    height: 20px;
 }
 
 .resumo{
@@ -83,3 +107,60 @@
     grid-row: variant7-inicio / variant7-end;
 }
 
+.botao1{
+    grid-column: resumo-inicio / resumo-end;
+    grid-row: botao1-inicio / botao1-end;
+}
+.botao2{
+    grid-column: resumo-inicio / resumo-end;
+    grid-row: botao2-inicio / botao2-end;
+}
+.botao3{
+    grid-column: resumo-inicio / resumo-end;
+    grid-row: botao3-inicio / botao3-end;
+}
+.botao4{
+    grid-column: resumo-inicio / resumo-end;
+    grid-row: botao4-inicio / botao4-end;
+}
+.botao5{
+    grid-column: resumo-inicio / resumo-end;
+    grid-row: botao5-inicio / botao5-end;
+}
+.botao6{
+    grid-column: resumo-inicio / resumo-end;
+    grid-row: botao6-inicio / botao6-end;
+}
+.botao7{
+    grid-column: resumo-inicio / resumo-end;
+    grid-row: botao7-inicio / botao7-end;
+}
+.buttonTest{
+    display:flex;
+    justify-content: end;
+}
+.formato:hover{
+    border:solid 1px #1f1f1f;
+    color: #1f1f1f;
+    cursor: pointer;
+}
+.variant{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1f1f1f;
+    border-radius: 6px;
+    color: white;
+}
+
+.interacao{
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+.button-ex1{
+    padding-inline: 20px;
+    padding: 10px;
+    background-color: cornflowerblue;
+    border-radius: 10%;
+}
