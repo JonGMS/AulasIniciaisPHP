@@ -1,4 +1,4 @@
-document.getElementById( )
+
 
 /*
 1 - Pega os números do input
@@ -11,13 +11,13 @@ var algorismos = []
 var ultimoNumero = 0
 var numero
 var operador
-var resultado = EfetuarCalculo(operador)
+var resultado //= EfetuarCalculo(operador)
 
 
 function ObterNumero(){
-    numero = document.getElementsByName("numeros");
-    console.log(numero);
-    return numero;
+    // numero = document.getElementsByName("numeros");
+    // console.log(numero);
+    // return numero;
 }
 
 function ObterOperador(operador){
@@ -50,4 +50,14 @@ function EfetuarCalculo(operador){
 
 function CalculoVariosNumeros (){
 
+}
+function AlterarTexto(e) {
+  const titulo = document.querySelector("header");
+  if (titulo) {
+    titulo.textContent = "New titulo";
+    console.log(e.target)
+  } else {
+    console.warn("Elemento <h1> não encontrado.");
+  }
+  
 }
