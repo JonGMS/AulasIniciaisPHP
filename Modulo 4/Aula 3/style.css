@@ -1,0 +1,85 @@
+.atividade1{
+    display: grid;
+    grid-template-columns: [variant-inicio] auto [variant-end resumo-inicio] 100px [resumo-end];
+    grid-template-rows:
+    [resumo-inicio] 70px 
+    [resumo-end variant1-inicio] 100px 
+    [variant1-end botao1-inicio] 80px
+    [botao1-end variant2-inicio] 100px
+    [variant2-end botao2-inicio] 100px
+    [botao2-end variant3-inicio] 100px
+    [variant3-end botao3-inicio] 100px
+    [botao3-end variant4-inicio] 100px
+    [variant4-end botao4-inicio] 100px
+    [botao4-end variant5-inicio] 100px
+    [variant5-end botao5-inicio] 100px
+    [botao5-end variant6-inicio] 100px
+    [variant6-end botao6-inicio] 100px
+    [botao6-end variant7-inicio] 100px
+    [variant7-end botao7-inicio] 100px
+    [botao7-end]
+    ; 
+}
+
+.resumo{
+    grid-column: variant-inicio / resumo-end;
+    grid-row: resumo-inicio / resumo-end;
+}
+.variant1{
+    grid-column: variant-inicio / variant-end;
+    grid-row: variant1-inicio / variant1-inicio;
+}
+.variant2{
+    grid-column: variant-inicio / variant-end;
+    grid-row: variant2-inicio / variant2-inicio;
+}
+.variant3{
+    grid-column: variant-inicio / variant-end;
+    grid-row: variant3-inicio / variant3-inicio;
+}
+.variant4{
+    grid-column: variant-inicio / variant-end;
+    grid-row: variant4-inicio / variant4-inicio;
+}
+.variant5{
+    grid-column: variant-inicio / variant-end;
+    grid-row: variant5-inicio / variant5-inicio;
+}
+.variant6{
+    grid-column: variant-inicio / variant-end;
+    grid-row: variant6-inicio / variant6-inicio;
+}
+.variant7{
+    grid-column: variant-inicio / variant-end;
+    grid-row: variant7-inicio / variant7-inicio;
+}
+
+.resumo1{
+    grid-column: resumo-inicio / resumo-end;
+    grid-row: variant1-inicio / variant1-end;
+}
+.resumo2{
+    grid-column: resumo-inicio / resumo-end;
+    grid-row: variant2-inicio / variant2-end;
+}
+.resumo3{
+    grid-column: resumo-inicio / resumo-end;
+    grid-row: variant3-inicio / variant3-end;
+}
+.resumo4{
+    grid-column: resumo-inicio / resumo-end;
+    grid-row: variant4-inicio / variant4-end;
+}
+.resumo5{
+    grid-column: resumo-inicio / resumo-end;
+    grid-row: variant5-inicio / variant5-end;
+}
+.resumo6{
+    grid-column: resumo-inicio / resumo-end;
+    grid-row: variant6-inicio / variant6-end;
+}
+.resumo1{
+    grid-column: resumo-inicio / resumo-end;
+    grid-row: variant7-inicio / variant7-end;
+}
+

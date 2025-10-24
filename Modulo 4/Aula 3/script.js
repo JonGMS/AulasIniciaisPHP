@@ -38,3 +38,4 @@ console.table(clone)
 let antagonista = {...clone}
 clone.apelido = "Antagonista"
 console.table(clone)
+// document.querySelector('.classe')
