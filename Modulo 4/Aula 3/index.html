@@ -5,10 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js"></script>
-     
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../../assets/style.css">
-    <title>Objeto</title>
+    <title>GetElement</title>
+    <style>
+        @font-face {
+            font-family: 'Montserrat';
+            src: url('../../montserrat/Montserrat-Light.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Montserrat-thin';
+            src: url('../../montserrat/Montserrat-Thin.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
 </head>
 
 <body>
@@ -33,35 +48,78 @@
         <div class="atividades">
             <h3 class="titulo-aula">GetElement</h3>
             <div class="atividade1">
-                <p class="resumo">O termo <code>document</code> não é uma nomenclatura opcional, ele é uma referência obrigatória ao objeto golobal que representa o DOM da pagína. Não pode ser alterada, pois é uma intercface padrão do navegador que permite acessar e manipular o conteúdo HTML.</p>
+                <p class="resumo">O termo <code>document</code> não é uma nomenclatura opcional, ele é uma referência
+                    obrigatória ao objeto golobal que representa o DOM da pagína. Não pode ser alterada, pois é uma
+                    intercface padrão do navegador que permite acessar e manipular o conteúdo HTML.</p>
 
-                <div class="variant1"><span class="document">document</span>.<span class="metodo">querySelector</span>(<span class="texto">'.btn-verde'</span> )</div>
-                <div class="resumo1">Seleciona o primeiro elemento com a classe especificada</div>
-                <div class="buttonTest">Testar</div>
+                <div class="variant1 variant"><span class="document">document</span>.<span
+                        class="metodo">querySelector</span>(<span class="texto">'.btn-verde'</span> )</div>
+                <div class="resumo1 resume">Seleciona o primeiro elemento com a classe especificada</div>
+                <div class="buttonTest botao1" >
+                    <div class="formato" style="background-color: greenyellow;" onclick="Testar(1)">Testar</div>
+                </div>
 
-                <div class="variant2"><span class="document">document</span>.<span class="metodo">querySelector</span>(<span class="texto">'#btn-Azul'</span>)</div>
-                <div class="resumo2">Seleciona o elemento com o ID especificado</div>
-                <div class="buttonTest">Testar</div>
+                <div class="variant2 variant"id="variant"><span class="document" >document</span>.<span
+                        class="metodo">querySelector</span>(<span class="texto">'#btn-Azul'</span>)</div>
+                <div class="resumo2 resume">Seleciona o elemento com o ID especificado</div>
+                <div class="buttonTest botao2">
+                    <div class="formato" style="background-color: aqua;" onclick="Testar(2)">Testar</div>
+                </div>
 
-                <div class="variant3"><span class="document">document</span>. <span class="metodo">querySelector</span>(<span class="texto">'div > button'</span>)</div>
-                <div class="resumo3">Seleciona o botão que é filho direto de uma div</div>
-                <div class="buttonTest">Testar</div>
+                <div class="variant3 variant"><span class="document">document</span>. <span
+                        class="metodo">querySelector</span>(<span class="texto">'div > button'</span>)</div>
+                <div class="resumo3 resume">Seleciona o botão que é filho direto de uma div</div>
+                <div class="buttonTest botao3">
+                    <div class="formato" style="background-color: gainsboro;" onclick="Testar(3)">Testar</div>
+                </div>
 
-                <div class="variant4"><span class="document">document</span>.<span class="metodo">querySelectorAll</span>(<span class="texto">'button'</span>)</div>
-                <div class="resumo4">Seleciona todos os botões da página, retornando uma NodeList</div>
-                <div class="buttonTest"></div>
+                <div class="variant4 variant"><span class="document">document</span>.<span
+                        class="metodo">querySelectorAll</span>(<span class="texto">'button'</span>)</div>
+                <div class="resumo4 resume">Seleciona todos os botões da página, retornando uma NodeList</div>
+                <div class="buttonTest botao4">
+                    <div class="formato" style="background-color: aquamarine;" onclick="Testar(4)">Testar</div>
+                </div>
 
-                <div class="variant5"><span class="document">document</span>.<span class="metodo">getElementById</span>(<span class="texto">'botaoPrincipal'</span>)</div>
-                <div class="resumo5">Alternativa mais antiga e específica para IDs</div>
-                <div class="buttonTest">Testar</div>
+                <div class="variant5 variant"><span class="document">document</span>.<span
+                        class="metodo">getElementById</span>(<span class="texto">'botaoPrincipal'</span>)</div>
+                <div class="resumo5 resume">Alternativa mais antiga e específica para IDs</div>
+                <div class="buttonTest botao5">
+                    <div class="formato" style="background-color: lemonchiffon;" onclick="Testar(5)">Testar</div>
+                </div>
 
-                <div class="variant6"><span class="document">document</span>.<span class="metodo">getElementsByClassName</span>(<span class="texto">'btn-verde'</span>)</div>
-                <div class="resumo6">Retorna uma coleção de elementos com a classe</div>
-                <div class="buttonTest">Testar</div>
+                <div class="variant6 variant"><span class="document">document</span>.<span
+                        class="metodo">getElementsByClassName</span>(<span class="texto">'btn-pink'</span>)</div>
+                <div class="resumo6 resume">Retorna uma coleção de elementos com a classe</div>
+                <div class="buttonTest botao6">
+                    <div class="formato" style="background-color: lightpink;" onclick="Testar(6)">Testar</div>
+                </div>
 
-                <div class="variant7"><span class="document">document</span>.<span class="metodo">getElementsByTagName</span>(<span class="texto">'button'</span>)</div>
-                <div class="resumo7">Retorna todos os elementos <button></button></div>
-                <div class="buttonTest">Testar</div>
+                <div class="variant7 variant"><span class="document">document</span>.<span
+                        class="metodo">getElementsByTagName</span>(<span class="texto">'button'</span>)</div>
+                <div class="resumo7 resume">Retorna todos os elementos </div>
+                <div class="buttonTest botao7">
+                    <div class="formato" style="background-color: lightcoral;" onclick="Testar(7)">Testar</div>
+                </div>
+            </div>
+            <div class="atividade2">
+                <div id="noticia" class="simulacao-noticia" style="background-color: black; padding: 20px;">
+                    <h3 id="titulo-noticia" style="color: yellow;"><strong>Jovens criam aplicativo para reduzir o
+                            desperdício de alimentos</strong></h3>
+                    <p id="subtitulo-notocia" style="color:aliceblue; padding-inline: 20px;"><strong>Estudantes de
+                            tecnologia desenvolvem solução que conecta restaurantes e ONGs locais</strong></p>
+                    <p id="artigo" style="color: blanchedalmond; padding-inline: 20px;">Um grupo de quatro jovens
+                        universitários lançou um aplicativo que ajuda a reduzir o desperdício de alimentos em
+                        restaurantes. A plataforma, chamada Reaproveita, permite que estabelecimentos cadastrem sobras
+                        de comida em bom estado, que são então direcionadas a instituições de caridade. Desde o
+                        lançamento, o projeto já evitou o descarte de mais de 2 toneladas de alimentos.</p>
+                </div>
+                <div class="interacao">
+                    <p>Vizualize os códigos em funcionamento atraves do F12</p>
+                    <div class="button-ex1" onclick="button_executar()">EXECUTAR</div>
+                </div>
+                <p>QuerySelector - Busca o primeiro elemento do HTML
+                    QuerySelector all - Mostra todos os elementos do HTML solicitado
+                </p>
             </div>
         </div>
     </div>

@@ -1,40 +1,43 @@
-let cor = document.querySelector("#noticia");
+// let elemento = document.documentElement;
+// console.log(elemento)
+// elemento = document.head
+// console.log(elemento)
 
-const estilos = window.getComputedStyle(cor)
-cor.style.backgroundColor = "blue"
-console.log(cor.style.backgroundColor)
-console.log(estilos.getPropertyValue('color'))
-let el = null
-/* Busca o primeiro Elemento do documento */
-el = document.querySelector('*')
+// let pessoa = {
+//     nome: "João",
+//     apelido: "Jon",
+//     idade: 21,
+//     genero: "masculino",
 
-// busca todos os elementos do documento
-el = document.querySelectorAll('*')
+//     apresentar_nome: function() {
+//         return this.nome + "  " + this.apelido
+//     },
+//     apresentar_idade: function() {
+//         return this.idade + " anos de idade"
+//     },
+//     hobbies:[
+//         'Programação',
+//         'Cinema',
+//         'Música'
+//     ]
+// }
 
-// Busca o primeiro paragrago de um documento
+// console.log(pessoa.nome)
+// console.log(pessoa['genero'])
+// console.log(pessoa.apresentar_nome())
+// console.log(pessoa.apresentar_idade())
+// console.table(pessoa.hobbies)
 
-el = document.querySelector('p')
+// pessoa.email = "joaoexemple@exemple.com"
 
-//busca todos os paragrafos de um documento
-el = document.querySelectorAll('p')
-//botao executar
-function button_executar(){
-    document.getElementById('noticia')
-    console.log(document)
+// let clone = Object.assign({}, pessoa)
+// clone.nome = "Joao clone"
+// console.table(pessoa)
+// console.table(clone)
 
-    let e = document.getElementById('titulo-noticia')
-    console.log(e.id)
-    console.log(e.className)
-    console.log(e.innerHTML)
-    console.log(e.innerText)
-    console.log(e.textContent)
-
-    let d = document.querySelector('#titulo')
-    console.log(d)
-
-    let a = document.querySelectorAll('p')
-
-}
-
+// let antagonista = {...clone}
+// clone.apelido = "Antagonista"
+// console.table(clone)
+// document.querySelector('.classe')
 
 
