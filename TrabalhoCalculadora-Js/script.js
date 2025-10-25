@@ -1,83 +1,65 @@
-
+//Fazer o calculo com base no div - calculo
 var algorismos = []
 
-var numero
+
 var operador
 var resultado
-var calculo
+
 
 function ObterNumero(operador) {
 
     try {
-        numero = document.getElementById("numeros");
-        var numeroValue = parseFloat(numero.value)
+        var numero = document.getElementById("numeros");
+        var calculo = document.getElementById("calculo")
 
-        console.log("Operador escolhido: " + operador)
-        EfetuarCalculo( operador, numeroValue)
+        if (calculo.textContent != '' && numero.value == '') {
+            calculo.textContent = calculo.textContent.replace(/[^0-9,]/g, '') + operador;
+            throw new Error(mensagemErro = "Altera o operador para: " + operador);
+        }
+        else if(numero.value == ''){
+            throw new Error( mensagemErro = "Nenhum número para alterar o Operador");
+        }
+
+        var numeroValue = parseFloat(numero.value)
+        numeroCalculo = parseFloat(calculo.textContent)
+        EfetuarCalculo(operador, numeroValue)
     }
     catch {
-        console.log("Erro no ObeterNumero")
+        console.log(mensagemErro)
     }
-
-
-
 }
 
 
-function EfetuarCalculo(operador, numero) {
-    console.log( operador, numero)
+function EfetuarCalculo(operador, numeroUsuario) {
     try {
         if (operador == "+") {
-            
-            calculo = document.getElementById('calculo')
-            nCalculo = parseFloat(calculo.textContent.replace('+')) 
-            
-            resultado = nCalculo + numero
-            console.log(nCalculo + " + " + numero + " = " + resultado)
 
-            calculo.value = resultado + operador
-            
-            //Apresentar na Tela
+            resultado = CalculoPorOperador()
+
             calculo.textContent = resultado + operador
+
             ApagarNumeros()
         }
         else if (operador == "-") {
-            calculo = document.getElementById('calculo')
-            nCalculo = parseFloat(calculo.textContent.replace('-')) 
-            
-            resultado = nCalculo + numero
-            console.log(nCalculo + " + " + numero + " = " + resultado)
+            resultado = CalculoPorOperador()
 
-            calculo.value = resultado + operador
-            
-            //Apresentar na Tela
             calculo.textContent = resultado + operador
+
             ApagarNumeros()
         }
         else if (operador == "*") {
-            calculo = document.getElementById('calculo')
-            nCalculo = parseFloat(calculo.textContent.replace('*')) 
-            
-            resultado = nCalculo + numero
-            console.log(nCalculo + " x " + numero + " = " + resultado)
+            resultado = CalculoPorOperador()
 
-            calculo.value = resultado * operador
-            
             calculo.textContent = resultado + operador
+
             ApagarNumeros()
         }
         else if (operador == "/") {
-            calculo = document.getElementById('calculo')
-            nCalculo = parseFloat(calculo.textContent.replace('/')) 
-            
-            resultado = nCalculo + numero
-            console.log(nCalculo + " / " + numero + " = " + resultado)
+            resultado = CalculoPorOperador()
 
-            calculo.value = resultado / operador
-            
             calculo.textContent = resultado + operador
-            ApagarNumeros()
 
+            ApagarNumeros()
         }
     }
     catch {
@@ -85,11 +67,28 @@ function EfetuarCalculo(operador, numero) {
     }
 
 
+
+    function CalculoPorOperador() {
+
+        if (calculo.textContent.includes("+")) {
+            return resultado = numeroUsuario + numeroCalculo
+        }
+        else if (calculo.textContent.includes("-")) {
+            return resultado = numeroUsuario - numeroCalculo
+        }
+        else if (calculo.textContent.includes("*")) {
+            return resultado = numeroUsuario * numeroCalculo
+        }
+        else if (calculo.textContent.includes("/")) {
+            return resultado = numeroCalculo / numeroUsuario
+        }
+        else {
+            console.log("Primeiro Calculo - Nenhuma formula aplicada.")
+            return numeroUsuario
+        }
+    }
 }
 
-function CalculoVariosNumeros() {
-
-}
 
 function EventoTeclado(digito) {
     let numeros = document.getElementById('numeros')
