@@ -33,9 +33,10 @@
     color: white;
     font-size: 40px;
 }
-
-.teclado-numerico div{
+.tecla{
     background-color: #595f72;
+}
+.teclado-numerico div{
     border-radius: 10%;
     color: white;
     display: flex;
@@ -95,22 +96,26 @@
 }
 .tecla-soma{
     grid-column: coluna3-start / coluna3-end;
-    grid-row: row4-start / row4-end
+    grid-row: row4-start / row4-end;
+    background-color: rgb(45, 45, 45);
 }
 
 /*Coluna 4*/
 .tecla-sub{
     grid-column: coluna4-start / coluna4-end;
     grid-row: row1-start / row1-end;
+    background-color: rgb(45, 45, 45);
 }
 .tecla-divisao{
     grid-column: coluna4-start / coluna4-end;
     grid-row: row2-start / row2-end;
+    background-color: rgb(45, 45, 45);
 }
 
 .teclax{
     grid-column: coluna4-start / coluna4-end;
     grid-row: row3-start / row3-end;
+    background-color: rgb(45, 45, 45);
 }
 .tecla-resultado{
     grid-column: coluna4-start / coluna4-end;
@@ -124,5 +129,15 @@
 .tecla0:hover, .tecla1:hover, .tecla2:hover, .tecla3:hover, .tecla4:hover, .tecla5:hover, .tecla6:hover, .tecla7:hover, .tecla8:hover, .tecla8:hover, .tecla9:hover, .tecla-virgula:hover{
     color:white;
     background-color:#575D90;
+    cursor: pointer;
+}
+.teclax:hover, .tecla-sub:hover, .tecla-divisao:hover, .tecla-soma:hover{
+    color:white;
+    background-color:#363845;
+    cursor: pointer;
+}
+.tecla-resultado:hover{
+    color:white;
+    background-color:rgb(147, 108, 9);
     cursor: pointer;
 }

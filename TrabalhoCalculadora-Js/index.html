@@ -19,22 +19,22 @@
             <div class="calculo" id="calculo"></div>
             <div class="textbox"><input type="number" name="numeros" id="numeros"></div>
             <div class="teclado-numerico">
-                <div class="tecla7" onclick="EventoTeclado('7')">7</div>
-                <div class="tecla8" onclick="EventoTeclado('8')">8</div>
-                <div class="tecla9" onclick="EventoTeclado('9')">9</div>
-                <div class="tecla4" onclick="EventoTeclado('4')">4</div>
-                <div class="tecla5" onclick="EventoTeclado('5')">5</div>
-                <div class="tecla6" onclick="EventoTeclado('6')">6</div>
-                <div class="tecla1" onclick="EventoTeclado('1')">1</div>
-                <div class="tecla2" onclick="EventoTeclado('2')">2</div>
-                <div class="tecla3" onclick="EventoTeclado('3')">3</div>
-                <div class="tecla-virgula" onclick="EventoTeclado(',')">,</div>
-                <div class="tecla0" onclick="AlterarTexto(event)">0</div>
+                <div class="tecla7 tecla" onclick="EventoTeclado('7')">7</div>
+                <div class="tecla8 tecla" onclick="EventoTeclado('8')">8</div>
+                <div class="tecla9 tecla" onclick="EventoTeclado('9')">9</div>
+                <div class="tecla4 tecla" onclick="EventoTeclado('4')">4</div>
+                <div class="tecla5 tecla" onclick="EventoTeclado('5')">5</div>
+                <div class="tecla6 tecla" onclick="EventoTeclado('6')">6</div>
+                <div class="tecla1 tecla" onclick="EventoTeclado('1')">1</div>
+                <div class="tecla2 tecla" onclick="EventoTeclado('2')">2</div>
+                <div class="tecla3 tecla" onclick="EventoTeclado('3')">3</div>
+                <div class="tecla-virgula tecla" onclick="EventoTeclado(',')">,</div>
+                <div class="tecla0 tecla" onclick="EventoTeclado('0')">0</div>
                 <div class="tecla-soma" onclick="ObterNumero('+')">+</div>
                 <div class="tecla-sub" onclick="ObterNumero('-')">-</div>
                 <div class="teclax" onclick="ObterNumero('*') ">x</div>
                 <div class="tecla-divisao" onclick="ObterNumero('/')">÷</div>
-                <div class="tecla-resultado" onclick="">=</div>
+                <div class="tecla-resultado" id="resultado" onclick="ObterNumero('=')">=</div>
             </div>
 
         </div>
