@@ -164,3 +164,32 @@
     background-color: cornflowerblue;
     border-radius: 10%;
 }
+.apresentacaoExemplo{
+    display: grid;
+    grid-template-columns: [code-inicio] auto [code-end apresentacao-inicio] 250px [apresentacao-end];
+    grid-template-rows: [code-inicio] 200px [code-end];
+}
+.variant8{
+    grid-column: code-inicio / code-end;
+    grid-row: code-inicio / code-end;
+}
+.botao8{
+    grid-column: apresentacao-inicio / apresentacao-end;
+    grid-row: code-inicio / code-end;
+}
+.buttonTest8{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.atributoCriado{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1f1f1f;
+    color: white;
+}
+#exemplo8{
+    border-radius: 10px;
+    margin-top: 20px;
+}

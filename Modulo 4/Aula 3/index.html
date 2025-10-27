@@ -55,11 +55,11 @@
                 <div class="variant1 variant"><span class="document">document</span>.<span
                         class="metodo">querySelector</span>(<span class="texto">'.btn-verde'</span> )</div>
                 <div class="resumo1 resume">Seleciona o primeiro elemento com a classe especificada</div>
-                <div class="buttonTest botao1" >
+                <div class="buttonTest botao1">
                     <div class="formato" style="background-color: greenyellow;" onclick="Testar(1)">Testar</div>
                 </div>
 
-                <div class="variant2 variant"id="variant"><span class="document" >document</span>.<span
+                <div class="variant2 variant" id="variant"><span class="document">document</span>.<span
                         class="metodo">querySelector</span>(<span class="texto">'#btn-Azul'</span>)</div>
                 <div class="resumo2 resume">Seleciona o elemento com o ID especificado</div>
                 <div class="buttonTest botao2">
@@ -115,14 +115,37 @@
                 </div>
                 <div class="interacao">
                     <p>Vizualize os códigos em funcionamento atraves do F12</p>
-                    <div class="button-ex1" onclick="button_executar()">EXECUTAR</div>
+                    <div class="formato" style="background-color: blanchedalmond;" onclick="Testar2()">EXECUTAR</div>
                 </div>
                 <p>QuerySelector - Busca o primeiro elemento do HTML
                     QuerySelector all - Mostra todos os elementos do HTML solicitado
                 </p>
             </div>
+            <h3 class="titulo-aula">createElement</h3>
+            <div class="atividade3" id="atividade3">
+                <p>O método <code>createElement</code> permite adicionar um novo elemento HTML mesmo que ele não exista
+                    previamente no arquivo. Ao clicar nesse botão, o conteúdo não está presente no HTML original, mas é
+                    inserido temporariamente pelo JavaScript. <br> O método <code>appendChild</code> define onde esse
+                    elemento sera 'filho'.</p>
+                <div class="apresentacaoExemplo">
+                    <div class="variant8 variant">
+                        <div class="codigo-Xlinhas"><span class="document">novo_elemento</span> = <span
+                                class="document">document</span>.<span class="metodo">createElement</span>(<span
+                                class="texto">'p'</span>)<br>
+
+                            <span class="document">novo_elemento</span>.<span class="document">innerText</span> = <span
+                                class="texto">'Texto adicionado pelo JS DOM'</span><br><span
+                                class="document">variavel2</span> = <span class="document">document</span>.<span
+                                class="metodo">querySelector</span>(<span class="texto">'#atividade3'</span>)<br><span
+                                class="document">variavel2</span>.<span class="metodo">appendChild</span>(<span
+                                class="texto">novo_elemento</span>)
+                        </div>
+                    </div>
+                    <div class="buttonTest8"><div class="formato botao8" style="background-color: rgb(66, 227, 125);" onclick="testarCriacao()">EXECUTAR</div></div>
+                </div>
+            </div>
+            <div id="exemplo8"></div>
         </div>
-    </div>
 </body>
 
 </html>
