@@ -1,0 +1,14 @@
+#usuario, #senha{
+    display: block;
+
+}
+#usuario{
+
+}
+#senha{
+
+}
+.error {
+    color:red;
+    font-style: italic;
+}

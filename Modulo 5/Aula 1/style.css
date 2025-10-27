@@ -1,0 +1,14 @@
+.destaque{
+    color: crimson;
+    font-size: 20px;
+
+}
+.atividade1{
+        padding-bottom: 30px;
+}
+div .fundo{
+    background-color: crimson;
+    color: white;
+    box-shadow: inset 1px 1px white;
+    text-align: center;
+}

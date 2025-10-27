@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header-tela">
+        <div class="cabecalho">
+            <a href="../../index.html" class="link-header">
+                <div class="button-header">HOME</div>
+            </a>
+            <a href="../../modulo.html" class="link-header">
+                <div class="button-header">MODULOS</div>
+            </a>
+            <a href="" class="link-header">
+                <div class="button-header">TRABALHOS</div>
+            </a>
+            <a href="https://github.com/JonGMS" class="link-header" target="_blak">
+                <div class="button-header">GIT</div>
+            </a>
+        </div>
+    </header>
+
+    <div class="content-wrapper">
+        <div class="atividades">
+            <h3 class="titulo-aula">BootStrap</h3>
+            <div class="explicacao">Bootstrap é um framework front-end popular que facilita a criação de sites
+                responsivos e modernos. Ele oferece uma coleção de componentes prontos como botões, formulários,
+                navegação e grades de layout, todos baseados em HTML, CSS e JavaScript. Com ele, desenvolvedores podem
+                construir interfaces consistentes e adaptáveis a diferentes tamanhos de tela com menos esforço e mais
+                rapidez. É amplamente usado por sua simplicidade, flexibilidade e compatibilidade com diversos
+                navegadores.</div>
+            <div class="atividade1 container"><span class="destaque">.container</span>: é um container com largura fixa
+                e responsividade.
+                Ele adapta sua largura conforme o tamanho da tela (breakpoints), mantendo o conteúdo centralizado e com
+                margnes automáticas. Ele é ideal para layouts que precisam de alinhamento e espaçamento consistente eme
+                diferentes dispositivos.</div>
+            <div class="atividade1 container-fluid"><span class="destaque">.container</span>: Um conteiner com largura
+                total (100%) em
+                todos os tamanhos de tela. Ocupa toda a largura da viewport, sem margens laterais. Ele é ideal para
+                layouts que precisam de aproveitamento máximo da teka, como dashboards ou páginas com gráficos
+                expansivos</div>
+            <div class="atividade1 container-md"> <span class="destaque">.container-'breakpoint'</span>: Um container
+                que é fluido até um determinado breakpoint, e depois se
+                comporta como o .container. Exemplo: .container-sm, .container-md, .container-lg, etc. Dá mais controle
+                sobre quando o layout deve "travar" a largura, permitindo designs mais personalizados. Ele é ideal para
+                Projetos que exigem comportamento específico em certos tamanhos de tela.</div>
+
+            <div class="explicacao">No geral o <code>.container-'breakpoint'</code> faz a responsividade com base nos
+                tamanos base do
+                BootStrap(<code>sm = small, md = medium, lg = large, xl = ExtraLarge, xxl = ExtraExtraLarge</code>). O
+                <code>container-fluid</code> contém todos esses breakpoints
+            </div>
+
+            <div class="atividade2">
+                <h3 class="titulo-aula">Row & Col</h3>
+                <div class="row">
+                    <div class="col fundo">A</div>
+                    <div class="col fundo">A</div>
+                    <div class="col fundo">A</div>
+                    <div class="col fundo">A</div>
+                    <div class="col fundo">A</div>
+                    <div class="col fundo">A</div>
+                    <div class="col fundo">A</div>
+                    <div class="col fundo">A</div>
+                    <div class="col fundo">A</div>
+                    <div class="col fundo">A</div>
+                    <div class="col fundo">A</div>
+                    <div class="col fundo">A</div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col fundo">B</div>
+                    <div class="col-3 fundo">B</div>
+                    <div class="col fundo">B</div>
+                    <div class="col-3 fundo">B</div>
+                    <div class="col fundo">B</div>
+                    <div class="col-3 fundo">B</div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-12 col-sm-3 col-lg-4 fundo">A</div>
+                    <div class="col-12 col-sm-3 col-lg-4 fundo">B</div>
+                    <div class="col-12 col-sm-6 col-lg-4 fundo">C</div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-12 col-sm-6 fundo">
+                        <h1>A</h1>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="col-12 com-lg-6 fundo">B</div>
+                        <div class="col-12 com-lg-6 fundo">C</div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-12 col-sm-8 offset-sm-2 col-lg-4 offset-lg-4 fundo">A</div>
+                </div>
+                <br>
+                <div class="row justify-content-end">
+                    <div class="col-2 fundo">A</div>
+                    <div class="col-2 fundo">B</div>
+                    <div class="col-2 fundo">C</div>
+                </div>
+                <br>
+                <div class="row align-items-center">
+                    <div class="col-4 fundo">Lorem ipsum dolor sit amet.</div>
+                    <div class="col-4 fundo">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem, similique
+                        architecto quaerat corrupti sed numquam dolorum veniam quas alias fugit nam vel ut illum optio
+                        quidem quam magni porro consequuntur.</div>
+                    <div class="col-4 fundo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, nemo.</div>
+                </div>
+                <div class="explicacao">
+                    Assim como o display: grid, o Bootstrap já vem padronizado com um sistema de 12 colunas, sendo
+                    necessário apenas personalizá-lo. Para utilizar essa funcionalidade, basta aplicar as classes row e
+                    col aos elementos. Para personalizar, é só adicionar um sufixo numérico após col, como por exemplo
+                    col-6, que ocupará 6 das 12 colunas disponíveis. Se a personalização ultrapassar os 12 as outras col
+                    serão na linha de baixo
+                </div>
+                <br>
+            </div>
+            <div class="atividade3 mt-20">
+                <h3 class="titulo-aula">Margem e Padding</h3>
+                <div class="explicacao">
+                    Resumidamente, quando queremos aplicar margem, usamos a classe <code>m</code>. Para especificar a
+                    direção da margem, adicionamos um dos seguintes termos: <code>t</code> (topo), <code>b</code>
+                    (base), <code>s</code> (esquerda), <code>e</code> (direita), <code>x</code> (horizontal) ou
+                    <code>y</code> (vertical).<br>
+                    Para espaçamento interno (padding), usamos a classe <code>p</code> com os mesmos termos.<br>
+                    Exemplo: <code>div.mt-30</code><br>
+                    Isso faz com que a margem superior aumente em 30 pixels.
+                </div>
+
+            </div>
+            <div class="atividade4">
+                <h3 class="titulo-aula">Gutters - GAP</h3>
+                <div class="explicacao">
+                    Em layouts baseados em grid, usamos o conceito de <strong>gutters</strong> ou <strong>gap</strong>
+                    para definir o espaçamento entre colunas ou elementos.<br>
+                    Para isso, utilizamos a classe <code>g</code> seguida de um número que representa o tamanho do
+                    espaçamento em pixels.<br>
+                    Exemplo: <code>row.g-3</code><br>
+                    Isso cria um espaçamento de aproximadamente 1rem (16px) entre as colunas dentro da linha.<br>
+                    Também é possível usar <code>gx</code> para espaçamento horizontal e <code>gy</code> para
+                    espaçamento vertical.<br>
+                    Exemplo: <code>row.gx-2 gy-4</code><br>
+                    Isso aplica 0.5rem (8px) de espaçamento horizontal e 1.5rem (24px) de espaçamento vertical entre os
+                    elementos.
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
