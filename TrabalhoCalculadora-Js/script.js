@@ -35,41 +35,30 @@ function ReiniciarCalculo(operador, calculo, numero) {
         botaoResultado.textContent = '=';
         calculo.textContent = '';
         numero.value = '';
-        // 
+
+        HabilitarTeclado();
+
+    }
+}
+
+function HabilitarTeclado() {
+    let divs = document.getElementsByClassName("teclas-ativadas");
+
+    for (let i = 0; i < divs.length; i++) {
+        divs[i].classList.remove("desabilitado");
+        divs[i].disabled = false;
     }
 }
 
 function EfetuarCalculo(operador, numeroUsuario, numero) {
     try {
-        if (operador == "+") {
+        if (["+", "-", "*", "/"].includes(operador)) {
 
-            resultado = CalculoPorOperador()
+            resultado = CalculoPorOperador();
 
-            calculo.textContent = resultado + operador
+            calculo.textContent = resultado + operador;
 
-            ApagarNumeros()
-        }
-        else if (operador == "-") {
-            resultado = CalculoPorOperador()
-
-            calculo.textContent = resultado + operador
-
-            ApagarNumeros()
-        }
-        else if (operador == "*") {
-            resultado = CalculoPorOperador()
-
-            calculo.textContent = resultado + operador
-
-            ApagarNumeros()
-        }
-        else if (operador == "/") {
-
-            resultado = CalculoPorOperador()
-
-            calculo.textContent = resultado + operador
-
-            ApagarNumeros()
+            ApagarNumeros();
         }
         else if (operador == "=") {
             resultado = CalculoPorOperador()
@@ -80,12 +69,13 @@ function EfetuarCalculo(operador, numeroUsuario, numero) {
 
             calculo.textContent = "Resultado"
 
-            botaoResultado = document.getElementById('resultado')
-
-            botaoResultado.textContent = 'A/C'
+            AlterarBotaoResultado();
 
             //Bloquear Teclado
             //Adicionar todo o calculo no histórico
+
+            DesabilitarTeclado();
+
         }
         DivisaoZero();
     }
@@ -96,8 +86,8 @@ function EfetuarCalculo(operador, numeroUsuario, numero) {
     function DivisaoZero() {
         if (resultado == "Infinity") {
             calculo.textContent = "Não é possível dividir por zero";
-            //Bloquear Cliques em botões
-            // Atualizar Botão de =
+            DesabilitarTeclado();
+            AlterarBotaoResultado();
         }
     }
 
@@ -121,6 +111,21 @@ function EfetuarCalculo(operador, numeroUsuario, numero) {
             return numeroUsuario
         }
 
+    }
+}
+
+function AlterarBotaoResultado() {
+    botaoResultado = document.getElementById('resultado');
+
+    botaoResultado.textContent = 'A/C';
+}
+
+function DesabilitarTeclado() {
+    let divs = document.getElementsByClassName("teclas-ativadas");
+    console.log(divs);
+    for (let i = 0; i < divs.length; i++) {
+        divs[i].classList.add("desabilitado");
+        divs[i].disabled = true;
     }
 }
 

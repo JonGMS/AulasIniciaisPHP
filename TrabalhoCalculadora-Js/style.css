@@ -36,6 +36,14 @@
 .tecla{
     background-color: #595f72;
 }
+.desabilitado{
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #333438;
+  color: rgb(58, 58, 58);
+
+}
 .teclado-numerico div{
     border-radius: 10%;
     color: white;
@@ -140,4 +148,10 @@
     color:white;
     background-color:rgb(147, 108, 9);
     cursor: pointer;
+}
+.historico{
+    margin: 20px 20px 0 20px;
+    background-color: #333438;
+    /* height: 100px; */
+    border-radius: 5px;
 }
