@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="../../assets/style.css">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
-    
+
 </head>
+
 <body>
-     <header class="header-tela">
+    <header class="header-tela">
         <div class="cabecalho">
             <a href="../../index.html" class="link-header">
                 <div class="button-header">HOME</div>
@@ -33,7 +35,7 @@
                 <div class="col-6">
                     <form action="" method="post">
                         <div class="mb-3">
-                            <select name="" id="" class="form-select form-select-lg" multiple size="8" >
+                            <select name="" id="" class="form-select form-select-lg" multiple size="8">
                                 <option selected>Escolha uma opção</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -43,7 +45,9 @@
                                 <option value="6">6</option>
                                 <option value="7">7</option>
                             </select>
-                            <p class="form-text">Form select é a 'configuração' padrão do bootstrap, com o 'multiple', podemos selecionar mais de uma opção precionando o ctrl, com o 'size' mostra quantas opções vao aparecer quando selecionarmos o Select</p>
+                            <p class="form-text">Form select é a 'configuração' padrão do bootstrap, com o 'multiple',
+                                podemos selecionar mais de uma opção precionando o ctrl, com o 'size' mostra quantas
+                                opções vao aparecer quando selecionarmos o Select</p>
                         </div>
                     </form>
                     <form action="" method="post">
@@ -58,12 +62,45 @@
                                 <option value="6">6</option>
                                 <option value="7">7</option>
                             </select>
-                            <p class="form-text">Form select é a 'configuração' padrão do bootstrap, com o 'multiple', podemos selecionar mais de uma opção precionando o ctrl, com o 'size' mostra quantas opções vao aparecer quando selecionarmos o Select</p>
+                            <p class="form-text">Form select é a 'configuração' padrão do bootstrap, com o 'multiple',
+                                podemos selecionar mais de uma opção precionando o ctrl, com o 'size' mostra quantas
+                                opções vao aparecer quando selecionarmos o Select</p>
                         </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="container mt5">
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    <form action="">
+                        <label for="range">Quantidade
+                            <input type="range" id="range" class="form-range" min="0" max="100" step="2">
+                            <div class="form-check form-check-inline">
+                                <input type="checkbox" name="" id="b" class="form-check-input">
+                                <label for="b">checkbox</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="checkbox" name="" id="a" class="form-check-input">
+                                <label for="a">checkbox</label>
+                            </div>
+                            <div class="form-check">
+                                <input id="s" type="radio" name="opcao" class="form-check-input">
+                                <label for="s" class="form-check-label">Radio</label>
+                            </div>
+                            <div class="form-check">
+                                <input id="d" type="radio" name="opcao" class="form-check-input">
+                                <label for="d" class="form-check-label">Radio</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input type="checkbox" name="" id="f" class="form-check-input" role="switch">
+                                <label for="f" class="form-check-label">opcao do Switch</label>
+                                </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </body>
+
 </html>
