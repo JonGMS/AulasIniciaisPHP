@@ -28,7 +28,12 @@
     </header>
     <div class="content-wrapper">
         <div class="atividades">
-            <h3 class="titulo-aula">Variaveis</h3>
+            <div class="painel-tag">
+                <h3 class="titulo-aula">Tag de abertura</h3>
+                
+                <h3 class="titulo-aula">Variaveis</h3>
+            </div>
+
             <div class="script-php">
                 <?php
 
@@ -54,12 +59,105 @@
 
                 echo 'Versão do PHP: ', PHP_VERSION, "<br>";
 
-                echo 'Linha do código: ', __LINE__;
+                echo 'Linha do código: ', __LINE__, "<br>";
 
+                // 
+
+                $valor_str = "145";
+                $valor_int = (int)$valor_str; // Console.Convert.Toint64(valor_str)
+
+                if(is_int($valor_int)){
+                    echo "A conversão funcionou: $valor_int <br>";
+                }
+                
+                $valor_null = null;
+                echo "Valor: $valor_null <br>";
+                var_dump($valor_null);
+                //function Mensagem(mixed $value) {};
+                if(is_null($valor_null)){
+                    unset($valor_null); //Exclui uma variavel
+                    echo "<br> Variavel excluida <br>";
+                }
+                //Agora a variavel não tem valor, com empty conseguimos retornar um bool quando verificamos uma variavel vazia ou nula
+                if(empty($valor_null)){
+                    echo "A variavel esta vazia ou nula. <br>" ;
+                }
+                
+                $nome = "Joao";
+                $sobrenome = "Santos";
+
+                $nome_completo = $nome . " " . $sobrenome;
+                echo $nome_completo,  "<br>";
+
+                $j = 0;
+                
+                for ($i = 0; $i < strlen($nome_completo); $i++){
+                    $j--;
+                    echo $nome_completo[$i], " ", $nome_completo[$j] ,"<br>";
+                }
+
+                $personalizado = strtoupper($nome_completo);
+
+                echo $personalizado, "<br>";
+
+                $personalizado = substr($personalizado, 0, 6);
+                echo $personalizado, "<br>";
+
+                echo strlen($personalizado), "<br>";
+
+                if(str_contains($personalizado, "LINDOO")){
+                    echo "Contem JOAO";
+                }
+                else{
+                    echo "Não Contem"; 
+                }
+
+                $caixa = array("Caneta", "Celular", "Monjaro", "Durateston", "Remédio", "Boneco", 10 => "Lego"); //O for vai parar no $i = 7, então nunca vai chegar no 10 = lego
+                for($i = 0; $i < count($caixa); $i++){
+                    if(empty($caixa[$i])){
+
+                        continue;
+                    }
+                    echo "<br>", $i, " " ,$caixa[$i];
+                }
+                foreach($caixa as $i => $conteudoCaixa){
+                    echo "<br>", $i, " " , $conteudoCaixa;
+
+                    if(str_contains($caixa[$i], "Lego")){
+                        unset($caixa[$i]); 
+                    }
+                } 
+
+                $empresa = array(
+                    "Administrador" => "Maria Eduarda",
+                    "Vendedor" => "Elian",
+                    "Designer" => "Thiago",
+                    "Desenvolvedor" => "João"
+                );
+                
+                echo "<br>", '<pre>';
+
+                print_r($empresa);
+                echo '</pre>';
+                
+                $empresa_multidimensional = [
+                    'Administrador' =>[
+                    '1' => ['nome' => 'Maria E.', 'telefone' => '123456789', 'email' => 'mariaadm@gmail.com'],
+                    '2' => ['nome' => 'Amabile', 'telefone' => '8521234658', 'email' => 'mabyadm@gmail.com'],
+
+                    'Vendedor' =>['nome' => 'Elian','telefone' => '987654321', 'email' => 'Elian@gmail.com' ],
+                    'Designer' =>['nome' => 'Thiago','telefone' => '741852963', 'email' => 'thi@gmail.com' ],
+                    'Desenvolvedor' =>['nome' => 'Joao','telefone' => '369258147', 'email' => 'jon@gmail.com' ]
+                ]];
+                echo '<pre>';
+                print_r($empresa_multidimensional);
+                echo '</pre>';
+
+                echo $empresa_multidimensional['Administrador'][2]['nome'];
                 ?>
+                
             </div>
 
-            <h1>Teste</h1>
         </div>
     </div>
 </body>
