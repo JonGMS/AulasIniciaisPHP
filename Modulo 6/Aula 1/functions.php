@@ -1,5 +1,17 @@
 <?php
-session_start(); //Para efetuar as funções dos Funcionários com foreach.
+function CriarCSV()
+{
+    $file = fopen("nomeArquivo.csv", 'w'); //'W de write, colocando nosso CSV para escrita
+    $header = ['coluna A', 'Coluna B', 'Coluna C'];
+    fputcsv($file, $header); // Cria o arquivo com suas respectivas colunas
+
+    for ($i = 0; $i <= 100; $i++) {
+        $linha = [rand(100, 999), rand(100, 999), rand(100, 999)];
+        fputcsv($file, $linha);
+    }
+    //Aq estão sendo adicionados numeros de 100 a 999 nas linhas das colunas, 100 em cada.
+    fclose($file); //fecha o CSV que estava para escrita.
+}
 function DarNotas($alunos)
 {
     for ($id_aluno = 1; $id_aluno <= count($alunos); $id_aluno++) {
@@ -70,5 +82,19 @@ function Calculo($numeroFixo)
         $resultado = $numeroFixo * $contador;
         echo "$numeroFixo x $contador = $resultado <br>";
         $contador++;
+        LogTabuada("$numeroFixo x $contador = $resultado" . PHP_EOL);
     }
+}
+function LogAulaInformatica()
+{
+    file_put_contents('LogClass.txt', "texto de ficheiro");
+}
+function LogTabuada($calculoLog)
+{
+
+    file_put_contents('LogTabuada.txt', $calculoLog, time() . FILE_APPEND,);
+}
+function TabuadaNumero()
+{
+    file_get_contents('LogTabuada.txt', offset: 6, length: 40);
 }

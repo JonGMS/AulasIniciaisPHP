@@ -144,6 +144,12 @@
 </head>
 <?php
 session_start();
+// session_name("minha_sessao");
+// session_set_cookie_params(60); //segundos
+
+
+setcookie('cookiePersonalizado' , 'conteudo_do_meu_cokkie', time( ) + 3600);
+
 include_once "functions.php";
 include_once "dados.php";
 $alunos = DarNotas($alunos);
@@ -160,7 +166,7 @@ require_once "../../nav.php";
 
             <div class="menuSimulacao">
                 <h3>Informática</h3>
-                <div class="button-simulacao" onclick=>CLASSE</div>
+                <a href="../Aula 2/inde.php"><div class="button-simulacao" onclick=>COOKIE</div></a>
                 <div class="button-simulacao" onclick="">CARGOS</div>
             </div>
 
@@ -170,6 +176,7 @@ require_once "../../nav.php";
                 </div>
             </table>
             <br>
+            <?php CriarCSV()?>
             <hr>
             <br>
             <div class="atividadeTabuada">

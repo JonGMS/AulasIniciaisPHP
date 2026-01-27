@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    <?php session_start()?> 
 
 <head>
     <meta charset="UTF-8">
@@ -34,6 +35,8 @@
 </head>
 
 <body>
+
+    <?php setcookie('cookiePersonalizado' , 'conteudo_do_meu_cokkie', time( )+3600);?>
     <header class="header-tela">
         <div class="cabecalho">
             <a href="../../index.html" class="link-header">
