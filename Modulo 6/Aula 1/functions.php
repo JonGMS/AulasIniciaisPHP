@@ -1,4 +1,5 @@
 <?php
+session_start(); //Para efetuar as funções dos Funcionários com foreach.
 function DarNotas($alunos)
 {
     for ($id_aluno = 1; $id_aluno <= count($alunos); $id_aluno++) {

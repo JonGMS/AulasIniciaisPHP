@@ -143,6 +143,7 @@
     <title>PHP - Variaveis</title>
 </head>
 <?php
+session_start();
 include_once "functions.php";
 include_once "dados.php";
 $alunos = DarNotas($alunos);

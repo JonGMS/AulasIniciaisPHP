@@ -1,5 +1,8 @@
 <?php
+session_start();
 
+session_name("minha_sessao");
+session_set_cookie_params(60);//segundos
 $alunos = [
 
 1 => ['nome'=> 'Beatriz Almeida', 'notas' => [
@@ -49,7 +52,7 @@ $alunos = [
                    
 ];
 
-$funcionarios = [
+$_SESSION = [
     1 => ['nome' => 'João Gabriel', 'cargo' => 'Desenvolvedor - TI'],
     2 => ['nome' => 'Maria Fernanda', 'cargo' => 'Secretária Escolar'], 
     3 => ['nome' => 'Carlos Eduardo', 'cargo' => 'Coordenador Pedagógico'], 
