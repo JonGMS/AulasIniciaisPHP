@@ -8,10 +8,10 @@
 <body>
     <header class="header-tela">
     <div class="cabecalho">
-        <a href="index.html" class="link-header">
+        <a href="./index.php" class="link-header">
             <div class="button-header">HOME</div>
         </a>
-        <a href="modulo.html" class="link-header">
+        <a href="./modulo.php" class="link-header">
             <div class="button-header">MODULOS</div>
         </a>
         <a href="" class="link-header">
