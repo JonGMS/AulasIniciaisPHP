@@ -9,37 +9,65 @@ function DarNotas($alunos)
     }
     return $alunos;
 }
-function Verificarstatus($alunos, $idAluno){
+function Verificarstatus($alunos, $idAluno)
+{
     $status = $alunos[$idAluno]['status'] == "APROVADO" ? true : false;
     return $status;
 }
 
-function FazerMedias($alunos) {
-    for($aluno = 1; $aluno <= count($alunos); $aluno++)
-    {
-        $alunos[$aluno]['media'] =  ($alunos[$aluno]['notas'][1] + $alunos[$aluno]['notas'][2] + $alunos[$aluno]['notas'][3] + $alunos[$aluno]['notas'][4]) /4;
+function FazerMedias($alunos)
+{
+    for ($aluno = 1; $aluno <= count($alunos); $aluno++) {
+        $alunos[$aluno]['media'] =  ($alunos[$aluno]['notas'][1] + $alunos[$aluno]['notas'][2] + $alunos[$aluno]['notas'][3] + $alunos[$aluno]['notas'][4]) / 4;
         $alunos = AplicarStatus($alunos, $aluno);
     }
     return $alunos;
-    
 }
 
-function AplicarStatus($alunos, $idAluno){
-    $alunos[$idAluno]['status'] = $alunos[$idAluno]['media'] >= 7 ? "APROVADO" : "REPROVADO";  
-    return $alunos; 
+function AplicarStatus($alunos, $idAluno)
+{
+    $alunos[$idAluno]['status'] = $alunos[$idAluno]['media'] >= 7 ? "APROVADO" : "REPROVADO";
+    return $alunos;
 }
 
 function Boletim($alunos)
 {
+    echo "<tr>
+                    <th>NOME</th>
+                    <th>1º SEMESTRE</th>
+                    <th>2º SEMESTRE</th>
+                    <th>3º SEMESTRE</th>
+                    <th>4º SEMESTRE</th>
+                    <th>MÉDIA</th>
+                    <th>STATUS</th>
+                </tr>";
     for ($aluno = 1; $aluno < count($alunos); $aluno++) {
-        if(Verificarstatus($alunos, $aluno)){
+        if (Verificarstatus($alunos, $aluno)) {
             echo "
-            <tr><td>" . $alunos[$aluno]['nome'] . "</td><td>" . $alunos[$aluno]['notas'][1] . "</td><td>" . $alunos[$aluno]['notas'][2] . "</td><td>" . $alunos[$aluno]['notas'][3] . "</td><td>" . $alunos[$aluno]['notas'][4]."</td><td class='notaAprovada'>" . $alunos[$aluno]['media'] . "</td><td class='statusAprovado'>".$alunos[$aluno]['status']."</td><tr>";
-        }
-        else{
+            <tr><td>" . $alunos[$aluno]['nome'] . "</td><td>" . $alunos[$aluno]['notas'][1] . "</td><td>" . $alunos[$aluno]['notas'][2] . "</td><td>" . $alunos[$aluno]['notas'][3] . "</td><td>" . $alunos[$aluno]['notas'][4] . "</td><td class='notaAprovada'>" . $alunos[$aluno]['media'] . "</td><td class='statusAprovado'>" . $alunos[$aluno]['status'] . "</td><tr>";
+        } else {
             echo "
-            <tr><td>" . $alunos[$aluno]['nome'] . "</td><td>" . $alunos[$aluno]['notas'][1] . "</td><td>" . $alunos[$aluno]['notas'][2] . "</td><td>" . $alunos[$aluno]['notas'][3] . "</td><td>" . $alunos[$aluno]['notas'][4]."</td><td class='notaReprovada'>" . $alunos[$aluno]['media'] . "</td><td class='statusReprovado'>".$alunos[$aluno]['status']."</td></tr>";
+            <tr><td>" . $alunos[$aluno]['nome'] . "</td><td>" . $alunos[$aluno]['notas'][1] . "</td><td>" . $alunos[$aluno]['notas'][2] . "</td><td>" . $alunos[$aluno]['notas'][3] . "</td><td>" . $alunos[$aluno]['notas'][4] . "</td><td class='notaReprovada'>" . $alunos[$aluno]['media'] . "</td><td class='statusReprovado'>" . $alunos[$aluno]['status'] . "</td></tr>";
         }
-            
+    }
+}
+function ApresentarFuncionarios($funcionarios)
+{
+    echo "<table><th>ID<th><th>NOME</th><th>CARGO</th></table>";
+}
+
+function Tabuada($numeroTabuada)
+{
+    Calculo($numeroTabuada);
+    $numeroTabuada++;
+    return $numeroTabuada;
+}
+function Calculo($numeroFixo)
+{
+    $contador = 0;
+    while ($contador < 11) {
+        $resultado = $numeroFixo * $contador;
+        echo "$numeroFixo x $contador = $resultado <br>";
+        $contador++;
     }
 }

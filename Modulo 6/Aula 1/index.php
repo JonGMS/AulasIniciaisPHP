@@ -6,13 +6,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    
-    <style> 
-        .menuSimulacao{
+
+    <style>
+        .atividadeTabuada {
+            display: grid;
+
+            grid-template-columns: [tabuada1-inicio] 20% [tabuada1-end tabuada2-inicio] 20% [tabuada2-end tabuada3-inicio] 20% [tabuada3-end tabuada4-inicio] 20% [tabuada4-end tabuada5-inicio] 20% [tabuada5-end];
+            grid-template-rows: [row1-inicio] 250px [row1-end row2-inicio] 250px [row2-end];
+        }
+
+        .tabuada1 {
+            grid-column: tabuada1-inicio / tabuada1-end;
+            grid-row: row1-inicio / row1-end;
+        }
+
+        .tabuada2 {
+            grid-column: tabuada2-inicio / tabuada2-end;
+            grid-row: row1-inicio / row1-end;
+        }
+
+        .tabuada3 {
+            grid-column: tabuada3-inicio / tabuada3-end;
+            grid-row: row1-inicio / row1-end;
+        }
+
+        .tabuada4 {
+            grid-column: tabuada4-inicio / tabuada4-end;
+            grid-row: row1-inicio / row1-end;
+        }
+
+        .tabuada5 {
+            grid-column: tabuada5-inicio / tabuada5-end;
+            grid-row: row1-inicio / row1-end;
+        }
+
+        .tabuada6 {
+            grid-column: tabuada1-inicio / tabuada1-end;
+            grid-row: row2-inicio / row2-end;
+        }
+
+        .tabuada7 {
+            grid-column: tabuada2-inicio / tabuada2-end;
+            grid-row: row2-inicio / row2-end;
+        }
+
+        .tabuada8 {
+            grid-column: tabuada3-inicio / tabuada3-end;
+            grid-row: row2-inicio / row2-end;
+        }
+
+        .tabuada9 {
+            grid-column: tabuada4-inicio / tabuada4-end;
+            grid-row: row2-inicio / row2-end;
+        }
+
+        .tabuada10 {
+            grid-column: tabuada5-inicio / tabuada5-end;
+            grid-row: row2-inicio / row2-end;
+        }
+
+        .tabuada1,
+        .tabuada2,
+        .tabuada3,
+        .tabuada4,
+        .tabuada5,
+        .tabuada6,
+        .tabuada7,
+        .tabuada8,
+        .tabuada9,
+        .tabuada10 {
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tabelas {
+            width: 100%;
+            border: solid 1px black;
+            border-collapse: collapse;
+
+        }
+
+        .menuSimulacao {
             display: flex;
             align-items: center;
         }
-        .button-simulacao{
+
+        .button-simulacao {
             margin-inline-start: 10px;
             text-align: center;
             height: 20px;
@@ -22,10 +103,13 @@
             border-radius: 10px;
             color: white;
         }
-        .button-simulacao:hover{
+
+        .button-simulacao:hover {
             color: darkblue;
-            background-color: white;
+            background-color: lightseagreen;
+            cursor: pointer;
         }
+
         th {
             background-color: darkslategray;
             color: white;
@@ -63,53 +147,71 @@ include_once "functions.php";
 include_once "dados.php";
 $alunos = DarNotas($alunos);
 $alunos = FazerMedias($alunos);
-
+require_once "../../nav.php";
 ?>
 
 <body>
-    <header class="header-tela">
-        <div class="cabecalho">
-            <a href="../../index.html" class="link-header">
-                <div class="button-header">HOME</div>
-            </a>
-            <a href="../../modulo.html" class="link-header">
-                <div class="button-header">MODULOS</div>
-            </a>
-            <a href="" class="link-header">
-                <div class="button-header">TRABALHOS</div>
-            </a>
-            <a href="https://github.com/JonGMS" class="link-header" target="_blak">
-                <div class="button-header">GIT</div>
-            </a>
-        </div>
-    </header>
     <div class="content-wrapper">
         <div class="atividades">
-            
+
             <h3 class="titulo-aula">Atividade Simulada</h3>
 
 
             <div class="menuSimulacao">
                 <h3>Informática</h3>
-                <div class="button-simulacao">CLASSE</div>
-                <div class="button-simulacao">CARGOS</div>
+                <div class="button-simulacao" onclick=>CLASSE</div>
+                <div class="button-simulacao" onclick="">CARGOS</div>
             </div>
-            <table style="width:100%; border: solid 1px black;border-collapse: collapse;">
-                <tr style=>
-                    <th>NOME</th>
-                    <th>1º SEMESTRE</th>
-                    <th>2º SEMESTRE</th>
-                    <th>3º SEMESTRE</th>
-                    <th>4º SEMESTRE</th>
-                    <th>MÉDIA</th>
-                    <th>STATUS</th>
-                </tr>
-                <?php
-                Boletim($alunos)
-                ?>
+
+            <table class="tabelas">
+                <div class="simulacao">
+                    <?php Boletim($alunos) ?>
+                </div>
             </table>
+            <br>
+            <hr>
+            <br>
+            <div class="atividadeTabuada">
+                <?php
+                $numeroTabuada = 1;
+                ?>
+                <!-- <div class="tabuada0">
+                        
+                    </div> -->
+                <div class="tabuada1">
+                    <?php $numeroTabuada = Tabuada($numeroTabuada); ?>
+                </div>
+                <div class="tabuada2">
+                    <?php $numeroTabuada = Tabuada($numeroTabuada); ?>
+                </div>
+                <div class="tabuada3">
+                    <?php $numeroTabuada = Tabuada($numeroTabuada); ?>
+                </div>
+                <div class="tabuada4">
+                    <?php $numeroTabuada = Tabuada($numeroTabuada); ?>
+                </div>
+                <div class="tabuada5">
+                    <?php $numeroTabuada = Tabuada($numeroTabuada); ?>
+                </div>
+                <div class="tabuada6">
+                    <?php $numeroTabuada = Tabuada($numeroTabuada); ?>
+                </div>
+                <div class="tabuada7">
+                    <?php $numeroTabuada = Tabuada($numeroTabuada); ?>
+                </div>
+                <div class="tabuada8">
+                    <?php $numeroTabuada = Tabuada($numeroTabuada); ?>
+                </div>
+                <div class="tabuada9">
+                    <?php $numeroTabuada = Tabuada($numeroTabuada); ?>
+                </div>
+                <div class="tabuada10">
+                    <?php $numeroTabuada = Tabuada($numeroTabuada); ?>
+                </div>
+
+
+            </div>
         </div>
-    </div>
 </body>
 
 </html>

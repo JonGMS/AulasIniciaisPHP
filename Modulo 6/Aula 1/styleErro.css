@@ -1,0 +1,30 @@
+.painel-tag{
+    display: grid;
+    
+}
+td{
+    text-align: center;
+    align-items: center;
+}
+th{
+    background-color: darkslategray;
+    color: white;
+}
+.notaReprovada{
+    color: red;
+}
+.statusReprovado{
+    background-color: rgb(251, 134, 134);
+    color: rgb(163, 3, 3);
+}
+.notaAprovado{
+    color:darkblue;
+}
+.statusAprovado{
+    background-color: rgb(68, 224, 81);
+    color: green;
+}
+th, td { border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+ }
