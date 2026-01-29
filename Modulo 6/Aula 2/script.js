@@ -14,7 +14,5 @@ function ValidarCPF() {
     alert("CPF deve conter apenas números.");
     return false;
   }
-
-  alert("CPF válido (estrutura)");
   return true; 
 }

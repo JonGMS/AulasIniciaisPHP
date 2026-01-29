@@ -2,28 +2,15 @@
 <?php
 include_once 'dados.php';
 
-
-
-if ($usuarios == null) {
-    die("Usuarios não chamados.");
-}
-
 if ($_SERVER['REQUEST_METHOD'] != 'POST') {
     die("Acesso inválido");
 }
-
-$username = isset($_POST['text_username']) ? $_POST['text_username'] : '';
+$cpf = isset($_POST['text_cpf']) ? $_POST['text_cpf'] : '';
 $password = isset($_POST['text_password']) ? $_POST['text_password'] : '';
 $status = " ";
 
-for ($i = 0; $i < count($usuarios); $i++) {
-    if ($usuarios[$i]['username'] == $username && $usuarios[$i]['password'] == $password) {
-        require_once "../../nav.php";
-        echo '<p>Login Ok!</p>';
-        $status = "ENTROU";
-    }
-}
-if ($status != "ENTROU") {
+$status = SelecionarLogin($cpf, $password); 
+if($status != "ENTROU") {
     echo "<p>Login não concluido. </p>";
     require_once "login.php";
     die("");
