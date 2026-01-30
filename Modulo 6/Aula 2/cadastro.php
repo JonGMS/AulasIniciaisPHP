@@ -1,3 +1,41 @@
+<?php
+    setcookie('cookiePersonalizado', 'conteudo_do_meu_cokkie', time() + 3600);
+
+    session_start();
+    $inputs = [];
+
+    if(isset($_SESSION['inputs'])){
+        $inputs = $_SESSION['inputs'];
+        unset($_SESSION['inputs']);
+    }
+    function show_error($campo){
+        global $inputs;
+        if(key_exists($campo, $inputs)){
+            if(!empty($inputs[$campo]['erro'])){
+                return '<span class="text-danger"><small><i>'.$inputs[$campo]['erro'].'</i><small></span>';
+            }
+            else{
+                return '';
+            }
+        }
+        else{
+            return '';
+        }
+    }
+    function show_value($campo){
+        global $inputs;
+        if(key_exists($campo,$inputs)){
+            if(!empty($inputs[$campo]['value'])){
+                return $inputs[$campo]['value'];
+            }
+        }
+        else{
+            return '';
+        }
+    }
+    print_r($inputs)
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,14 +45,16 @@
     <title>Atividades PHP</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../../assets/style.css">
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
     <style>
-        .a_link{
+        .a_link {
             margin-top: 20px;
         }
-        .titulo_form{
+
+        .titulo_form {
             padding-top: 20px;
         }
+
         .formulario_post {
             background-color: rgb(236, 236, 236);
             height: 420px;
@@ -56,7 +96,6 @@
 
 <body>
 
-    <?php setcookie('cookiePersonalizado', 'conteudo_do_meu_cokkie', time() + 3600); ?>
 
     <header class="header-tela">
         <div class="cabecalho">
@@ -73,21 +112,28 @@
                 <form action="valida_cadastro.php" method="post">
                     <div class="campo">
                         <label for="id_CPF">CPF:</label><br>
-                        <input type="text" name="text_cpf" id="id_cpf" maxlength="11" minlength="11"><br>
+                        <input type="text" name="text_cpf" id="id_cpf"  value=<?php echo show_value('text_cpf') ?>><br>
+                        <!-- maxlength="11" minlength="11" -->
+                        <?php echo show_error('text_cpf') ?>
                     </div>
                     <div class="campo">
                         <label for="id_username">Nome:</label><br>
-                        <input type="text" name="text_username" id="id_username" minlength="3" maxlength="20"><br>
+                        <input type="text" name="text_username" id="id_username"  value=<?php echo show_value('text_username') ?>><br>
+                        <!-- minlength="3" maxlength="20" -->
+                        <?php echo show_error('text_username') ?>
                     </div>
 
                     <div class="campo">
                         <label for="id_password">Password</label><br>
-                        <input type="password" name="text_password" id="id_password"><br>
+                        <input type="password" name="text_password" id="id_password" value=<?php echo show_value('text_password') ?>><br>
+                        <?php
+                        echo show_error('text_password') ?>
                     </div>
-                       <div class="a_link">
+                    <div class="a_link">
                         <a href="login.php">login</a>
                     </div>
-                    <input class="button_submit" type="submit" onclick="ValidarCPF()" value="CADASTRAR">
+                    <input class="button_submit" type="submit"  value="CADASTRAR">
+                    <!-- onclick="ValidarCPF()" -->
                 </form>
             </div>
         </div>

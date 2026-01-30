@@ -73,9 +73,10 @@
                 <form action="valida_login.php" method="post">
                     <div class="campo">
                         <label for="id_cpf">CPF:</label><br>
-                        <input type="text" name="text_cpf" id="id_cpf" maxlength="11" minlength="11"><br>
+                        <input type="text" name="text_cpf" id="id_cpf"  ><br>
+                        <!-- maxlength="11" minlength="11" -->
                     </div>
-
+                    
                     <div class="campo">
                         <label for="id_password">Password</label><br>
                         <input type="password" name="text_password" id="id_password"><br>
@@ -84,7 +85,7 @@
                         <a href="cadastro.php">Não possui cadastro?</a>
                     </div>
                     
-                    <input class="button_submit" type="submit" onclick="ValidarCPF()" value="ENTRAR">
+                    <input class="button_submit" type="submit"  value="ENTRAR"> <!--onclick="ValidarCPF()"-->
                 </form>
 
             </div>
