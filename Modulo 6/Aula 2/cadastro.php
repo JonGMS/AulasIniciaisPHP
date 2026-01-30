@@ -45,7 +45,7 @@
     <title>Atividades PHP</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../../assets/style.css">
-    <!-- <script src="script.js"></script> -->
+    <script src="script.js"></script>
     <style>
         .a_link {
             margin-top: 20px;
@@ -112,14 +112,12 @@
                 <form action="valida_cadastro.php" method="post">
                     <div class="campo">
                         <label for="id_CPF">CPF:</label><br>
-                        <input type="text" name="text_cpf" id="id_cpf"  value=<?php echo show_value('text_cpf') ?>><br>
-                        <!-- maxlength="11" minlength="11" -->
+                        <input type="text" name="text_cpf" id="id_cpf" maxlength="11" minlength="11" value=<?php echo show_value('text_cpf') ?>><br>
                         <?php echo show_error('text_cpf') ?>
                     </div>
                     <div class="campo">
                         <label for="id_username">Nome:</label><br>
-                        <input type="text" name="text_username" id="id_username"  value=<?php echo show_value('text_username') ?>><br>
-                        <!-- minlength="3" maxlength="20" -->
+                        <input type="text" name="text_username" id="id_username" minlength="3" maxlength="20" value=<?php echo show_value('text_username') ?>><br>
                         <?php echo show_error('text_username') ?>
                     </div>
 
@@ -132,8 +130,7 @@
                     <div class="a_link">
                         <a href="login.php">login</a>
                     </div>
-                    <input class="button_submit" type="submit"  value="CADASTRAR">
-                    <!-- onclick="ValidarCPF()" -->
+                    <input class="button_submit" type="submit" onclick="ValidarCPF()" value="CADASTRAR">
                 </form>
             </div>
         </div>

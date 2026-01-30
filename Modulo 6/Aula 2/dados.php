@@ -2,12 +2,15 @@
 
 function CriarCSV()
 {
-    $caminho = "../Aula 1/dados.csv";
+    $caminho = __DIR__ . "/../Aula 1/CSV/dados.csv";
+
     if (file_exists($caminho)) {
-        return $file = fopen("../Aula 1/dados.csv", 'a');
+        $file = fopen("../Aula 1/CSV/dados.csv", 'a');
+        return $file;
+        
     }
     else{
-        $file = fopen("../Aula 1/dados.csv", 'w'); //'W de write, colocando nosso CSV no ar
+        $file = fopen("../Aula 1/CSV/dados.csv", 'w'); //'W de write, colocando nosso CSV no ar
         $header = ['CPF', 'Username', 'password'];
         fputcsv($file, $header); // Cria o arquivo com suas respectivas colunas
         return $file;
@@ -20,15 +23,16 @@ function Cadastrar($cpf, $username, $password)
 
     $linha = [$cpf, $username, $password];
     fputcsv($file, $linha);
+    fclose($file);
 }
 
 function SelecionarLogin($cpf, $password)
 {
-    $dados = fopen("../Aula 1/dados.csv", "r");
+    $dados = fopen("../Aula 1/CSV/dados.csv", "r");
     while (($linha = fgetcsv($dados, 0, ",")) !== false) {
         if ($linha[0] == $cpf && $linha[2] == $password) {
-            require_once "../../nav.php";
-            echo '<p>Login Ok!</p>';
+            $_POST['usuario'] = $linha[1];
+            $_SESSION['usuario'] = $_POST['usuario'];
             $status = "ENTROU";
             return $status;
         }

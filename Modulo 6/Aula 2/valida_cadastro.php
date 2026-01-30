@@ -15,18 +15,23 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
     return;
 }
 
-ValidacaoInput($inputs, 'text_cpf');
+$cpf = ValidacaoInput($inputs, 'text_cpf');
 
-ValidacaoInput($inputs, 'text_username');
+$username = ValidacaoInput($inputs, 'text_username');
 
-ValidacaoInput($inputs, 'text_password');
+$password = ValidacaoInput($inputs, 'text_password');
 
 if (VerificarErros($inputs)) {
+
     Cadastrar($cpf, $username, $password);
+    header('Location: login.php');
+
 } else {
+
     header('Location: cadastro.php');
     exit;
 }
+
 
 function ValidacaoInput(&$inputs ,$array)
 {
@@ -42,13 +47,14 @@ function ValidacaoInput(&$inputs ,$array)
             }
             VerificarRepticao($inputs[$array]['value'], $inputs);
         }
+        return $_POST[$array];
     }
 }
 
 function VerificarRepticao($cpf, &$inputs)
 {
-    if (file_exists("../Aula 1/dados.csv")) {
-        $file = fopen("../Aula 1/dados.csv", "r");
+    if (file_exists("../Aula 1/CSV/dados.csv")) {
+        $file = fopen("../Aula 1/CSV/dados.csv", "r");
         while (($linha = fgetcsv($file)) !== false) {
             if ($linha[0] == $cpf) {
                 if ($_SERVER['REQUEST_METHOD'] != 'POST') {
@@ -63,8 +69,7 @@ function VerificarRepticao($cpf, &$inputs)
 }
 
 function VerificarErros($inputs){
-    echo __LINE__;
-    if(!empty($inputs['text_username']['erro']) || !empty($inputs['text_password']['erro']) || !empty($inputs['text_cpf']['erro'])){
+    if(empty($inputs['text_username']['erro']) || empty($inputs['text_password']['erro']) || empty($inputs['text_cpf']['erro'])){
         $_SESSION['inputs'] = $inputs;
         return false;
     }
