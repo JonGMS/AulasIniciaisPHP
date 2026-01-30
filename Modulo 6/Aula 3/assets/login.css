@@ -1,0 +1,17 @@
+body, html{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #232322;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}.formulario_login{
+    
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid rgb(218, 211, 211);
+    height: 400px;
+    width: 300px;
+}
