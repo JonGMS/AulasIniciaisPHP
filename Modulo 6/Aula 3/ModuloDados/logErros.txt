@@ -1,0 +1,9 @@
+[2026-02-06 02:32:16] ValidarErro - Teve erro e retornamos Falso: 
+[2026-02-06 02:43:39] ValidarCPF - É ADMIN
+[2026-02-06 02:46:14] ValidarCPF - É ADMIN
+[2026-02-06 02:51:57] ValidarCPF - É ADMIN
+[2026-02-06 02:55:17] ValidarCPF - É ADMIN
+[2026-02-06 02:55:17]  - 
+[2026-02-06 02:58:12] ValidarCPF - É ADMIN
+[2026-02-06 02:58:12] VereficarLogin - Acertou CPF e Senha:  e 
+[2026-02-06 02:58:12]  - 

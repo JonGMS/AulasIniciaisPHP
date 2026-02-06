@@ -1,4 +1,5 @@
 body, html{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     height: 100%;
     width: 100%;
     margin: 0;
@@ -7,11 +8,46 @@ body, html{
     display: flex;
     justify-content: center;
     align-items: center;
-}.formulario_login{
+}
+.formulario_login{
     
     background-color: white;
     border-radius: 10px;
     border: 2px solid rgb(218, 211, 211);
     height: 400px;
     width: 300px;
+}
+
+.formulario{
+    margin-top: 40px;
+}
+
+label{
+   margin-inline-start: 10% 
+}
+.input_cpf, .input_password{
+    padding: 10px 5%;
+    width: 70%;
+    margin-inline-start: 10%;
+    border-radius: 20px;
+    border: 1px solid rgb(173, 172, 172);
+    font-size: 15px;   
+}
+.campo_password, .campo_cpf{
+     margin-top: 20px;
+}
+.button_entrar{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+.entrar{
+    padding: 10px 40px;
+    border-radius: 20px;
+    border: 1px solid rgb(173, 172, 172);
+    background-color: #232322;
+    color: white;
+}
+.titulo_login{
+    text-align: center;
 }
