@@ -20,7 +20,7 @@
 
                     <label for="text_cpf">CPF:</label>
 
-                    <input type="text" name="text_cpf" id="text_cpf" class="input_cpf">
+                    <input type="text" name="text_cpf" id="text_cpf" class="input_cpf" maxlength="11">
 
                 </div>
                 <div class="campo_password">

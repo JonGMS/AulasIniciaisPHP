@@ -14,7 +14,7 @@
     <header>
         <div class="painel-button">
             <a href="index.php">
-                <div class="buttom-menu"><img src="" alt=""></div>
+                <div class="buttom-menu"><img class="img-menu" src="assets/images/Libros-menu.png" alt=""></div>
             </a>
         </div>
 

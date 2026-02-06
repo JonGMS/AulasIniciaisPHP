@@ -81,16 +81,22 @@ function ValidarErro(&$inputs)
 
 function VereficarLogin($cpf, $password)
 {
-    
-    $dados = fopen("ModuloDados/membros.csv", "r");
+    session_start();
+    $dados = fopen(__DIR__ . "/ModuloDados/membros.csv", "r");
+    if (!$dados) {
+        registrarLog(__METHOD__, "Erro ao abrir arquivo CSV");
+        die("Não foi possível abrir o arquivo.");
+    }
     while (($linha = fgetcsv($dados, 0, ",")) !== false) {
+        registrarLog(__METHOD__, "Acertou CPF e Senha: $linha[0] e $linha[1]");
         if ($linha[0] == $cpf && $linha[1] == $password) {
             $_POST['usuario'] = $linha[2];
             $_SESSION['usuario'] = $_POST['usuario'];
-            registrarLog(__METHOD__, "Acertou CPF e Senha: $linha[0] e $linha[1]");
+            
             return true;
         }
     }
+    fclose($dados);
 }
 function registrarLog($metodo, $mensagem)
 {
