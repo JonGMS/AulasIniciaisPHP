@@ -111,5 +111,6 @@ header{
 .content-wraper{
     grid-column: content-inicio / content-end;
     grid-row:content-inicio / content-end;
+    height: 90%;
 }
 a:link, a:visited { color: rgb(255, 255, 255); /* cor fixa para todos os links */ text-decoration: none; /* sem sublinhado */ } a:hover { color: rgb(57, 56, 56); /* cor ao passar o mouse */ } a:active, a:focus { outline: none; /* remove o tracejado */ }
