@@ -147,7 +147,7 @@
                     <a href="Modulo 6/Aula 1/index.php">
                         <div class="aula">Tipos de Variaveis</div>
                     </a>
-                    <a href="Modulo 6/Aula 2/inde.php">
+                    <a href="Modulo 6/Aula 2/login.php">
                         <div class="aula">Atividades</div>
                     </a>
                     <a href="">
