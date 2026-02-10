@@ -1,14 +1,30 @@
 <?php
-class Fruto{
-	public $nome;
+class Fruto
+{
+    public $nome;
     public $cor;
     public $peso;
     protected $unidades;
     private $matricula;
 
-    public function ApresentarFruto(){
+
+
+    public function ApresentarFruto()
+    {
         return "O nome é: {$this->nome}, a cor é {$this->cor} e meu peso é {$this->peso}.";
     }
+
+    function AdicionarMatricula($m)
+{
+    $matriculas = [
+        '121',
+        '123'
+    ];
+    if(in_array($m, $matriculas)){
+        return;
+    }
+    $this->matricula = $m;
+}
 }
 
 $laranja = new Fruto();
@@ -27,4 +43,3 @@ $banana->peso = "1gr";
 echo $banana->ApresentarFruto();
 
 
-?>
