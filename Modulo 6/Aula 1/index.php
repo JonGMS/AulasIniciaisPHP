@@ -147,7 +147,12 @@ session_start();
 // session_name("minha_sessao");
 // session_set_cookie_params(60); //segundos
 
+if (empty($_SESSION['usuario'])) {
+    header('Location: ../Aula 2/login.php');
+    return;
+}
 
+$_GET['carro'] = 'hb20';
 setcookie('cookiePersonalizado' , 'conteudo_do_meu_cokkie', time( ) + 3600);
 
 include_once "functions.php";
@@ -165,7 +170,8 @@ require_once "../../nav.php";
 
 
             <div class="menuSimulacao">
-                <h3>Informática</h3>
+                <h3> Informática <?php if (isset($_SESSION['usuario'])) { echo htmlspecialchars($_SESSION['usuario']); } else { echo "Visitante"; } ?> </h3>
+
                 <a href="../Aula 2/inde.php"><div class="button-simulacao" onclick=>COOKIE</div></a>
                 <div class="button-simulacao" onclick="">CARGOS</div>
             </div>

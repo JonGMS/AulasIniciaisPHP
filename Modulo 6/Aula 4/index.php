@@ -7,7 +7,14 @@ class Fruto
     protected $unidades;
     private $matricula;
 
-
+    function __construct($nome, $cor, $peso, $unidades, $matricula)
+    {
+        $this->nome = $nome;
+        $this->cor = $cor;
+        $this->peso = $peso;
+        $this->unidades = $unidades;
+        $this->matricula = $matricula;
+    }
 
     public function ApresentarFruto()
     {
@@ -27,14 +34,14 @@ class Fruto
 }
 }
 
-$laranja = new Fruto();
+$laranja = new Fruto($nome, $cor, $peso, $unidades, $matricula);
 
 $laranja->nome = "Laranja";
 $laranja->cor = "Alaranjado";
 $laranja->peso = "1kg";
 
 
-$banana = new Fruto();
+$banana = new Fruto($nome, $cor, $peso, $unidades, $matricula);
 
 $banana->nome = "Banana";
 $banana->cor = "Amarelho";
