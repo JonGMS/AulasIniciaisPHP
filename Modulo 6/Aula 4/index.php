@@ -1,6 +1,36 @@
 <?php
-class Fruto
+class Fruta extends Alimento
 {
+    public $TemSemente; 
+    
+    public function ApresentarFruto()
+    {
+        return "O nome é: {$this->nome}, a cor é {$this->cor} e meu peso é {$this->peso}.";
+    }
+
+    function __destruct(){
+        echo 'Destruido'; //Quando usar um unset no construtor, ira aparecer esse mensagem.
+    }
+
+}
+
+$laranja = new Fruta($nome, $cor, $peso, $unidades, $matricula);
+
+$laranja->nome = "Laranja";
+$laranja->cor = "Alaranjado";
+$laranja->peso = "1kg";
+
+
+$banana = new Fruta($nome, $cor, $peso, $unidades, $matricula);
+
+$banana->nome = "Banana";
+$banana->cor = "Amarelho";
+$banana->peso = "1gr";
+
+echo $banana->ApresentarFruto();
+
+class Alimento{
+
     public $nome;
     public $cor;
     public $peso;
@@ -16,12 +46,10 @@ class Fruto
         $this->matricula = $matricula;
     }
 
-    public function ApresentarFruto()
-    {
-        return "O nome é: {$this->nome}, a cor é {$this->cor} e meu peso é {$this->peso}.";
+    public function comer(){
+        echo "O alimento foi consumido.";
     }
-
-    function AdicionarMatricula($m)
+       function AdicionarMatricula($m)
 {
     $matriculas = [
         '121',
@@ -31,22 +59,10 @@ class Fruto
         return;
     }
     $this->matricula = $m;
+
+    function __destruct(){
+        echo 'Destruido'; //Quando usar um unset no construtor, ira aparecer esse mensagem.
+    }
 }
 }
-
-$laranja = new Fruto($nome, $cor, $peso, $unidades, $matricula);
-
-$laranja->nome = "Laranja";
-$laranja->cor = "Alaranjado";
-$laranja->peso = "1kg";
-
-
-$banana = new Fruto($nome, $cor, $peso, $unidades, $matricula);
-
-$banana->nome = "Banana";
-$banana->cor = "Amarelho";
-$banana->peso = "1gr";
-
-echo $banana->ApresentarFruto();
-
 
