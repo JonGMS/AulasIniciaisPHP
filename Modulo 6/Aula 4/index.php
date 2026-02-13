@@ -1,17 +1,17 @@
 <?php
-class Fruta extends Alimento
+class Fruta extends Alimento 
 {
-    public $TemSemente; 
-    
+    public $TemSemente;
+
     public function ApresentarFruto()
     {
         return "O nome é: {$this->nome}, a cor é {$this->cor} e meu peso é {$this->peso}.";
     }
 
-    function __destruct(){
+    function __destruct()
+    {
         echo 'Destruido'; //Quando usar um unset no construtor, ira aparecer esse mensagem.
     }
-
 }
 
 $laranja = new Fruta($nome, $cor, $peso, $unidades, $matricula);
@@ -29,7 +29,8 @@ $banana->peso = "1gr";
 
 echo $banana->ApresentarFruto();
 
-class Alimento{
+class Alimento
+{
 
     public $nome;
     public $cor;
@@ -46,23 +47,49 @@ class Alimento{
         $this->matricula = $matricula;
     }
 
-    public function comer(){
+    public function comer()
+    {
         echo "O alimento foi consumido.";
     }
-       function AdicionarMatricula($m)
-{
-    $matriculas = [
-        '121',
-        '123'
-    ];
-    if(in_array($m, $matriculas)){
-        return;
-    }
-    $this->matricula = $m;
+    function AdicionarMatricula($m)
+    {
+        $matriculas = [
+            '121',
+            '123'
+        ];
+        if (in_array($m, $matriculas)) {
+            return;
+        }
+        $this->matricula = $m;
 
-    function __destruct(){
-        echo 'Destruido'; //Quando usar um unset no construtor, ira aparecer esse mensagem.
+        function __destruct()
+        {
+            echo 'Destruido'; //Quando usar um unset no construtor, ira aparecer esse mensagem.
+        }
     }
 }
-}
+abstract class iRepositorioBase{
 
+    abstract public function Cadastrar();
+    abstract public function Editar();
+    abstract public function Listar();
+    abstract public function Excluir();
+}
+class Pessoa extends iRepositorioBase{
+    function Cadastrar()
+    {
+        throw new \Exception('Not implemented');
+    }
+    function Editar()
+    {
+        throw new \Exception('Not implemented');
+    }
+    function Listar()
+    {
+        throw new \Exception('Not implemented');
+    }
+    function Excluir()
+    {
+        throw new \Exception('Not implemented');
+    }
+}
