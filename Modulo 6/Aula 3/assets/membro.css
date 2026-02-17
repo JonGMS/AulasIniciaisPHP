@@ -1,0 +1,24 @@
+.content-wraper{
+    display: grid;
+    grid-template-columns: [cadastro-inicio]50% [cadastro-fim listagem-inicio] 50% [listagem-fim];
+    grid-template-rows: [painel-row]100%[painel-row-end] ;
+}
+.cadastrar_membro{
+    grid-column: cadastro-inicio / cadastro-fim;
+    grid-row: painel-row / painel-row-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.listar_membro{
+    grid-column: listagem-inicio / listagem-fim;
+    grid-row: painel-row / painel-row-end;
+}
+.cadastrar_membro div input{
+    height: 40px;
+    width: 250px;
+    font-size: 20px;
+    padding-inline: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
