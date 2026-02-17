@@ -12,24 +12,24 @@ if (empty($_SESSION['usuario'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-    <link rel="stylesheet" href="assets/style.css">
-
+    <title>Locação</title>
+    <link rel="stylesheet" href="../assets/style.css">
+    
 
 </head>
 
 <body>
     <header>
         <div class="painel-button">
-            <a href="index.php">
-                <div class="buttom-menu"><img class="img-menu" src="assets/images/Libros-menu.png" alt=""></div>
+            <a href="../index.php">
+                <div class="buttom-menu"><img class="img-menu" src="../assets/images/Libros-menu.png" alt=""></div>
             </a>
         </div>
 
         <div class="painel-menu">
             <div class="painel-menu-grid">
                 <div class="titulo">
-                    <h1 class="legenda-tipo">MENU</h1>
+                    <h1 class="legenda-tipo">LOCAÇÃO</h1>
                 </div>
 
                 <div class="campo-pesquisa">
@@ -38,8 +38,8 @@ if (empty($_SESSION['usuario'])) {
                     </form>
                 </div>
                 <div class="conta-info">
-                    <?php echo "<p class='nome-usuario'>" . $_SESSION['usuario'] . "</p>" ?>
-                    <img class="imagem-perfil" src="assets/images/MembroOffiline.png" alt="">
+                     <?php echo "<p class='nome-usuario'>".$_SESSION['usuario']."</p>" ?>
+                    <img class="imagem-perfil" src="../assets/images/MembroOffiline.png" alt="">
                 </div>
             </div>
 
@@ -50,38 +50,34 @@ if (empty($_SESSION['usuario'])) {
         <div class="menu-button">
             <div class="menu-fixed">
 
-                <a href="ModuloLivros/livros.php" class="button1-menu">
-                    <div class="button1-menu">
-                        <img src="" alt="">
-                        LIVRO
-                    </div>
-                </a>
-
-                <a href="ModuloLocacao/locacao.php" class="button2-menu">
-                    <div class="button2-menu">
-                        <img src="" alt="">
-                        LOCAÇÃO
-                    </div>
-                </a>
-
+                <a href="../ModuloLivros/livros.php" class="button1-menu"><div class="button1-menu">
+                    <img src="" alt="">
+                    LIVRO
+                </div></a>
+                
+                <a href="../ModuloLocacao/locacao.php" class="button2-menu"><div class="button2-menu">
+                    <img src="" alt="">
+                    LOCAÇÃO
+                </div></a>
+                
                 <?php
                 if ($_SESSION['usuario'] == 'ADMIN') {
                     echo
-                    "<a href='ModuloMembro/membro.php' class='button3-menu'><div class='button3-menu'>
+                    "<a href='../ModuloMembro/membro.php' class='button3-menu'><div class='button3-menu'>
                     <img src='' alt=''>
                     MEMBRO
                     </div></a>";
                 }
 
                 ?>
-
+                
             </div>
         </div>
 
         <div class="content-wraper">
-            <div class="perfil">
-
-            </div>
+           <div class="perfil">
+            
+           </div>
         </div>
     </div>
 </body>
