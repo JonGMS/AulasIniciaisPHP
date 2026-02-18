@@ -1,0 +1,152 @@
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: rgb(170, 170, 170);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.painel_calculadora{
+    height: 600px;
+    width: 500px;
+    background-color: rgb(43, 43, 44);
+    border-radius: 20px;
+}
+.painel_campo{
+    margin: 20px;
+}
+.caixa_texto{
+    height: 60px;
+    width: 400px;
+    padding-inline: 25px;
+    border-radius: 10px;
+    font-size: 40px;
+}
+label{
+    font-size: 30px;
+    color: rgb(152, 128, 240);
+}
+.teclado-numerico div{
+    border-radius: 10%;
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.painel_teclado_numerico{
+    display: flex;
+    justify-content: center;
+}
+.teclado-numerico{
+    display:grid;
+    grid-template-columns: [coluna1-start] 100px [coluna1-end coluna2-start] 100px [coluna2-end coluna3-start] 100px [coluna3-end coluna4-start] 100px [coluna4-end] ;
+    grid-template-rows: [row1-start] 70px [row1-end row2-start] 70px [row2-end row3-start] 70px [row3-end row4-start ] 70px [row4-end];
+    gap: 10px;
+}
+/*Coluna 1*/
+.tecla7{
+    grid-column: coluna1-start / coluna1-end;
+    grid-row: row1-start / row1-end;
+}
+.tecla4{
+    grid-column: coluna1-start / coluna1-end;
+    grid-row: row2-start / row2-end;
+}
+.tecla1{
+    grid-column: coluna1-start / coluna1-end;
+    grid-row: row3-start/ row3-end;
+}
+.tecla0{
+    grid-column: coluna1-start / coluna1-end;
+    grid-row: row4-start / row4-end
+}
+
+/*Coluna 2*/
+.tecla8{
+    grid-column: coluna2-start / coluna2-end;
+    grid-row: row1-start / row1-end;
+}
+.tecla5{
+    grid-column: coluna2-start / coluna2-end;
+    grid-row: row2-start / row2-end;
+}
+.tecla2{
+    grid-column: coluna2-start / coluna2-end;
+    grid-row: row3-start/ row3-end;
+}
+.tecla-virgula{
+    grid-column: coluna2-start / coluna2-end;
+    grid-row: row4-start / row4-end
+}
+
+/*Coluna 3*/
+.tecla9{
+    grid-column: coluna3-start / coluna3-end;
+    grid-row: row1-start / row1-end;
+}
+.tecla6{
+    grid-column: coluna3-start / coluna3-end;
+    grid-row: row2-start / row2-end;
+}
+.tecla3{
+    grid-column: coluna3-start / coluna3-end;
+    grid-row: row3-start/ row3-end;
+}
+.tecla-soma{
+    grid-column: coluna3-start / coluna3-end;
+    grid-row: row4-start / row4-end;
+    background-color: rgb(152, 128, 240);
+}
+
+/*Coluna 4*/
+.tecla-sub{
+    grid-column: coluna4-start / coluna4-end;
+    grid-row: row1-start / row1-end;
+    background-color: rgb(152, 128, 240);
+}
+.tecla-divisao{
+    grid-column: coluna4-start / coluna4-end;
+    grid-row: row2-start / row2-end;
+    background-color: rgb(152, 128, 240);
+}
+
+.teclax{
+    grid-column: coluna4-start / coluna4-end;
+    grid-row: row3-start / row3-end;
+    background-color: rgb(152, 128, 240);
+}
+.tecla-resultado{
+    grid-column: coluna4-start / coluna4-end;
+    grid-row: row4-start / row4-end;
+    background-color: darkgoldenrod; /*Ver pq n esta funcionando*/
+}
+#numeros{
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+.tecla0:hover, .tecla1:hover, .tecla2:hover, .tecla3:hover, .tecla4:hover, .tecla5:hover, .tecla6:hover, .tecla7:hover, .tecla8:hover, .tecla8:hover, .tecla9:hover, .tecla-virgula:hover{
+    color:white;
+    background-color:#575D90;
+    cursor: pointer;
+}
+.teclax:hover, .tecla-sub:hover, .tecla-divisao:hover, .tecla-soma:hover{
+    color:white;
+    background-color:#363845;
+    cursor: pointer;
+}
+.tecla-resultado:hover{
+    color:white;
+    background-color:rgb(147, 108, 9);
+    cursor: pointer;
+}
+.tecla{
+    background-color: azure;
+}
+.painel_historio{
+    background-color: white;
+    height: 10px;
+    margin: 30px 30px 0 30px;
+    border-radius: 20px;
+}
+
