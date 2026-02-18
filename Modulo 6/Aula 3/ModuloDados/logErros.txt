@@ -37,3 +37,9 @@
 [2026-02-06 14:35:56] ValidarCPF - É ADMIN
 [2026-02-06 14:35:56] VereficarLogin - Acertou CPF e Senha: CPF e SENHA
 [2026-02-06 14:35:56] VereficarLogin - Acertou CPF e Senha: ADMIN e ADMIN
+[2026-02-17 00:44:38] ValidarCPF - É ADMIN
+[2026-02-17 00:44:38] VereficarLogin - Acertou CPF e Senha: CPF e SENHA
+[2026-02-17 00:44:38] VereficarLogin - Acertou CPF e Senha: ADMIN e ADMIN
+[2026-02-18 01:20:38] ValidarCPF - É ADMIN
+[2026-02-18 01:20:38] VereficarLogin - Acertou CPF e Senha: CPF e SENHA
+[2026-02-18 01:20:38] VereficarLogin - Acertou CPF e Senha: ADMIN e ADMIN

@@ -2,11 +2,8 @@
 <html lang="en">
 <?php
 session_start();
-
-if (empty($_SESSION['usuario'])) {
-    header('Location: ../Aula 3/login.php');
-    return;
-}
+require_once '../includes/auth.php';
+verificarLogin();
 ?>
 
 <head>
