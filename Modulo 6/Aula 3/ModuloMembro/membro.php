@@ -2,11 +2,9 @@
 <html lang="en">
 <?php
 session_start();
+require_once '../includes/auth.php';
+verificarLogin();
 
-if (empty($_SESSION['usuario'])) {
-    header('Location: ../Aula 3/login.php');
-    return;
-}
 ?>
 
 <head>
@@ -81,11 +79,11 @@ if (empty($_SESSION['usuario'])) {
 
         <div class="content-wraper">
             <div class="cadastrar_membro">
-                <form action="" method="post">
+                <form action="cadastro_membro.php" method="post">
                     <h2>CADASTRAR</h2>
                     <div class="campo_cpf">
                         <label for="text_cpf">CPF</label><br>
-                        <input type="text" name="text_cpf" id="text_cpf"><br>
+                        <input type="text" name="text_cpf" id="text_cpf" maxlength="11"><br>
                     </div>
 
                     <div class="campo_nome">
@@ -101,14 +99,15 @@ if (empty($_SESSION['usuario'])) {
 
                     <div class="campo_telefone">
                         <label for="text_telefone">Telefone</label><br>
-                        <input type="text" name="text_telefone" id="text_telefone"><br>
+                        <input type="tel" name="text_telefone" id="text_telefone" placeholder="(DD) " maxlength="11" minlength="8"><br>
                     </div>
 
                     <div class="campo_endereco">
                         <label for="text_endereco">Endereço</label><br>
                         <input type="text" name="text_endereco" id="text_endereco"><br>
                     </div>
-
+                    
+                    
                     <input type="submit" value="CADASTRAR">
                 </form>
             </div>
