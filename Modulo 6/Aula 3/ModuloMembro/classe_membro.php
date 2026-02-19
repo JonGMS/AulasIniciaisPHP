@@ -2,11 +2,11 @@
 
 class Membro extends AbstractRepositorio
 {
-    public $cpf;
-    public $senha;
-    public $nome;
-    public $telefone;
-    public $endereco;
+    private $cpf;
+    private $senha;
+    private $nome;
+    private $telefone;
+    private $endereco;
 
     function __construct($cpf, $senha, $nome, $telefone, $endereco)
     {
@@ -18,7 +18,15 @@ class Membro extends AbstractRepositorio
     }
     function Cadastrar()
     {
-        throw new \Exception('Not implemented');
+        try{
+            $file = fopen("../Aula 3/ModuloDados/membros.csv", 'a');
+            $linha = [$this->cpf, $this->senha, $this->nome, $this->telefone, $this->endereco];
+            fputcsv($file, $linha);
+            fclose($file);
+
+        }catch(Exception $e){
+            echo $e->getMessage();
+        }
     }
 
 
