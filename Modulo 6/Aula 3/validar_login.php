@@ -21,14 +21,12 @@ if (ValidarErro($inputs)) {
     } else {
         $erro1 = $inputs['text_cpf']['erro'];
         $erro2 = $inputs['text_cpf']['erro'];
-        registrarLog(__METHOD__, $erro1 . $erro2);
         header('Location: login.php');
         exit;
     }
 } else {
     $erro1 = $inputs['text_cpf']['erro'];
     $erro2 = $inputs['text_cpf']['erro'];
-    registrarLog(__METHOD__, $erro1 . $erro2);
     header('Location: login.php');
     exit;
 }
@@ -55,7 +53,6 @@ function ValidarInput(&$inputs, $array)
 function ValidarCPF(&$inputs, $array)
 {
     if ($_POST[$array] == "ADMIN") {
-        registrarLog(__METHOD__, "É ADMIN");
         return;
     }
 
@@ -70,7 +67,6 @@ function ValidarErro(&$inputs)
 {
     try {
         if (!empty($inputs['text_cpf']['erro']) || !empty($inputs['text_password']['erro'])) {
-            registrarLog(__METHOD__, "Teve erro e retornamos Falso: " . $inputs['text_password']['erro'] . $inputs['text_cpf']['erro']);
             return false;
         }
         return true;
@@ -84,11 +80,9 @@ function VereficarLogin($cpf, $password)
     session_start();
     $dados = fopen(__DIR__ . "/ModuloDados/membros.csv", "r");
     if (!$dados) {
-        registrarLog(__METHOD__, "Erro ao abrir arquivo CSV");
         die("Não foi possível abrir o arquivo.");
     }
     while (($linha = fgetcsv($dados, 0, ",")) !== false) {
-        registrarLog(__METHOD__, "Acertou CPF e Senha: $linha[0] e $linha[1]");
         if ($linha[0] == $cpf && $linha[1] == $password) {
             $_POST['usuario'] = $linha[2];
             $_SESSION['usuario'] = $_POST['usuario'];
@@ -98,12 +92,4 @@ function VereficarLogin($cpf, $password)
     }
     fclose($dados);
 }
-function registrarLog($metodo, $mensagem)
-{
-    $mensagem = $metodo . " - " . $mensagem;
-    $arquivo = __DIR__ . "/ModuloDados/logErros.txt";
 
-    $dataHora = date("Y-m-d H:i:s");
-    $linha = "[$dataHora] $mensagem" . PHP_EOL;
-    file_put_contents($arquivo, $linha, FILE_APPEND);
-}

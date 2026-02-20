@@ -1,18 +1,19 @@
 .content-wraper{
     display: grid;
-    grid-template-columns: [cadastro-inicio]50% [cadastro-fim listagem-inicio] 50% [listagem-fim];
-    grid-template-rows: [painel-row]100%[painel-row-end] ;
+    grid-template-columns: [cadastro-inicio]40% [cadastro-fim listagem-inicio] 60% [listagem-fim];
 }
 .cadastrar_membro{
     grid-column: cadastro-inicio / cadastro-fim;
-    grid-row: painel-row / painel-row-end;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .listar_membro{
     grid-column: listagem-inicio / listagem-fim;
-    grid-row: painel-row / painel-row-end;
+    display: flex;
+}
+h2{
+    margin: 0px 0px 15px 0px;
 }
 .cadastrar_membro div input{
     height: 40px;
@@ -21,4 +22,40 @@
     padding-inline: 20px;
     border-radius: 12px;
     margin-bottom: 20px;
+}
+
+.lista{
+    align-self: center;
+    justify-self: center;
+    height: 507px;        
+    overflow-y: auto;   
+}
+tr{
+    width: 100%;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+table{
+    width: 700px;
+    border: 1px solid black;
+    overflow-y: auto;
+}
+
+.msg-error{
+    color: red;
+}
+
+th {
+    position: sticky;
+    top: 0;              
+    background-color: rgb(49, 49, 49);
+    color: white;
+}
+
+td, th {
+    border: 1px solid #ccc;
+    padding: 8px;
 }
