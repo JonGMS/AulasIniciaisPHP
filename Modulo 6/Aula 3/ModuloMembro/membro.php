@@ -3,8 +3,13 @@
 <?php
 session_start();
 require_once '../includes/auth.php';
+require_once 'classe_membro.php';
 verificarLogin();
 
+if (isset($_SESSION['inputs'])) {
+    $inputs = $_SESSION['inputs'] ?? [];
+    unset($_SESSION['inputs']);
+}
 ?>
 
 <head>
@@ -82,36 +87,51 @@ verificarLogin();
                 <form action="cadastro_membro.php" method="post">
                     <h2>CADASTRAR</h2>
                     <div class="campo_cpf">
-                        <label for="text_cpf">CPF</label><br>
+                        <label for="text_cpf">CPF <?php echo Show_error('text_cpf', $inputs) ?></label><br>
                         <input type="text" name="text_cpf" id="text_cpf" maxlength="11"><br>
                     </div>
 
                     <div class="campo_nome">
-                        <label for="text_nome">Nome</label><br>
+                        <label for="text_nome">Nome <?php echo Show_error('text_nome', $inputs) ?></label><br>
                         <input type="text" name="text_nome" id="text_nome"><br>
                     </div>
 
                     <div class="campo_password">
-                        <label for="text_password">Senha</label><br>
+                        <label for="text_password">Senha <?php echo Show_error('text_password', $inputs) ?></label><br>
                         <input type="password" name="text_password" id="text_password"><br>
                     </div>
 
 
                     <div class="campo_telefone">
-                        <label for="text_telefone">Telefone</label><br>
+                        <label for="text_telefone">Telefone <?php echo Show_error('text_telefone', $inputs) ?></label><br>
                         <input type="tel" name="text_telefone" id="text_telefone" placeholder="(DD) " maxlength="11" minlength="8"><br>
                     </div>
 
                     <div class="campo_endereco">
-                        <label for="text_endereco">Endereço</label><br>
+                        <label for="text_endereco">Endereço <?php echo Show_error('text_endereco', $inputs) ?></label><br>
                         <input type="text" name="text_endereco" id="text_endereco"><br>
                     </div>
-                    
-                    
+
+
                     <input type="submit" value="CADASTRAR">
                 </form>
             </div>
             <div class="listar_membro">
+                <div class="lista">
+                    <table>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Telefone</th>
+                            <th>CPF</th>
+                            <th>Endereço</th>
+                        </tr>
+                        <?php
+                        require_once 'classe_membro.php';
+                        Membro::Listar();
+                        ?>
+                    </table>
+                </div>
+
 
             </div>
         </div>
