@@ -9,8 +9,9 @@
         private $status;
         private $genero;
         private $colecao;
+        private $descricao;
 
-        function __construct( $id, $nome, $autor, $quantidade, $status, $genero, $colecao)
+        function __construct( $id, $nome, $autor, $quantidade, $status, $genero, $colecao, $descricao)
         {
             $this->id = $id;
             $this->nome = $nome;
@@ -19,6 +20,7 @@
             $this->status = $status;
             $this->genero = $genero;
             $this->colecao = $colecao;
+            $this->descricao = $descricao;
         }
 
         function Cadastrar()
