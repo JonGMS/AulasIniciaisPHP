@@ -30,19 +30,19 @@
             <div class="campo_genero">
                 <label>Gêneros:</label><br>
                 <div class="checkbox-group">
-                    
-                        <label><input type="checkbox" name="generos[]" value="Fantasia"> Fantasia</label>
-                        <label><input type="checkbox" name="generos[]" value="Ficcao Cientifica"> Ficção Científica</label>
-                        <label><input type="checkbox" name="generos[]" value="Romance"> Romance</label>
-                        <label><input type="checkbox" name="generos[]" value="Misterio"> Mistério</label>
-                        <label><input type="checkbox" name="generos[]" value="Suspense"> Suspense</label>
-                    
-                        <label><input type="checkbox" name="generos[]" value="Terror"> Terror</label>
-                        <label><input type="checkbox" name="generos[]" value="Drama"> Drama</label>
-                        <label><input type="checkbox" name="generos[]" value="Distopia"> Biografia</label>
-                        <label><input type="checkbox" name="generos[]" value="Distopia"> AutoAjuda</label>
-                        <label><input type="checkbox" name="generos[]" value="Distopia"> Educação</label>
-                    
+
+                    <label><input type="checkbox" class="check" name="generos[]" value="Fantasia"> Fantasia</label>
+                    <label><input type="checkbox" class="check" name="generos[]" value="FiccaoCientifica"> Ficção Científica</label>
+                    <label><input type="checkbox" class="check" name="generos[]" value="Romance"> Romance</label>
+                    <label><input type="checkbox" class="check" name="generos[]" value="Misterio"> Mistério</label>
+                    <label><input type="checkbox" class="check" name="generos[]" value="Suspense"> Suspense</label>
+
+                    <label><input type="checkbox" class="check" name="generos[]" value="Terror"> Terror</label>
+                    <label><input type="checkbox" class="check" name="generos[]" value="Drama"> Drama</label>
+                    <label><input type="checkbox" class="check" name="generos[]" value="Distopia"> Biografia</label>
+                    <label><input type="checkbox" class="check" name="generos[]" value="Distopia"> AutoAjuda</label>
+                    <label><input type="checkbox" class="check" name="generos[]" value="Distopia"> Educação</label>
+
 
 
                 </div>
@@ -51,6 +51,16 @@
                 <label for="text_colecao">Coleção</label><br>
                 <input type="text" class="input_text" name="text_colecao" id="text_colecao">
             </div>
+
+            <div class="campo_descricao">
+                <label for="text_descricao">Descrição</label><br>
+                <textarea style="resize: none;" class="text_descricao"
+                    name="text_descricao"
+                    id="text_descricao"
+                    placeholder="Digite a descrição do livro...">
+</textarea>
+            </div>
+
             <div class="campo_imagem">
                 <label for="capa">Imagem</label><br>
                 <input type="file" name="capa" id="capa">
