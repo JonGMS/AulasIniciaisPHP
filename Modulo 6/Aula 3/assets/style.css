@@ -1,5 +1,16 @@
-body, html{
- height: 100%; width: 100%; margin: 0; padding: 0;
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 70px 1fr; /* header + resto */
+}
+.content{
+    display: grid;
+    grid-template-columns: [menu-inicio] 200px [menu-end content-inicio] 17fr [content-end];
+    grid-template-rows: [content-inicio] 100% [content-end];
 }
 .img-menu{
     height:70px ;
@@ -65,12 +76,7 @@ header{
 .legenda-tipo{
     margin: 0 0 0 30px;
 }
-.content{
-    height: 100%;
-    display: grid;
-    grid-template-columns: [menu-inicio] 200px [menu-end content-inicio] 17fr [content-end];
-    grid-template-rows: [content-inicio] 100% [content-end];
-}
+
 .menu-button{
     grid-column: menu-inicio / menu-end;
     grid-row: content-inicio / content-end;
@@ -111,6 +117,6 @@ header{
 .content-wraper{
     grid-column: content-inicio / content-end;
     grid-row:content-inicio / content-end;
-    height: 90%;
+    padding: 30px;
 }
 a:link, a:visited { color: rgb(255, 255, 255); /* cor fixa para todos os links */ text-decoration: none; /* sem sublinhado */ } a:hover { color: rgb(57, 56, 56); /* cor ao passar o mouse */ } a:active, a:focus { outline: none; /* remove o tracejado */ }

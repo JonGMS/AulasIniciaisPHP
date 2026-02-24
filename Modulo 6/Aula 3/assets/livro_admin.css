@@ -4,9 +4,14 @@
 }
 .cadastrar_livro{
     grid-column: cadastro-inicio / cadastro-fim;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-y: auto;
+}
+form{
+    height: 485px;
 }
 .listar_membro{
     grid-column: listagem-inicio / listagem-fim;
@@ -87,4 +92,17 @@ td, th {
     border: 1px solid #ccc;
     resize: none;
     font-family: inherit;
+}
+.addImagem::file-selector-button {
+    margin-top: 5px;
+    background-color: #2f2f2d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.addImagem::file-selector-button:hover {
+    background-color: #777777;
 }
