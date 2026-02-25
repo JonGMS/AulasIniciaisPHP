@@ -1,17 +1,9 @@
 <?php
-    session_start();
-    require_once '../includes/auth.php';
-    verificarLogin();
-
-    if (isset($_SESSION['inputs'])) {
-    $inputs = $_SESSION['inputs'] ?? [];
-    unset($_SESSION['inputs']);
-}
 
 ?>
 <div class="cadastrar_livro">
 
-    <form action="valida_livro.php" method="post">
+    <form action="valida_livro.php" method="post" enctype="multipart/form-data">
         <h2>CADASTRAR</h2>
         <div class="campo_nome">
             <label for="text_nome">Nome  <?php echo Show_error('text_nome', $inputs) ?></label><br>
@@ -63,6 +55,8 @@
             <label for="capa">Imagem</label><br>
             <input class="addImagem" type="file" name="capa" id="capa">
         </div>
+
+        <input class="inputCadastrar" type="submit" value="CADASTRAR">
 
     </form>
 

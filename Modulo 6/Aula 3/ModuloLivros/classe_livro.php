@@ -1,4 +1,5 @@
 <?php
+require_once '../includes/AbstractRepositorio.php';
 
 class Livro extends AbstractRepositorio
 {
@@ -29,7 +30,11 @@ class Livro extends AbstractRepositorio
     function Cadastrar()
     {
         try {
+
             $file = fopen("../ModuloDados/livros.csv", 'a');
+            if (!$file) {
+                die("Erro ao abrir arquivo CSV");
+            }
             $linha = [$this->id, $this->nome, $this->autor, $this->quantidade, $this->status, $this->genero, $this->colecao, $this->descricao, $this->imagem];
             fputcsv($file, $linha);
             fclose($file);
@@ -40,7 +45,5 @@ class Livro extends AbstractRepositorio
 
     public static function  Listar() {}
 
-    public static function SalvarImagem(){
-        
-    }
+    public static function SalvarImagem() {}
 }

@@ -8,7 +8,7 @@ $inputs = [
     'text_nome' => ['value' => "", 'error' => ""],
     'text_autor'  => ['value' => "", 'error' => ""],
     'text_quantidade'  => ['value' => "", 'error' => ""],
-    'text_genero'  => ['value' => "", 'error' => ""],
+    'generos'  => ['value' => "", 'error' => ""],
     'text_colecao'  => ['value' => "", 'error' => ""],
     'text_descricao'  => ['value' => "", 'error' => ""]
 ];
@@ -19,30 +19,38 @@ $autor = ValidarInput('text_autor', $inputs);
 
 $quantidade = ValidarInput('text_quantidade', $inputs);
 
-$genero = ValidarInput('text_genero', $inputs);
+if (!isset($_POST['generos']) || empty($_POST['generos'])) {
+    $inputs['text_genero']['error'] = "Selecione ao menos um gênero!";
+    $genero = null;
+} else {
+    $genero = implode(",", $_POST['generos']);
+}
+
 
 $descricao = ValidarInput('text_descricao', $inputs);
-ValidarDescricao();
+ValidarDescricao($inputs);
 
-$colecao = $_POST['text_colecao'];
+$colecao = strtoupper($_POST['text_colecao']);
 
-$imagem = 'LocalDaImagem'; //fazer
+
 
 if (AnalizarErros($inputs)) {
 
-    $id = DefinirId(); //Fazer
+    $id = uniqid();
+    $imagem = SalvarImagem();
     $livro = new Livro($id, $nome, $autor, $quantidade, 'DISPONÍVEL', $genero, $colecao, $descricao, $imagem);
     $livro->Cadastrar();
     header('Location: livros.php');
+    var_dump("Entrou Aqui");
     exit();
-}
-else{
+} else {
     header('Location: livros.php');
     exit();
 }
 
-function ValidarDescricao(){
-    if(strlen($_POST['text_descricao']) > 40){
+function ValidarDescricao(&$inputs)
+{
+    if (strlen($_POST['text_descricao']) > 200) {
         $inputs['text_descricao']['error'] = "Descrição muito longa (max: 40)";
     }
 }
@@ -50,23 +58,36 @@ function ValidarDescricao(){
 function ValidarInput($inputName, &$inputs)
 {
     if (!isset($_POST[$inputName]) || empty($_POST[$inputName])) {
-        $inputs[$inputName]['erro'] = "Campo Obrigatório!";
+        $inputs[$inputName]['error'] = "Campo Obrigatório!";
         return null;
     }
     return $_POST[$inputName];
 }
 
-function DefinirId()
-{
-    $id = 0;
-    return $id;
-}
 
 function AnalizarErros(&$inputs)
 {
-    if (isset($inputs['text_nome']['error']) || isset($inputs['text_autor']['error']) || isset($inputs['text_quantidade']['error']) || isset($inputs['text_genero']['error']) || isset($inputs['text_descricao']['error'])) {
-        $_SESSION['inputs'] = $inputs;
-        return false;
+    foreach ($inputs as $campo) {
+        if (!empty($campo['error'])) {
+            $_SESSION['inputs'] = $inputs;
+            return false;
+        }
     }
     return true;
+}
+
+function SalvarImagem()
+{
+    if (isset($_FILES['capa']) && $_FILES['capa']['error'] === 0) {
+
+        $extensao = pathinfo($_FILES['capa']['name'], PATHINFO_EXTENSION);
+        $imagem = uniqid() . "." . $extensao;
+        move_uploaded_file(
+            $_FILES['capa']['tmp_name'],
+            "../ModuloDados/images/" . $imagem
+        );
+        return $imagem;
+    } else {
+        return $imagem = null;
+    }
 }
