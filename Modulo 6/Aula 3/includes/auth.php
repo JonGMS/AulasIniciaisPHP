@@ -23,3 +23,11 @@ function Show_error($campo, &$inputs)
         return '';
     }
 }
+
+function LogDebug($mensagem) {
+    file_put_contents(
+        "../ModuloDados/debug.log",
+        date("d/m/Y H:i:s") . " - " . $mensagem . PHP_EOL,
+        FILE_APPEND
+    );
+}
