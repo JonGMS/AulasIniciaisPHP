@@ -13,10 +13,6 @@
 form{
     height: 485px;
 }
-.listar_membro{
-    grid-column: listagem-inicio / listagem-fim;
-    display: flex;
-}
 h2{
     margin: 0px 0px 15px 0px;
 }
@@ -38,6 +34,18 @@ h2{
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 colunas */
     gap: 10px 30px; /* linha / coluna */
+}
+.inputCadastrar{
+    height: 40px;
+    width: 100%;
+    margin:20px 0px 20px 0px;
+    border-radius: 10px;
+    background-color: #2f2f2d;
+    color: white;
+    cursor: pointer;
+}
+.inputCadastrar:hover{
+    background-color: #595958;
 }
 .group1{
     columns: coluna1 / coluna2;
@@ -105,4 +113,85 @@ td, th {
 
 .addImagem::file-selector-button:hover {
     background-color: #777777;
+}
+/* LISTAGEM */
+.listar_livro{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    
+}
+
+/* CARD */
+.card{
+    background-color: white;
+    border-radius: 20px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: 0.2s ease;
+}
+
+.card:hover{
+    transform: translateY(-5px);
+}
+
+/* IMAGEM */
+.imagem{
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.imagem img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* TITULO */
+.nome-livro{
+    font-size: 20px;
+    font-weight: bold;
+    display: grid;
+    grid-template-columns: [nome-inicio] auto [nome-fim status-inicio] 38px [status-fim];
+    gap: 2px;
+
+}
+
+/* STATUS */
+.status-livro{
+    align-self: flex-end;
+    background-color: #2f2f2d;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    grid-column: status-inicio / status-fim;
+}
+
+/* DESCRIÇÃO */
+.descricao{
+    font-size: 14px;
+    color: #666;
+    flex-grow: 1;
+}
+
+/* GÊNEROS */
+.painel-genero{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tag{
+    background-color: #e5e5e5;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
 }
