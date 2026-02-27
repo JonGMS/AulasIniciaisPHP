@@ -43,7 +43,61 @@ class Livro extends AbstractRepositorio
         }
     }
 
-    public static function  Listar() {}
+    public static function  Listar()
+    {
+        try {
+            $dados = fopen('../ModuloDados/livros.csv', 'r');
+            while (($linha = fgetcsv($dados, 0, ",")) !== false) {
+                if ($linha[0] == 'ID') {
+                    continue;
+                }
+
+                $generos = explode(",", $linha[5]);
+                echo
+                "<div class='card1'>
+                    <div class='card'>
+                        <div class='imagem'>
+                            <img class='imagem' src='../ModuloDados/images/" . $linha[8] . "' alt=''>
+                        </div>
+                        <div class='nome-livro'>
+                            <p class='paragrafo-titulo'>" . $linha[1] . "</p>
+                            <div class='status-livro'>
+                                <p class='paragrafo-status'>" . $linha[3] . "</p>
+                            </div>
+                        </div>
+                        <div class='painel-genero'>";
+                for ($i = 0; $i < count($generos); $i++) {
+                    echo "<span class='tag'>" . $generos[$i] . "</span>";
+                }
+                echo "
+                </div>
+                    <div class='descricao'>
+                        <p class='paragrafo-descricao' class='descricao'>
+                        " . $linha[7] . "</p>
+                    </div>
+                </div>
+        </div>";
+            }
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+    }
 
     public static function SalvarImagem() {}
 }
+/*<div class="card1">
+        <div class="card">
+            
+            <div class="painel-genero">
+                <span class="tag">Fantasia</span>
+                <span class="tag">Mistério</span>
+            </div>
+            <div class="descricao">
+                <p class="paragrafo-descricao" class="descricao">Harry descobre aos 11 anos que é um bruxo e vai para Hogwarts, onde faz amigos, enfrenta desafios e se envolve no mistério da Pedra Filosofal.</p>
+            </div>
+
+
+
+
+        </div>
+    </div>*/
