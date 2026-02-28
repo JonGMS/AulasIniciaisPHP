@@ -54,7 +54,7 @@ class Livro extends AbstractRepositorio
 
                 $generos = explode(",", $linha[5]);
                 echo
-                "<div class='card1'>
+                "<a href='livro_estoque.php?livro=".$linha[0]."'><div class='card1'>
                     <div class='card'>
                         <div class='imagem'>
                             <img class='imagem' src='../ModuloDados/images/" . $linha[8] . "' alt=''>
@@ -76,7 +76,7 @@ class Livro extends AbstractRepositorio
                         " . $linha[7] . "</p>
                     </div>
                 </div>
-        </div>";
+        </div></a>";
             }
         } catch (Exception $e) {
             echo $e->getMessage();

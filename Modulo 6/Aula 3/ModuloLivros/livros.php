@@ -11,9 +11,15 @@ verificarLogin();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livros</title>
     <link rel="stylesheet" href="../assets/style.css">
-    <link rel="stylesheet" href="../assets/livro_admin.css">
-
-
+    <?php 
+        if($_SESSION['usuario'] == 'ADMIN'){
+                echo "<link rel='stylesheet' href='../assets/livro_admin.css'>";
+            }
+            else{
+                
+                echo "<link rel='stylesheet' href='../assets/livro_membro.css'>";
+            }
+    ?>
 </head>
 
 <body>
@@ -78,7 +84,15 @@ verificarLogin();
         </div>
 
         <div class="content-wraper">
-            <?php include "conteudo_livro_admin.php" ?>
+            <?php 
+            if($_SESSION['usuario'] == 'ADMIN'){
+                include "conteudo_livro_admin.php";
+            }
+            else{
+                include "conteudo_livro_membro.php";
+            }
+            
+            ?>
         </div>
     </div>
 </body>
