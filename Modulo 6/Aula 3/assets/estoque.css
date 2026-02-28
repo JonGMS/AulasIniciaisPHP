@@ -1,0 +1,8 @@
+.painel_apresentação{
+    
+    display: grid;
+    grid-template-columns: repeat(200px, auto);
+}
+.painel_imagem img{ 
+    height: 200px;
+}
