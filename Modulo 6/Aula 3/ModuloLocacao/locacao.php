@@ -11,7 +11,14 @@ verificarLogin();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Locação</title>
     <link rel="stylesheet" href="../assets/style.css">
+    <?php if($_SESSION['usuario'] == "ADMIN"){
+
+    }else{
+        echo "<link rel='stylesheet' href='../assets/locacao_membro.css'>";
+    } 
     
+    ?>
+
 
 </head>
 
@@ -35,7 +42,7 @@ verificarLogin();
                     </form>
                 </div>
                 <div class="conta-info">
-                     <?php echo "<p class='nome-usuario'>".$_SESSION['usuario']."</p>" ?>
+                    <?php echo "<p class='nome-usuario'>" . $_SESSION['usuario'] . "</p>" ?>
                     <img class="imagem-perfil" src="../assets/images/MembroOffiline.png" alt="">
                 </div>
             </div>
@@ -47,16 +54,20 @@ verificarLogin();
         <div class="menu-button">
             <div class="menu-fixed">
 
-                <a href="../ModuloLivros/livros.php" class="button1-menu"><div class="button1-menu">
-                    <img src="" alt="">
-                    LIVRO
-                </div></a>
-                
-                <a href="../ModuloLocacao/locacao.php" class="button2-menu"><div class="button2-menu">
-                    <img src="" alt="">
-                    LOCAÇÃO
-                </div></a>
-                
+                <a href="../ModuloLivros/livros.php" class="button1-menu">
+                    <div class="button1-menu">
+                        <img src="" alt="">
+                        LIVRO
+                    </div>
+                </a>
+
+                <a href="../ModuloLocacao/locacao.php" class="button2-menu">
+                    <div class="button2-menu">
+                        <img src="" alt="">
+                        LOCAÇÃO
+                    </div>
+                </a>
+
                 <?php
                 if ($_SESSION['usuario'] == 'ADMIN') {
                     echo
@@ -67,14 +78,19 @@ verificarLogin();
                 }
 
                 ?>
-                
+
             </div>
         </div>
 
         <div class="content-wraper">
-           <div class="perfil">
-            
-           </div>
+
+            <?php
+            if ($_SESSION['usuario'] == 'ADMIN') {
+                include "conteudo_locacao_admin.php";
+            } else {
+                include "conteudo_locacao_membro.php";
+            } ?>
+
         </div>
     </div>
 </body>

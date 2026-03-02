@@ -1,8 +1,76 @@
-.painel_apresentação{
+.content-wraper{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.painel_apresentacao{
     
     display: grid;
-    grid-template-columns: repeat(200px, auto);
+    grid-template-columns: [imagem-inicio] 600px [imagem-fim descricao-inicio] auto [descricao-fim];
+    
+}
+.panel{
+    width: 500px;
+   
+}
+.panel div{
+    margin-bottom: 20px;
 }
 .painel_imagem img{ 
-    height: 200px;
+    height: 400px;
+   
+}
+.painel_imagem{
+    grid-column: imagem-inicio / imagem-fim;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.painel_descricao{
+    color: rgb(103, 102, 102);
+}
+.painel_opcoes{
+    grid-column: descricao-inicio / descricao-fim;
+    display: flex;
+    justify-content: center;
+}
+.painel_nome{
+    font-size: 40px;
+}
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.tag{
+    background-color: #e5e5e5;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+.botao{
+    margin-top: 10px;
+    background-color: rgb(40, 40, 40);
+    height: 40px;
+    display:flex;
+    align-items: center ;
+    justify-content: center;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+.select_membros{
+    width: 100%;
+    height: 40px;
+    padding-inline: 20px;
+    border-radius: 10px;
+    background-color: white;
+}
+.submit{
+    width: 100%;
+    margin-top: 10px;
+    background-color: rgb(40, 40, 40);
+    height: 40px;
+    display:flex;
+    align-items: center ;
+    justify-content: center;
+    border-radius: 10px;
+    margin-right: 10px;
+    color: WHITE;
 }
