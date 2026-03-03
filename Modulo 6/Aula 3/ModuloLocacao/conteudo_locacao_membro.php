@@ -1,21 +1,35 @@
-<div class="locacao">
-    <div class="lista_adicao">
-        <div class="painel_checkbox"><input type="checkbox" name="" id=""></div>
-        <div class="imagem">
-            <img src="../ModuloDados/images/699dfc2504209.png" alt="">
-        </div>
-        <div class="nome_livro">
-            Harry Potter: A pedra filosofal
-        </div>
-        
-        <div class="button_excluir">
-            <button class="button_excluir_adicao">
-                
-            </button>
-        </div>
+<?php require_once 'classe_locacao.php'; ?>
+<form action="" method="post">
+    <div class="locacao">
 
-    </div>
-    <div class="cadastrar_locacao">
+        <?php if (!isset($_SESSION['id_livro_locacao'])) {
+            echo 'Nenhum livro adicionado - Vamos mudar isso?';
+        }
+        if (isset($_SESSION['id_livro_locacao'])): ?>
+            <div class="painel_overflow">
+                <div class="lista_locacao">
+                    <?php Locacao::ListarAdicoes();
+                    ?>
+                </div>
+            </div>
 
+        <?php endif; ?>
+        <div class="cadastrar_locacao">
+            <h1>FINALIZAÇÃO</h1>
+            <div class="painel_informacao">
+                <div class="button_finalizar">
+                    <input type="submit" value="FINALIZAR LOCAÇÃO">
+                </div>
+
+                <div class="texto_paragrafo">VOCÊ TEM 7 DIAS PARA REALIZAR A RELOCAÇÃO
+                </div>
+                <div class="texto_paragrafo">A data prevista para devolução é 09/03.
+                </div>
+                <div class="texto_paragrafo">Caso não efetue a devolução no prazo, será cobrada uma multa de R$0,50 por dia de atraso.
+                </div>
+            </div>
+
+
+        </div>
     </div>
-</div>
+</form>
