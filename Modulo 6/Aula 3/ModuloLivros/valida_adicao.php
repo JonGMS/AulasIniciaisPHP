@@ -5,12 +5,21 @@ require_once 'classe_livro.php';
 verificarLogin();
 
 $id = RetornarID();
+if (!isset($_SESSION['id_livro_locacao'])) {
+    $_SESSION['id_livro_locacao'] = [];
+}
 
-$_SESSION['id_livro_locacao'] = $_GET['livro'];
+
+if (isset($_GET['livro'])) {
+    $_SESSION['id_livro_locacao'][] = $_GET['livro'];
+}
+
+
 
 header('Location: livros.php');
 
 exit();
+
 
 function RetornarID()
 {

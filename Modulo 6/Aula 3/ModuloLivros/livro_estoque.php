@@ -110,7 +110,7 @@ while (($linha = fgetcsv($dados, 0, ",")) !== false) {
                             ?>
                             <span class="tag">Fantasia</span>
                         </div>
-                        <form action="valida_adicao.php?<?php echo $_GET['livro']  ?>" method="post">
+                        <form action="valida_adicao.php?livro=<?php echo $_GET['livro']  ?>" method="post">
 
 
 
