@@ -31,9 +31,9 @@ class Locacao extends AbstractRepositorio
                         </div>
                 
                         <div class='button_excluir'>
-                            <button class='button_excluir_adicao'>
+                            <a href='retirar.php?livro_finalizacao=$linha[0]' class='button_excluir_adicao'>
                                 <img src='../assets/images/iconeX.png'>
-                            </button>
+                            </a>
                         </div>
                     </div>";
                 }
