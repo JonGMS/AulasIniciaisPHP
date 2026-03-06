@@ -1,5 +1,5 @@
 <?php require_once 'classe_locacao.php'; ?>
-<form class="formulario" action="" method="post">
+<form class="formulario" action="validar_locacao.php" method="post">
     <div class="locacao">
         <h1>FINALIZAÇÃO</h1>
 
