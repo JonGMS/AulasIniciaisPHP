@@ -48,7 +48,7 @@ class Livro extends AbstractRepositorio
         try {
             $dados = fopen('../ModuloDados/livros.csv', 'r');
             while (($linha = fgetcsv($dados, 0, ",")) !== false) {
-                if ($linha[0] == 'ID') {
+                if ($linha[0] == 'ID' || $linha[4] == "INDISPONÍVEL") {
                     continue;
                 }
 

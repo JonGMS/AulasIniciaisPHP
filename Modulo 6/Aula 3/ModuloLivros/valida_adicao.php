@@ -5,16 +5,23 @@ require_once 'classe_livro.php';
 verificarLogin();
 
 $id = RetornarID();
+
 if (!isset($_SESSION['id_livro_locacao'])) {
     $_SESSION['id_livro_locacao'] = [];
+}
+
+foreach ($_SESSION['id_livro_locacao'] as  $indice => $id_livro) {
+    if ($_GET['livro'] == $_SESSION['id_livro_locacao'][$indice]) {
+        header('Location: livros.php');
+
+        exit();
+    }
 }
 
 
 if (isset($_GET['livro'])) {
     $_SESSION['id_livro_locacao'][] = $_GET['livro'];
 }
-
-
 
 header('Location: livros.php');
 
@@ -30,23 +37,3 @@ function RetornarID()
     }
 }
 
-function AlterarQuantidade($id_livro){
-    $dados = fopen("../ModuloDados/livros.php","r");
-    while(($linha = fgetcsv($dados, 0, ",")) !==false){
-        $linhas[] = $linha;
-    }
-    fclose($dados);
-
-    foreach ($linhas as &$linha) {
-        if($linha[0] == $id_livro){
-            $linha[3] = max(0, $linha[3]- 1);
-        }
-    }
-
-    $dados = fopen("../ModuloDados/livros.csv", "w");
-    foreach ($linhas as $linha){
-        fputcsv($dados, $linha);
-    }
-    fclose($dados);
-
-}
