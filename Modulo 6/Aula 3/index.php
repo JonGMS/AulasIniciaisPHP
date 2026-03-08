@@ -3,6 +3,7 @@
 <?php
 session_start();
 require_once 'includes/auth.php';
+require_once 'ModuloLocacao/classe_locacao.php';
 verificarLogin();
 ?>
 
@@ -11,6 +12,7 @@ verificarLogin();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/index_admin.css">
 
 
 </head>
@@ -76,9 +78,34 @@ verificarLogin();
         </div>
 
         <div class="content-wraper">
-            <div class="perfil">
+            <div class="painel_index">
 
+                <div class="locacao_overflow">
+                    <div class="legenda">
+                        <div class="nomem_membro">
+                            <p style="margin-left: 25px;">MEMBRO</p>
+                        </div>
+                        <div class="numeroLivros">
+                            <p>Nº LIVROS</p>
+                        </div>
+                        <div class="data_devolucao">
+                            <p>DEVOLUÇÃO</p>
+                        </div>
+                        <div class="status">
+                            <p>STATUS</p>
+                        </div>
+
+                    </div>
+                    <div class="lista_locacoes">
+                        <?php Locacao::ApresentarLocacaoAdmin() ?>
+                    </div>
+                </div>
+
+                <div class="dadosLocacao">
+
+                </div>
             </div>
+
         </div>
     </div>
 </body>

@@ -1,0 +1,46 @@
+.lista_locacoes a{
+  color: black; /* ou qualquer outra cor que você queira */
+  text-decoration: none; /* opcional, remove o sublinhado */
+}
+.lista_locacoes a:visited {
+  color: rgb(0, 0, 0); /* cor quando já foi clicado */
+}
+.legenda{
+    display: grid;
+    grid-template-columns: 45% 15% 15% 25%;
+    color: gray;
+    font-size: 12px;
+}
+
+
+.painel_index{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+}
+.painel_locacao{
+    border: solid 1px rgb(201, 201, 201);
+    display: grid;
+    grid-template-columns: 45% 15% 15% 25%;;
+    border-radius: 5px;
+    height: 60px;
+}
+.locacao_overflow{
+    height: 400px;
+    overflow-y: auto;
+    background-color: rgb(246, 246, 246);
+    padding: 20px;
+    border-radius: 10px;
+}
+.nome_membro, .numeroLivros, .status, .data_devolucao{
+    display: flex;
+
+}
+.numeroLivros, .status, .data_devolucao{
+    justify-content: center;
+    align-items: center;
+}
+.nome_membro{
+        
+    align-items: center;
+    margin-left: 40px;
+}
