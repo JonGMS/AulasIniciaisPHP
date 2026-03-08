@@ -9,7 +9,7 @@ $id = uniqid();
 if ($_SESSION['usuario'] == "ADMIN") {
     $membro = $_POST['membro'];
 } else {
-    $membro = $_SESSION['usuario'];
+    $_SESSION['cpf_login'];
 }
 
 $dataLocacao = date('d/m/Y');
