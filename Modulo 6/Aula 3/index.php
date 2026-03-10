@@ -6,21 +6,24 @@ require_once 'includes/auth.php';
 require_once 'ModuloLocacao/classe_locacao.php';
 verificarLogin();
 
-if(isset($_SESSION['dadosLocacao'])){
+if (isset($_SESSION['dadosLocacao'])) {
 
+    $dadosLocacao = $_SESSION['dadosLocacao'];
 }
 
-    function show_value($campo){
-        global $inputs;
-        if(key_exists($campo,$inputs)){
-            if(!empty($inputs[$campo]['value'])){
-                return $inputs[$campo]['value'];
-            }
+function show_value($campo)
+{
+    global $dadosLocacao;
+    if (key_exists($campo, $dadosLocacao)) {
+        if (!empty($dadosLocacao[$campo])) {
+            return $dadosLocacao[$campo];
         }
-        else{
-            return '';
-        }
+    } else {
+        echo '<pre>';
+        print_r($dadosLocacao);
+        echo '</pre>';
     }
+}
 
 ?>
 
@@ -119,7 +122,17 @@ if(isset($_SESSION['dadosLocacao'])){
                 </div>
 
                 <div class="dadosLocacao">
+                    <div class="nome_apresentacao">
+                        <?php echo show_value('nome_membro') ?>
+                    </div>
 
+                    <div class="painelLivros">
+                        <div class="painelOverflow">
+                            <?php for($i = 0; $i < count($dadosLocacao['livros']); $i++){
+
+                            } ?>
+                        </div>
+                    </div>
                 </div>
             </div>
 

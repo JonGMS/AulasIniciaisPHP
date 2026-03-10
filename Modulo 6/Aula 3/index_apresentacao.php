@@ -1,14 +1,14 @@
 <?php
 session_start();
-require_once '../includes/auth.php';
-require_once "classe_locacao.php";
+require_once 'includes/auth.php';
+require_once "ModuloLocacao/classe_locacao.php";
 verificarLogin();
 
-$dados = ["nome_membro", "livros" => [''], "data_locacao", "data_entrega", "multa", 'status'];
+$dados = ["nome_membro" => [], "livros" => [''], "data_locacao"=> [], "data_entrega"=> [], "multa"=> [], 'status'=> []];
 
 $id_locacao = $_GET['id_locacao'];
 
-LocalizarMembro();
+LocalizarMembro($dados);
 
 $dadosCsv = fopen("ModuloDados/locacao.csv", "r");
 while (false !== ($linha = fgetcsv($dadosCsv))) {
@@ -24,6 +24,10 @@ while (false !== ($linha = fgetcsv($dadosCsv))) {
 }
 
 $_SESSION['dadosLocacao'] = $dados;
+
+header('Location: index.php');
+
+exit();
 
 function DefinirStatusMulta($dataDevolucao, &$dados)
 {
@@ -46,13 +50,13 @@ function DefinirStatusMulta($dataDevolucao, &$dados)
 
         return;
     }
-     $dados['multa'] = 0;
-     $dados['status'] = "ABERTO";
+     $dados['multa'][] = 0;
+     $dados['status'][] = "ABERTO";
 }
-function LocalizarMembro()
+function LocalizarMembro(&$dados)
 {
-    $dados = fopen("ModuloDados/membro.csv", "r");
-    while (false !== ($linha = fgetcsv($dados))) {
+    $dadosCSV = fopen("ModuloDados/membros.csv", "r");
+    while (false !== ($linha = fgetcsv($dadosCSV))) {
         if ($linha[0] == $_GET['id_membro']) {
             $dados['nome_membro'] =  $linha[2];
             return;
