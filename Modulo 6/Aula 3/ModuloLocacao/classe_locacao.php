@@ -94,6 +94,7 @@ class Locacao extends AbstractRepositorio
             while (($linhaMembro = fgetcsv($csv, 0, ",")) !== false) {
                 if ($linha[1] == $linhaMembro[0]) {
                     $membro = $linhaMembro[2];
+                    $id_membro = $linhaMembro[0];
                 }
             }
             fclose($csv);
@@ -102,7 +103,7 @@ class Locacao extends AbstractRepositorio
             }
             $livros = explode(",", $linha[2]);
             $quantidadeLivros = count($livros);
-            echo "<a class='get_locacao' href='index_apresentacao.php?id_locacao=$linha[0]'>
+            echo "<a class='get_locacao' href='index_apresentacao.php?id_locacao=$linha[0] id_membro=$id_membro'>
                             <div class='painel_locacao'>
                                 <div class='nome_membro'>$membro</div>
                                 <div class='numeroLivros'>$quantidadeLivros</div>
