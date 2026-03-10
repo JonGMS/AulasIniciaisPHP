@@ -5,6 +5,23 @@ session_start();
 require_once 'includes/auth.php';
 require_once 'ModuloLocacao/classe_locacao.php';
 verificarLogin();
+
+if(isset($_SESSION['dadosLocacao'])){
+
+}
+
+    function show_value($campo){
+        global $inputs;
+        if(key_exists($campo,$inputs)){
+            if(!empty($inputs[$campo]['value'])){
+                return $inputs[$campo]['value'];
+            }
+        }
+        else{
+            return '';
+        }
+    }
+
 ?>
 
 <head>

@@ -43,6 +43,7 @@ function ValidarInput(&$inputs, $array)
                 ValidarCPF($inputs, $array);
             }
             $inputs[$array]['value'] = $_POST[$array];
+
             return $_POST[$array];
         }
     } catch (Exception) {
@@ -86,6 +87,7 @@ function VereficarLogin($cpf, $password)
         if ($linha[0] == $cpf && $linha[1] == $password) {
             $_POST['usuario'] = $linha[2];
             $_SESSION['usuario'] = $_POST['usuario'];
+            $_SESSION['cpf_login'] = $_POST['cpf'];
             
             return true;
         }
