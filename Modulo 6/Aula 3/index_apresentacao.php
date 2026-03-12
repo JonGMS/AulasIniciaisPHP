@@ -4,7 +4,7 @@ require_once 'includes/auth.php';
 require_once "ModuloLocacao/classe_locacao.php";
 verificarLogin();
 
-$dados = ["nome_membro" => [], "livros" => [''], "data_locacao"=> [], "data_entrega"=> [], "multa"=> [], 'status'=> []];
+$dados = ["nome_membro" => [], "livros" => [''], "data_locacao" => [], "data_entrega" => [], "multa" => [], 'status' => []];
 
 $id_locacao = $_GET['id_locacao'];
 
@@ -19,7 +19,7 @@ while (false !== ($linha = fgetcsv($dadosCsv))) {
         $dados['livros'] = $livros;
 
         $dados['data_entrega'] = $linha[4];
-        $status = DefinirStatusMulta($linha[4], $dados);
+        $status = DefinirStatusMulta($linha[4], $linha[3], $dados);
     }
 }
 
@@ -29,29 +29,30 @@ header('Location: index.php');
 
 exit();
 
-function DefinirStatusMulta($dataDevolucao, &$dados)
+function DefinirStatusMulta($dataDevolucao, $dataLocacao, &$dados)
 {
+    $dateTimeLocacao = DateTime::createFromFormat('d/m/Y', $dataLocacao);
+
     $hoje = new DateTime();
 
-    $dateTimeDevolucao = new DateTime($dataDevolucao);
+    $dateTimeDevolucao = DateTime::createFromFormat('d/m/Y', $dataDevolucao);
 
-    $diferenca = $hoje->diff($dateTimeDevolucao);
+    $diferenca = $hoje->diff($dateTimeLocacao);
 
-
-    $diasPassados = $diferenca->days;;
+    $diasPassados = $diferenca->days; //Line
 
     if ($diasPassados > 7) {
 
         $dados['status'] = "ATRASADO";
 
         $diasAtrasados = $diasPassados - 7;
-        
-        $dados['multa'] = $diasAtrasados * 0.50;
+
+        $dados['multa'] = $diasAtrasados * 0.5;
 
         return;
     }
-     $dados['multa'][] = 0;
-     $dados['status'][] = "ABERTO";
+    $dados['multa'] = 0;
+    $dados['status'] = "ABERTO";
 }
 function LocalizarMembro(&$dados)
 {
