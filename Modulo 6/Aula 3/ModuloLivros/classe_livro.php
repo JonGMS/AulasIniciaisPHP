@@ -1,5 +1,5 @@
 <?php
-require_once '../includes/AbstractRepositorio.php';
+require_once(__DIR__ . '/../includes/AbstractRepositorio.php');
 
 class Livro extends AbstractRepositorio
 {
@@ -54,7 +54,7 @@ class Livro extends AbstractRepositorio
 
                 $generos = explode(",", $linha[5]);
                 echo
-                "<a href='livro_estoque.php?livro=".$linha[0]."'><div class='card1'>
+                "<a href='livro_estoque.php?livro=" . $linha[0] . "'><div class='card1'>
                     <div class='card'>
                         <div class='imagem'>
                             <img class='imagem' src='../ModuloDados/images/" . $linha[8] . "' alt=''>
@@ -83,21 +83,28 @@ class Livro extends AbstractRepositorio
         }
     }
 
-    public static function SalvarImagem() {}
+    public static function ApresentarLivros($listaLivros)
+    {
+        $contador = 0;
+        $dados = fopen(__DIR__ . "/../ModuloDados/livros.csv", "r");
+        while (false !== ($linha = fgetcsv($dados))) {
+            for ($i = 0; $i < count($listaLivros); $i++) {
+
+                if ($linha[0] == $listaLivros[$i]) {
+                    $contador++;
+                    echo "<div class='livro'>
+                                        <div class='contador'>
+                                            $contador
+                                        </div>
+                                        <div class='imagem_livro'>
+                                            <img src='ModuloDados/images/$linha[8]' alt=''>
+                                        </div>
+                                        <div class='nome_livro'>
+                                            $linha[1]
+                                        </div>
+                                    </div>";
+                }
+            }
+        }
+    }
 }
-/*<div class="card1">
-        <div class="card">
-            
-            <div class="painel-genero">
-                <span class="tag">Fantasia</span>
-                <span class="tag">Mistério</span>
-            </div>
-            <div class="descricao">
-                <p class="paragrafo-descricao" class="descricao">Harry descobre aos 11 anos que é um bruxo e vai para Hogwarts, onde faz amigos, enfrenta desafios e se envolve no mistério da Pedra Filosofal.</p>
-            </div>
-
-
-
-
-        </div>
-    </div>*/
