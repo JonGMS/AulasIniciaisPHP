@@ -84,7 +84,7 @@ if (isset($_SESSION['inputs'])) {
 
         <div class="content-wraper">
             <div class="cadastrar_membro">
-                <form action="cadastro_membro.php" method="post">
+                <form action="valida_membro.php" method="post">
                     <h2>CADASTRAR</h2>
                     <div class="campo_cpf">
                         <label for="text_cpf">CPF <?php echo Show_error('text_cpf', $inputs) ?></label><br>
