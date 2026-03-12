@@ -11,12 +11,12 @@ verificarLogin();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Locação</title>
     <link rel="stylesheet" href="../assets/style.css">
-    <?php if($_SESSION['usuario'] == "ADMIN"){
-
-    }else{
+    <?php if ($_SESSION['usuario'] == "ADMIN") {
+        echo "<link rel='stylesheet' href='../assets/locacao_admin.css'>";
+    } else {
         echo "<link rel='stylesheet' href='../assets/locacao_membro.css'>";
-    } 
-    
+    }
+
     ?>
 
 
