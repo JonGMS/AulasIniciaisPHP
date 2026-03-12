@@ -35,7 +35,56 @@ class Locacao extends AbstractRepositorio
 
     public static function ListarAdicoes()
     {
+        $dadosLivros = array_map('str_getcsv', file("../ModuloDados/livros.csv"));
+        $dadosMembros = array_map('str_getcsv', file("../ModuloDados/membros.csv"));
+
+
         $dados = fopen("../ModuloDados/livros.csv", "r");
+
+        if ($_SESSION['usuario'] == "ADMIN") {
+            foreach ($dadosMembros as $linha) {
+                $idMembro = $linha[0];
+
+                if (isset($_SESSION['admin_relacoes'][$idMembro])) {
+                    echo "<div class='card_membro'>
+                    <div class='overflow_membro'>
+                        <div class='painel_membro'>
+                            <div class='nome_membro'>
+                                {$linha[2]}
+                            </div>
+                            <div class='selecao_membro'>
+                                <input type='checkbox' name='membro[]' value='{$linha[0]}' checked>
+                            </div>
+                        </div>";
+
+                    foreach ($_SESSION['admin_relacoes'][$idMembro] as $idLivro) {
+                        foreach ($dadosLivros as $linhaLivro) {
+                            if ($linhaLivro[0] == $idLivro) {
+                                echo "<div class='lista_adicao'>
+                                <div class='painel_checkbox'>
+                                    <input type='checkbox' name='livro[]' value='{$linhaLivro[0]}' checked>
+                                </div>
+                                <div class='imagem'>
+                                    <img src='../ModuloDados/images/{$linhaLivro[8]}' alt=''>
+                                </div>
+                                <div class='nome_livro'>
+                                    {$linhaLivro[1]}
+                                </div>
+                                <div class='button_excluir'>
+                                    <a href='retirar.php?livro_finalizacao={$linhaLivro[0]}' class='button_excluir_adicao'>
+                                        <img src='../assets/images/iconeX.png'>
+                                    </a>
+                                </div>
+                              </div>";
+                            }
+                        }
+                    }
+                    echo "</div></div>";
+                }
+            }
+        }
+
+
         while ($linha = fgetcsv($dados, 0, ",")) {
             foreach ($_SESSION['id_livro_locacao'] as $livro) {
 
