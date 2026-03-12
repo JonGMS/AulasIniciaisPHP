@@ -30,6 +30,7 @@
     background-color: rgb(246, 246, 246);
     padding: 20px;
     border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 .nome_membro, .numeroLivros, .status, .data_devolucao{
     display: flex;
@@ -43,4 +44,77 @@
         
     align-items: center;
     margin-left: 40px;
+}
+.nome_apresentacao{
+    font-size: 20px;
+    font-family:Arial, Helvetica, sans-serif
+}
+.dadosLocacao{
+    padding: 30px;
+}
+.livro{
+    background-color: white;
+    border-radius: 10px;
+    border: solid 1px rgb(205, 205, 205);
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 20px 80px 400px;
+
+}
+.contador, .imagem_livro, .nome_livro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.lista_livros{
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    height: 100px;
+    background-color: rgb(246, 246, 246);
+}
+.overflow_livro{
+    overflow-y: auto;
+    height: 100px;
+}
+.imagem_livro img{
+    height: 80px;
+}
+.datas{
+    margin: 20px 0 20px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;  
+}
+.dataLocacao , .dataDevolucao{
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(75, 75, 75);
+    color: white;
+    border-radius: 10px;
+}
+.dataDevolucao{
+    margin: 0 0 0 20px;
+}
+.dataLocacao{
+    margin: 0 20px 0 0px;
+}
+.status_livro_atrasado{
+margin: 10px 20px 0 0px;
+}
+ .status_livro_aberto{
+margin: 10px 20px 0 0px;
+ }
+
+.multa, .status_livro_atrasado, .status_livro_aberto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.status_livro_atrasado{
+    color: red;
+}
+.status_livro_aberto{
+    color: green;
 }
