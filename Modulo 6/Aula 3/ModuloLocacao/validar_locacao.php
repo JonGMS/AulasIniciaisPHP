@@ -7,7 +7,7 @@ verificarLogin();
 $id = uniqid();
 
 if ($_SESSION['usuario'] == "ADMIN") {
-    $membro = $_POST['membro'];
+    $membro = $_GET['membro'];
 } else {
     $_SESSION['cpf_login'];
 }

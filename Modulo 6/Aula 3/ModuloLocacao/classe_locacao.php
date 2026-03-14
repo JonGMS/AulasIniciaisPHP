@@ -46,7 +46,8 @@ class Locacao extends AbstractRepositorio
                 $idMembro = $linha[0];
 
                 if (isset($_SESSION['admin_relacoes'][$idMembro])) {
-                    echo "<div class='card_membro'>
+                    echo "<form  action='validar_locacao.php?membro=$idMembro' method='post'>
+                <div class='card_membro'>
                     <div class='overflow_membro'>
                         <div class='painel_membro'>
                             <div class='nome_membro'>
@@ -79,9 +80,12 @@ class Locacao extends AbstractRepositorio
                             }
                         }
                     }
-                    echo "</div></div>";
+                    echo "<div class='posicaoButton'><input class='ButtonFinalizar' type='submit' value='FINALIZAR LOCAÇÃO'></div>
+                    </div></div>";
                 }
             }
+
+            echo "</form>";
         }
 
 
@@ -152,17 +156,60 @@ class Locacao extends AbstractRepositorio
             }
             $livros = explode(",", $linha[2]);
             $quantidadeLivros = count($livros);
-            echo "<a class='get_locacao' href='index_apresentacao.php?id_locacao=$linha[0]&id_membro=$id_membro'>
+            echo "
+            <div class='margin_membro'><a class='get_locacao' href='index_apresentacao.php?id_locacao=$linha[0]&id_membro=$id_membro'>
                             <div class='painel_locacao'>
                                 <div class='nome_membro'>$membro</div>
                                 <div class='numeroLivros'>$quantidadeLivros</div>
                                 <div class='data_devolucao'>$linha[4]</div>
                                 <div class='status'>EM ABERTO</div>
                             </div>
-                        </a>";
+                        </a></div>";
         }
         fclose($dados);
     }
-}
+    public static function ApresentarLocacaoMembro($id_membro)
+    {
+        $dadosLocacao = array_map('str_getcsv', file(__DIR__ . "/../ModuloDados/locacao.csv"));
+        $dadosLivros  = array_map('str_getcsv', file(__DIR__ . "/../ModuloDados/livros.csv"));
 
-?>
+        foreach ($dadosLocacao as $linha) {
+            if ($linha[1] == $id_membro) {
+                echo "<div class='painel_locacao'>
+                <div class='cabecalho_card_pai'>
+                    <div class='data_locacao'>$linha[3]</div>
+                    <div class='ate'>até</div>
+                    <div class='data_entrega'>$linha[4]</div>
+                    <div class='status'>$linha[5]</div>
+                </div>
+                <div class='apresenta_livros'>";
+
+                $livros   = explode(",", $linha[2]);
+
+                foreach ($dadosLivros as $linhaLivro) {
+                    for ($i = 0; $i < count($livros); $i++) {
+                        if ($linhaLivro[0] == $livros[$i]) {
+                            $generos = explode(",", $linhaLivro[5]);
+
+                            echo "
+                            <div class='cardlivro'>
+                                <div class='nome_livro'>$linhaLivro[1]</div>
+                                <div class='img'>
+                                    <img class='img' src='ModuloDados/images/$linhaLivro[8]' alt=''>
+                                </div>
+                                <div class='generos'>";
+                            foreach ($generos as $g) {
+                                echo "<span class='tag'>$g</span>";
+                            }
+                            echo "</div>
+                                </div>
+                            
+                        ";
+                        }
+                    }
+                }
+            echo "</div></div>";
+            }
+        }
+    }
+}

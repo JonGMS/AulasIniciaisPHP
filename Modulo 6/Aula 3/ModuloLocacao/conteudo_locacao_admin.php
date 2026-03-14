@@ -1,5 +1,5 @@
 <?php require_once 'classe_locacao.php'; ?>
-<form class="formulario" action="validar_locacao.php" method="post">
+<div class="formulario">
     <div class="locacao">
         <h1>FINALIZAÇÃO</h1>
 
@@ -11,19 +11,15 @@
                 <div class="painel_overflow">
                     <div class="lista_locacao">
 
-                        
-
                         <?php Locacao::ListarAdicoes();
                         ?>
+
                     </div>
                 </div>
 
             <?php endif; ?>
 
             <div class="finalizar">
-                <div class="button_finalizar">
-                    <input type="submit" value="FINALIZAR LOCAÇÃO">
-                </div>
 
                 <div class="texto_paragrafo">VOCÊ TEM 7 DIAS PARA REALIZAR A RELOCAÇÃO
                 </div>
@@ -36,4 +32,4 @@
 
         </div>
     </div>
-</form>
+</div>
