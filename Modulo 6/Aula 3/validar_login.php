@@ -87,8 +87,11 @@ function VereficarLogin($cpf, $password)
         if ($linha[0] == $cpf && $linha[1] == $password) {
             $_POST['usuario'] = $linha[2];
             $_SESSION['usuario'] = $_POST['usuario'];
-            $_SESSION['cpf_login'] = $_POST['cpf'];
-            
+            $_SESSION['cpf_login'] = $_POST['text_cpf'];
+
+             $dadosMembro = ['cpf' => $linha[0],'senha' => $linha[1],'nome' => $linha[2],'telefone' => $linha[3],'endereco' => $linha[4], 'data_cadastro' => $linha[5]];
+
+            $_SESSION['dados_membro'] = $dadosMembro;
             return true;
         }
     }
