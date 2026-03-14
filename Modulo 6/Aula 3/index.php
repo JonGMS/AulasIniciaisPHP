@@ -36,8 +36,13 @@ function show_value($campo)
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
     <link rel="stylesheet" href="assets/style.css">
+    <?php if($_SESSION['usuario'] == "ADMIN") : ?>
     <link rel="stylesheet" href="assets/index_admin.css">
-
+    <?php endif;
+    if($_SESSION['usuario'] != "ADMIN" ) :
+    ?>
+    <link rel="stylesheet" href="assets/index_membro.css">
+    <?php endif ?>
 
 </head>
 
@@ -167,7 +172,13 @@ function show_value($campo)
                     </div>
 
                 </div>
-                <?php endif ?>
+                <?php endif ;
+                    if($_SESSION['usuario'] != "ADMIN"){
+                        include 'index_membro.php';
+                    }
+                ?>
+
+   
             </div>
 
         </div>
