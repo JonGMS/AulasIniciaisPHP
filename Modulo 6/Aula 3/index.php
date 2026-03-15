@@ -141,7 +141,12 @@ function show_value($campo)
                         <div class="painelOverflow">
                             <div class="lista_livros">
                                 <div class="overflow_livro">
-                                    <?php Livro::ApresentarLivros($dadosLocacao['livros']) ?>
+                                    
+                                    <?php
+                                    if(isset($dadosLocacao['livros'])){
+                                        Livro::ApresentarLivros($dadosLocacao['livros']);
+                                    }
+                                     ?>
                                 </div>
                             </div>
                         </div>
