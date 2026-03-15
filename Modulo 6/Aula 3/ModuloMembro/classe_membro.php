@@ -55,7 +55,6 @@ class Membro extends AbstractRepositorio
     {
         $linhas = [];
 
-        // Lê todas as linhas
         $dados = fopen(__DIR__ . "/../ModuloDados/membros.csv", "r");
         while (($linha = fgetcsv($dados, 0, ",")) !== false) {
             $linhas[] = $linha;
@@ -64,7 +63,6 @@ class Membro extends AbstractRepositorio
 
         $dadosMembro = null;
 
-        // Atualiza a linha correspondente
         foreach ($linhas as &$linha) {
             if (trim((string)$linha[0]) === trim((string)$id_membro)) {
                 $linha = [
@@ -87,7 +85,6 @@ class Membro extends AbstractRepositorio
             }
         }
 
-        // Regrava o arquivo
         $dados = fopen(__DIR__ . "/../ModuloDados/membros.csv", "w");
         foreach ($linhas as $linha) {
             fputcsv($dados, $linha);
