@@ -48,9 +48,11 @@ class Livro extends AbstractRepositorio
         try {
             $dados = fopen('../ModuloDados/livros.csv', 'r');
             while (($linha = fgetcsv($dados, 0, ",")) !== false) {
-                if ($linha[0] == 'ID' || $linha[4] == "INDISPONÍVEL") {
+                if ($linha[0] == 'ID' || $linha[4] == "INDISPONÍVEL" && $_SESSION['usuario'] != "ADMIN" &&  $linha[3] == 0) {
                     continue;
                 }
+                $nome = substr($linha[1], 0, 21);
+                $nome = $nome."...";
 
                 $generos = explode(",", $linha[5]);
                 echo
@@ -60,7 +62,7 @@ class Livro extends AbstractRepositorio
                             <img class='imagem' src='../ModuloDados/images/" . $linha[8] . "' alt=''>
                         </div>
                         <div class='nome-livro'>
-                            <p class='paragrafo-titulo'>" . $linha[1] . "</p>
+                            <p class='paragrafo-titulo'>" . $nome . "</p>
                             <div class='status-livro'>
                                 <p class='paragrafo-status'>" . $linha[3] . "</p>
                             </div>
