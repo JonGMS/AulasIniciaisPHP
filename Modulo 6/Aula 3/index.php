@@ -36,12 +36,12 @@ function show_value($campo)
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
     <link rel="stylesheet" href="assets/style.css">
-    <?php if($_SESSION['usuario'] == "ADMIN") : ?>
-    <link rel="stylesheet" href="assets/index_admin.css">
+    <?php if ($_SESSION['usuario'] == "ADMIN") : ?>
+        <link rel="stylesheet" href="assets/index_admin.css">
     <?php endif;
-    if($_SESSION['usuario'] != "ADMIN" ) :
+    if ($_SESSION['usuario'] != "ADMIN") :
     ?>
-    <link rel="stylesheet" href="assets/index_membro.css">
+        <link rel="stylesheet" href="assets/index_membro.css">
     <?php endif ?>
 
 </head>
@@ -131,59 +131,63 @@ function show_value($campo)
                         </div>
 
                     </div>
-                
-                <div class="dadosLocacao">
-                    <div class="nome_apresentacao">
-                        <?php echo show_value('nome_membro') ?>
-                    </div>
 
-                    <div class="painelLivros">
-                        <div class="painelOverflow">
-                            <div class="lista_livros">
-                                <div class="overflow_livro">
-                                    
-                                    <?php
-                                    if(isset($dadosLocacao['livros'])){
-                                        Livro::ApresentarLivros($dadosLocacao['livros']);
-                                    }
-                                     ?>
+                    <div class="dadosLocacao">
+                        <div class="nome_apresentacao">
+                            <?php echo show_value('nome_membro') ?>
+                        </div>
+                        <?php
+                        if (isset($dadosLocacao['livros'])) :
+                        ?>
+                            <div class="painelLivros">
+
+                                <div class="painelOverflow">
+                                    <div class="lista_livros">
+                                        <div class="overflow_livro">
+
+                                            <?php
+
+                                            Livro::ApresentarLivros($dadosLocacao['livros']);
+                                            ?>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="datas">
+                                <div class="dataLocacao">
+                                    <?php echo show_value('data_locacao') ?>
+                                </div>
+                                <div class="dataDevolucao">
+                                    <?php echo show_value('data_entrega') ?>
+                                </div>
+
+                                <?php
+                                if ($dadosLocacao['status'] == 'ABERTO') {
+                                    echo "<div class='status_livro_aberto'>" .
+                                        show_value('status') .
+                                        "</div>";
+                                } else {
+                                    echo "<div class='status_livro_atrasado'>" .
+                                        show_value('status') .
+                                        "</div>";
+                                }
+
+                                ?>
+                                <div class="multa">
+                                    <?php echo show_value('multa'); ?>
                                 </div>
                             </div>
-                        </div>
+                        <?php endif; ?>
+
                     </div>
-                    <div class="datas">
-                        <div class="dataLocacao">
-                            <?php echo show_value('data_locacao') ?>
-                        </div>
-                        <div class="dataDevolucao">
-                            <?php echo show_value('data_entrega') ?>
-                        </div>
-
-                        <?php
-                        if ($dadosLocacao['status'] == 'ABERTO') {
-                            echo "<div class='status_livro_aberto'>" .
-                                show_value('status') .
-                                "</div>";
-                        } else {
-                            echo "<div class='status_livro_atrasado'>" .
-                                show_value('status') .
-                                "</div>";
-                        }
-
-                        ?>
-                        <div class="multa">
-                            <?php echo show_value('multa'); ?>
-                        </div>
-                    </div>
-
-                </div>
-                <?php endif ;
-                    if($_SESSION['usuario'] != "ADMIN"){
-                        include 'index_membro.php';
-                    }
+                <?php endif;
+                if ($_SESSION['usuario'] != "ADMIN") {
+                    include 'index_membro.php';
+                }
                 ?>
 
-   
+
             </div>
 
         </div>
