@@ -52,11 +52,11 @@ class Livro extends AbstractRepositorio
                     continue;
                 }
                 $nome = substr($linha[1], 0, 21);
-                $nome = $nome."...";
+                $nome = $nome . "...";
 
                 $generos = explode(",", $linha[5]);
                 echo
-                "<a href='livro_estoque.php?livro=" . $linha[0] . "'><div class='card1'>
+                "<a href='livro_estoque.php?livro=" . $linha[0] . "&acao=apresentacao'><div class='card1'>
                     <div class='card'>
                         <div class='imagem'>
                             <img class='imagem' src='../ModuloDados/images/" . $linha[8] . "' alt=''>
@@ -108,5 +108,65 @@ class Livro extends AbstractRepositorio
                 }
             }
         }
+    }
+
+    function Editar()
+    {
+
+        $arquivo = (__DIR__ . "/../ModuloDados/livros.csv");
+        $entrada = fopen($arquivo, "r");
+        $linhas = [];
+
+        while (($dados = fgetcsv($entrada)) !== false) {
+            if ($dados[0] != $this->id) {
+                $linhas[] = $dados;
+            }
+        }
+
+        fclose($entrada);
+
+        $saida = fopen($arquivo, "w");
+
+        foreach ($linhas as $linha) {
+            fputcsv($saida, $linha);
+        }
+
+        fclose($saida);
+
+        try {
+
+            $file = fopen("../ModuloDados/livros.csv", 'a');
+            if (!$file) {
+                die("Erro ao abrir arquivo CSV");
+            }
+            $linha = [$this->id, $this->nome, $this->autor, $this->quantidade, $this->status, $this->genero, $this->colecao, $this->descricao, $this->imagem];
+            fputcsv($file, $linha);
+            fclose($file);
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    public static function Excluir($id)
+    {
+        $arquivo = (__DIR__ . "/../ModuloDados/livros.csv");
+        $entrada = fopen($arquivo, "r");
+        $linhas = [];
+
+        while (($dados = fgetcsv($entrada)) !== false) {
+            if ($dados[0] != $id) {
+                $linhas[] = $dados;
+            }
+        }
+
+        fclose($entrada);
+
+        $saida = fopen($arquivo, "w");
+
+        foreach ($linhas as $linha) {
+            fputcsv($saida, $linha);
+        }
+
+        fclose($saida);
     }
 }
