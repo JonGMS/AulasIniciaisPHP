@@ -35,11 +35,11 @@ class Locacao extends AbstractRepositorio
 
     public static function ListarAdicoes()
     {
-        $dadosLivros = array_map('str_getcsv', file("../ModuloDados/livros.csv"));
-        $dadosMembros = array_map('str_getcsv', file("../ModuloDados/membros.csv"));
+        $dadosLivros = array_map('str_getcsv', file(__DIR__ . "/../ModuloDados/livros.csv"));
+        $dadosMembros = array_map('str_getcsv', file(__DIR__ . "/../ModuloDados/membros.csv"));
 
 
-        $dados = fopen("../ModuloDados/livros.csv", "r");
+        $dados = fopen(__DIR__ . "/../ModuloDados/livros.csv", "r");
 
         if ($_SESSION['usuario'] == "ADMIN") {
             foreach ($dadosMembros as $linha) {
@@ -112,6 +112,31 @@ class Locacao extends AbstractRepositorio
                 }
             }
         }
+        fclose($dados);
+    }
+    public static function ListarAdicoesIndex()
+    {
+
+        $dados = fopen(__DIR__ . "/../ModuloDados/livros.csv", "r");
+
+        while ($linha = fgetcsv($dados, 0, ",")) {
+            foreach ($_SESSION['id_livro_locacao'] as $livro) {
+
+                if ($livro == $linha[0]) {
+                    echo "
+                    <div class='lista_adicao'>
+                            <div class='imagem'>
+                            <img src='ModuloDados/images/" . $linha[8] . "' alt=''>
+                        </div>
+                        <div class='nome_livro'>
+                            " . $linha[1] . "
+                        </div>
+                
+                    </div>";
+                }
+            }
+        }
+        echo "<a class'buttonLocar' href=ModuloLocacao/locacao.php><div class='painelbutton'><div class='locar'>Locar</div></a>";
         fclose($dados);
     }
     public static function AlterarQuantidade($ids_livro)
@@ -208,7 +233,7 @@ class Locacao extends AbstractRepositorio
                         }
                     }
                 }
-            echo "</div></div>";
+                echo "</div></div>";
             }
         }
     }
