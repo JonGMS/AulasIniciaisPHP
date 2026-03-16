@@ -44,7 +44,7 @@
 }
 .cabecalho_card_pai{
     display: grid;
-    grid-template-columns: 120px 40px 120px 100px;
+    grid-template-columns: 120px 40px 120px 100px 40px;
 }
 .cabecalho_card_pai div{
     display: flex;
@@ -215,4 +215,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.statusAtrasado{
+    color: red;
+}
+.statusAberto{
+    color: green;
+}
+.multa{
+color: grey;
 }

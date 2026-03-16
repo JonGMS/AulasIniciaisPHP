@@ -33,7 +33,10 @@ require_once "ModuloLocacao/classe_locacao.php";
     </div>
     <div class="apresentar_locacoes">
         <div class="painel_locacoes">
-            <?php Locacao::ApresentarLocacaoMembro($_SESSION['dados_membro']['cpf']) ?>
+            <?php Locacao::ApresentarLocacaoMembro($_SESSION['dados_membro']['cpf']);
+            if(!isset($_SESSION['status_membro'])){
+                $_SESSION['status_membro'] = "LIBERADO";
+            } ?>
         </div>
     </div>
 
