@@ -146,7 +146,6 @@ function show_value($campo)
                                         <div class="overflow_livro">
 
                                             <?php
-
                                             Livro::ApresentarLivros($dadosLocacao['livros']);
                                             ?>
                                         </div>
@@ -177,7 +176,26 @@ function show_value($campo)
                                 <div class="multa">
                                     <?php echo show_value('multa'); ?>
                                 </div>
+
+
+
                             </div>
+                            <div class="button">
+                                <?php
+                                
+                                $query = http_build_query([
+                                    'id_locacao' => $dadosLocacao['id_locacao'],
+                                    'id_membro'  => $dadosLocacao['id_membro'],
+                                    'livros'     => $dadosLocacao['livros']
+                                ]);
+
+                                echo "<a href='efetuar_devolucao.php?$query'>
+            <div class='button_devolucao'>CONCLUIR DEVOLUÇÃO</div>
+          </a>";
+                                ?>
+                            </div>
+
+
                         <?php endif; ?>
 
                     </div>
