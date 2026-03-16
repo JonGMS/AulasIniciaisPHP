@@ -20,6 +20,7 @@ while (($linha = fgetcsv($dados, 0, ",")) !== false) {
         $_SESSION['autor'] = $linha[2];
         $_SESSION['descricao'] = $linha[7];
         $_SESSION['imagem'] = $linha[8];
+        $_SESSION['quantidade'] = $linha[3];
         for ($i = 0; $i < count($generos); $i++) {
             $_SESSION['genero'][$i] = $generos[$i];
         }
@@ -109,7 +110,7 @@ while (($linha = fgetcsv($dados, 0, ",")) !== false) {
                     }
                     if ($_GET['acao'] == "editar") :
                     ?>
-                        <form class="editar" action="valida_editar_livro.php?tipo=editar&livro="$idLivro method="post" enctype="multipart/form-data">
+                        <form class="editar" action="valida_editar_livro.php?tipo=editar&livro=" $idLivro method="post" enctype="multipart/form-data">
                             <h2>EDITAR</h2>
                             <div class="campo_nome">
                                 <label for="text_nome">Nome <?php echo Show_error('text_nome', $inputs) ?></label><br>
@@ -196,7 +197,7 @@ while (($linha = fgetcsv($dados, 0, ",")) !== false) {
                                     <a href="livro_estoque.php?livro=<?php echo $idLivro . "&acao=editar" ?>">
                                         <div class="button_editar botao">Editar</div>
                                     </a>
-                                    <a href="valida_editar_livro.php?tipo=excluir&livro=<?php echo $idLivro?>">
+                                    <a href="valida_editar_livro.php?tipo=excluir&livro=<?php echo $idLivro ?>">
                                         <div class="button_editar botao">Excluir</div>
                                     </a>
                                 </div>
@@ -218,7 +219,14 @@ while (($linha = fgetcsv($dados, 0, ",")) !== false) {
                                     </select>
                                 </div>
                             <?php endif; ?>
-                            <input class="submit" type="submit" value="ADICIONAR LIVRO">
+
+                            <?php
+                            if ($_SESSION['quantidade'] != 0) {
+                                echo "<input class='submit' type='submit' value='ADICIONAR LIVRO'>";
+                            }
+
+                            ?>
+
                         </form>
                     </div>
 

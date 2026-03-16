@@ -38,6 +38,7 @@ class Locacao extends AbstractRepositorio
         $dadosLivros = array_map('str_getcsv', file(__DIR__ . "/../ModuloDados/livros.csv"));
         $dadosMembros = array_map('str_getcsv', file(__DIR__ . "/../ModuloDados/membros.csv"));
 
+        
 
         $dados = fopen(__DIR__ . "/../ModuloDados/livros.csv", "r");
 
@@ -139,27 +140,6 @@ class Locacao extends AbstractRepositorio
         echo "<a class'buttonLocar' href=ModuloLocacao/locacao.php><div class='painelbutton'><div class='locar'>Locar</div></a>";
         fclose($dados);
     }
-    public static function AlterarQuantidade($ids_livro)
-    {
-        $dados = fopen("../ModuloDados/livros.csv", "r");
-        while (($linha = fgetcsv($dados, 0, ",")) !== false) {
-            $linhas[] = $linha;
-        }
-        fclose($dados);
-
-        foreach ($linhas as &$linha) {
-            if (in_array($linha[0], $ids_livro)) {
-                $linha[3] = max(0, $linha[3] - 1);
-                $linha[4] = "INDISPONÍVEL";
-            }
-        }
-
-        $dados = fopen("../ModuloDados/livros.csv", "w");
-        foreach ($linhas as $linha) {
-            fputcsv($dados, $linha);
-        }
-        fclose($dados);
-    }
 
     public static function ApresentarLocacaoAdmin()
     {
@@ -195,17 +175,31 @@ class Locacao extends AbstractRepositorio
     }
     public static function ApresentarLocacaoMembro($id_membro)
     {
+
         $dadosLocacao = array_map('str_getcsv', file(__DIR__ . "/../ModuloDados/locacao.csv"));
         $dadosLivros  = array_map('str_getcsv', file(__DIR__ . "/../ModuloDados/livros.csv"));
 
         foreach ($dadosLocacao as $linha) {
             if ($linha[1] == $id_membro) {
+
+                $dados = [];
+                Locacao::DefinirStatusMulta($linha[4], $linha[3],$dados);
+                
                 echo "<div class='painel_locacao'>
                 <div class='cabecalho_card_pai'>
                     <div class='data_locacao'>$linha[3]</div>
                     <div class='ate'>até</div>
-                    <div class='data_entrega'>$linha[4]</div>
-                    <div class='status'>$linha[5]</div>
+                    <div class='data_entrega'>$linha[4]</div>";
+
+                    if($dados['status'] == "ATRASADO"){
+                        echo "<div class='statusAtrasado'>".$dados['status']."</div>";
+                        $_SESSION['status_membro'] = "BLOQUEADO";
+                    }
+                    else{
+                        echo "<div class='statusAberto'>".$dados['status']."</div>";
+                        $_SESSION['status_membro'] = "LIBERADO";
+                    }
+                echo "<div class='multa'>R$".$dados['multa']."</div>
                 </div>
                 <div class='apresenta_livros'>";
 
@@ -236,5 +230,55 @@ class Locacao extends AbstractRepositorio
                 echo "</div></div>";
             }
         }
+    }
+
+    public static function Devolucao() {}
+    public static function AlterarQuantidade($ids_livro)
+    {
+        $dados = fopen("../ModuloDados/livros.csv", "r");
+        while (($linha = fgetcsv($dados, 0, ",")) !== false) {
+            $linhas[] = $linha;
+        }
+        fclose($dados);
+
+        foreach ($linhas as &$linha) {
+            if (in_array($linha[0], $ids_livro)) {
+                $linha[3] = max(0, $linha[3] - 1);
+                $linha[4] = "INDISPONÍVEL";
+            }
+        }
+
+        $dados = fopen("../ModuloDados/livros.csv", "w");
+        foreach ($linhas as $linha) {
+            fputcsv($dados, $linha);
+        }
+        fclose($dados);
+    }
+    
+    public static function DefinirStatusMulta($dataDevolucao, $dataLocacao, &$dados)
+    {
+        $dateTimeLocacao = DateTime::createFromFormat('d/m/Y', $dataLocacao);
+
+        $hoje = new DateTime();
+
+        $dateTimeDevolucao = DateTime::createFromFormat('d/m/Y', $dataDevolucao);
+
+        $diferenca = $hoje->diff($dateTimeLocacao);
+
+        $diasPassados = $diferenca->days; //Line
+
+        if ($diasPassados > 7) {
+
+            $dados['status'] = "ATRASADO";
+
+            $diasAtrasados = $diasPassados - 7;
+
+            $dados['multa'] = $diasAtrasados * 0.5;
+
+            return;
+        }
+        $dados['multa'] = 0;
+        $dados['status'] = "ABERTO";
+        
     }
 }

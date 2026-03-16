@@ -1,4 +1,5 @@
-<?php require_once 'classe_locacao.php'; ?>
+<?php require_once 'classe_locacao.php';
+?>
 <form class="formulario" action="validar_locacao.php" method="post">
     <div class="locacao">
         <h1>FINALIZAÇÃO</h1>
@@ -18,17 +19,17 @@
             <?php endif; ?>
 
             <div class="finalizar">
+                <?php if(isset($_SESSION['id_livro_locacao']) && $_SESSION['status_membro'] != "BLOQUEADO") :?>
                 <div class="button_finalizar">
                     <input type="submit" value="FINALIZAR LOCAÇÃO">
                 </div>
-
+                <?php endif; ?>
                 <div class="texto_paragrafo">VOCÊ TEM 7 DIAS PARA REALIZAR A RELOCAÇÃO
                 </div>
                 <div class="texto_paragrafo">A data prevista para devolução é 09/03.
                 </div>
                 <div class="texto_paragrafo">Caso não efetue a devolução no prazo, será cobrada uma multa de R$0,50 por dia de atraso.
                 </div>
-
             </div>
 
         </div>
