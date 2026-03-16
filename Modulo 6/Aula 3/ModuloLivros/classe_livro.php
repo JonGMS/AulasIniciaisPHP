@@ -112,40 +112,38 @@ class Livro extends AbstractRepositorio
 
     function Editar()
     {
-
         $arquivo = (__DIR__ . "/../ModuloDados/livros.csv");
-        $entrada = fopen($arquivo, "r");
-        $linhas = [];
 
-        while (($dados = fgetcsv($entrada)) !== false) {
-            if ($dados[0] != $this->id) {
+        $linhas = [];
+        if (($entrada = fopen($arquivo, "r")) !== false) {
+            while (($dados = fgetcsv($entrada)) !== false) {
+
+                if ($dados[0] == $this->id) {
+                    $dados = [
+                        $this->id,
+                        $this->nome,
+                        $this->autor,
+                        $this->quantidade,
+                        $this->status,
+                        $this->genero,
+                        $this->colecao,
+                        $this->descricao,
+                        $this->imagem
+                    ];
+                }
                 $linhas[] = $dados;
             }
+            fclose($entrada);
         }
 
-        fclose($entrada);
-
-        $saida = fopen($arquivo, "w");
-
-        foreach ($linhas as $linha) {
-            fputcsv($saida, $linha);
-        }
-
-        fclose($saida);
-
-        try {
-
-            $file = fopen("../ModuloDados/livros.csv", 'a');
-            if (!$file) {
-                die("Erro ao abrir arquivo CSV");
+        if (($saida = fopen($arquivo, "w")) !== false) {
+            foreach ($linhas as $linha) {
+                fputcsv($saida, $linha);
             }
-            $linha = [$this->id, $this->nome, $this->autor, $this->quantidade, $this->status, $this->genero, $this->colecao, $this->descricao, $this->imagem];
-            fputcsv($file, $linha);
-            fclose($file);
-        } catch (Exception $e) {
-            echo $e->getMessage();
+            fclose($saida);
         }
     }
+
 
     public static function Excluir($id)
     {

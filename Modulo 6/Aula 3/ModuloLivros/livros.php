@@ -11,14 +11,19 @@ verificarLogin();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livros</title>
     <link rel="stylesheet" href="../assets/style.css">
-    <?php 
-        if($_SESSION['usuario'] == 'ADMIN'){
-                echo "<link rel='stylesheet' href='../assets/livro_admin.css'>";
-            }
-            else{
-                
-                echo "<link rel='stylesheet' href='../assets/livro_membro.css'>";
-            }
+    <style>
+        .listar_livro a:visited {
+            color: black;
+            
+        }
+    </style>
+    <?php
+    if ($_SESSION['usuario'] == 'ADMIN') {
+        echo "<link rel='stylesheet' href='../assets/livro_admin.css'>";
+    } else {
+
+        echo "<link rel='stylesheet' href='../assets/livro_membro.css'>";
+    }
     ?>
 </head>
 
@@ -84,14 +89,13 @@ verificarLogin();
         </div>
 
         <div class="content-wraper">
-            <?php 
-            if($_SESSION['usuario'] == 'ADMIN'){
+            <?php
+            if ($_SESSION['usuario'] == 'ADMIN') {
                 include "conteudo_livro_admin.php";
-            }
-            else{
+            } else {
                 include "conteudo_livro_membro.php";
             }
-            
+
             ?>
         </div>
     </div>
