@@ -156,7 +156,7 @@ class Locacao extends AbstractRepositorio
                 }
             }
             fclose($csv);
-            if ($linha[0] == "ID") {
+            if ($linha[0] == "ID" || $linha[5] != "ABERTO") {
                 continue;
             }
             $livros = explode(",", $linha[2]);
@@ -232,7 +232,47 @@ class Locacao extends AbstractRepositorio
         }
     }
 
-    public static function Devolucao() {}
+    public static function Devolucao($id_locacao, $id_membro) {
+        $arquivo = (__DIR__ . "/../ModuloDados/locacao.csv");
+        $entrada = fopen($arquivo, "r");
+        $linhas = [];
+        $linhaEditada = [];
+
+        while (($dados = fgetcsv($entrada)) !== false) {
+            if ($dados[0] != $id_locacao) {
+                $linhas[] = $dados;
+            }
+            else{
+                $linhaEditada = $dados;
+            }
+        }
+
+        fclose($entrada);
+
+        $saida = fopen($arquivo, "w");
+
+        foreach ($linhas as $linha) {
+            fputcsv($saida, $linha);
+        }
+
+        fclose($saida);
+
+        try {
+
+            $file = fopen(__DIR__."/../ModuloDados/locacao.csv", 'a');
+            if (!$file) {
+                die("Erro ao abrir arquivo CSV");
+            }
+            $multa = [];
+            Locacao::DefinirStatusMulta($linhaEditada[4], $linhaEditada[3], $multa);
+            $linha = [$id_locacao, $id_membro, $linhaEditada[2], $linhaEditada[3], $linhaEditada[4], "FINALIZADA", $multa['multa']];
+            fputcsv($file, $linha);
+            fclose($file);
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+
+    }
     public static function AlterarQuantidade($ids_livro)
     {
         $dados = fopen("../ModuloDados/livros.csv", "r");
@@ -281,4 +321,5 @@ class Locacao extends AbstractRepositorio
         $dados['status'] = "ABERTO";
         
     }
+     
 }
