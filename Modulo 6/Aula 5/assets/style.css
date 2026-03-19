@@ -41,7 +41,7 @@ label{
 .teclado-numerico{
     display:grid;
     grid-template-columns: [coluna1-start] 100px [coluna1-end coluna2-start] 100px [coluna2-end coluna3-start] 100px [coluna3-end coluna4-start] 100px [coluna4-end] ;
-    grid-template-rows: [row1-start] 70px [row1-end row2-start] 70px [row2-end row3-start] 70px [row3-end row4-start ] 70px [row4-end];
+    grid-template-rows: [row1-start] 80px [row1-end row2-start] 80px [row2-end row3-start] 80px [row3-end row4-start ] 80px [row4-end];
     gap: 10px;
 }
 /*Coluna 1*/
@@ -111,12 +111,12 @@ label{
     background-color: rgb(152, 128, 240);
 }
 
-.teclax{
+ .teclax{
     grid-column: coluna4-start / coluna4-end;
     grid-row: row3-start / row3-end;
-    background-color: rgb(152, 128, 240);
+    background-color: #575D90;
 }
-.tecla-resultado{
+ .tecla-resultado{
     grid-column: coluna4-start / coluna4-end;
     grid-row: row4-start / row4-end;
     background-color: darkgoldenrod; /*Ver pq n esta funcionando*/
@@ -150,3 +150,26 @@ label{
     border-radius: 20px;
 }
 
+.display{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+a:hover{
+    
+}
+a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+.painel_valores{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+.valores{
+    color: white;
+}
