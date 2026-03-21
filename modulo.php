@@ -148,13 +148,13 @@
                         <div class="aula">Tipos de Variaveis</div>
                     </a>
                     <a href="Modulo 6/Aula 2/login.php">
-                        <div class="aula">Atividades</div>
+                        <div class="aula">Login</div>
                     </a>
-                    <a href="">
-                        <div class="aula"></div>
+                    <a href="Modulo 6/Aula 3/login.php">
+                        <div class="aula">Objeto com Cadastro</div>
                     </a>
-                    <a href="">
-                        <div class="aula"></div>
+                    <a href="Modulo 6/Aula 5/index.php">
+                        <div class="aula">Calculadora PHP</div>
                     </a>
                 </div>
             </div>
