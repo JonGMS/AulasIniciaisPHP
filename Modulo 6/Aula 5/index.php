@@ -7,94 +7,119 @@
     <link rel="stylesheet" href="assets/style.css">
     <title>Calculadora PHP</title>
 </head>
+
+
 <?php
 session_start();
-$valor = [];
-if (isset($_SESSION['valores'])) {
-    $valor = $_SESSION['valores'];
+
+if (isset($_SESSION['operador'])) {
+    Calculo($_SESSION['operador']);
 }
 
+if (isset($_POST['operador'])) {
+    if (isset($operador)) {
+    }
+
+    global $operador;
+    $_SESSION['conta'] = $_POST['text_panel'];
+    $_SESSION['segundoNumero'] = $_SESSION['conta'];
+
+    $_SESSION['operador'] =  $_POST['operador'];
+}
 
 function show_value()
 {
-    if (isset($_SESSION['valores']) && !empty($_SESSION['valores'])) {
-        return $_SESSION['valores'];
+    if (isset($_POST['numero']) && !empty($_POST['numero'])) {
+        return $_POST['text_panel'] . $_POST['numero'];
     }
     return '';
 }
-
+function Calculo($operador)
+{
+    if ($operador == "+") {
+        $_SESSION['conta'] = $_SESSION['primeiro_numero'] + $_SESSION['segundo_numero'];
+    } else if ($operador == "-") {
+        $_SESSION['conta'] = $_SESSION['primeiro_numero'] - $_SESSION['segundo_numero'];
+    } else if ($operador == "/") {
+        $_SESSION['conta'] = $_SESSION['segundo_numero'] == 0 ? "Erro: divisão por zero" : $_SESSION['primeiro_numero'] / $_SESSION['segundo_numero'];
+    } else if ($operador == "x") {
+        $_SESSION['conta'] = $_SESSION['conta'] * $_SESSION[''];
+    }
+}
 
 ?>
 
 <body>
-    <div class="painel_calculadora">
+    <form class="painel_calculadora" method="post">>
         <div class="painel_campo">
-            <?php if(!isset($_SESSION['hitorico'])) : ?>
-            <label for="">Calculadora PHP</label><br>
+            <?php if (!isset($_SESSION['hitorico'])) : ?>
+                <label for="">Calculadora PHP</label><br>
             <?php endif; ?>
-            <?php if(isset($_SESSION['historico'])){
-                echo "<div class='painel_valores'><label class='valores' for='input'>".$_SESSION['historico']."</label></div><br>";
+            <?php if (isset($_SESSION['conta'])) {
+                echo "<div class='painel_valores'><label class='valores' for='input'>" . $_SESSION['conta'] . "  " . $_SESSION['operador'] . "</label></div><br>";
             } ?>
-            <input class="caixa_texto" type="text" name="" id="input" value="<?php echo Show_value() ?>">
+            <input class="caixa_texto" type="text" name="text_panel" id="input" value="<?php echo Show_value() ?>">
         </div>
+
         <div class="painel_teclado_numerico">
-            <div class="teclado-numerico">
+
+            <div class="teclado-numerico" method="post">
+
+                <button value="7" name="numero" type="submit" class=" tecla teclas-ativadas tecla7">7</a></button>
 
 
-                <div class=" tecla teclas-ativadas tecla7"><a href="calculo.php?numero=7">7</a></div>
+                <button value="8" name="numero" type="submit" class="tecla8 tecla teclas-ativadas">8</a></button>
 
 
-                <div class="tecla8 tecla teclas-ativadas"><a href="calculo.php?numero=8">8</a></div>
+                <button value="9" name="numero" type="submit" class="tecla9 tecla teclas-ativadas">9</a></button>
 
 
-                <div class="tecla9 tecla teclas-ativadas"><a href="calculo.php?numero=9">9</a></div>
+                <button value="4" name="numero" type="submit" class="tecla4 tecla teclas-ativadas">4</a></button>
 
 
-                <div class="tecla4 tecla teclas-ativadas"><a href="calculo.php?numero=4">4</a></div>
+                <button value="5" name="numero" type="submit" class="tecla5 tecla teclas-ativadas">5</a></button>
 
 
-                <div class="tecla5 tecla teclas-ativadas"><a href="calculo.php?numero=5">5</a></div>
+                <button value="6" name="numero" type="submit" class="tecla6 tecla teclas-ativadas">6</a></button>
 
 
-                <div class="tecla6 tecla teclas-ativadas"><a href="calculo.php?numero=6">6</a></div>
+                <button value="1" name="numero" type="submit" class="tecla1 tecla teclas-ativadas">1</a></button>
 
 
-                <div class="tecla1 tecla teclas-ativadas"><a href="calculo.php?numero=1">1</a></div>
+                <button value="2" name="numero" type="submit" class="tecla2 tecla teclas-ativadas">2</a></button>
 
 
-                <div class="tecla2 tecla teclas-ativadas"><a href="calculo.php?numero=2">2</a></div>
+                <button value="3" name="numero" type="submit" class="tecla3 tecla teclas-ativadas">3</a></button>
 
 
-                <div class="tecla3 tecla teclas-ativadas"><a href="calculo.php?numero=3">3</a></div>
+                <button value="." name="numero" type="submit" class="tecla-virgula tecla teclas-ativadas">.</a></button>
+
+                <button value="0" name="numero" type="submit" class="tecla0 tecla teclas-ativadas">0</a></button>
 
 
-                <div class="tecla-virgula tecla teclas-ativadas"><a href="calculo.php?numero=.">.</a></div>
+                <button value="+" name="operador" type="submit" class="tecla-soma teclas-ativadas">+</a></button>
 
 
-                <div class="tecla0 tecla teclas-ativadas"><a href="calculo.php?numero=0">0</a></div>
+                <button value="-" name="operador" type="submit" class="tecla-sub teclas-ativadas">-</a></button>
 
 
-                <div class="tecla-soma teclas-ativadas"><a href="calculo.php?operador=soma">+</a></div>
+                <button value="x" name="operador" type="submit" class="teclax teclas-ativadas">x</a></button>
 
 
-                <div class="tecla-sub teclas-ativadas"><a href="calculo.php?operador=subtracao">-</a></div>
+                <button value="/" name="operador" type="submit" class="tecla-divisao teclas-ativadas">÷</a></button>
 
 
-                <div class="teclax teclas-ativadas"><a href="calculo.php?operador=multiplicacao">x</a></div>
-
-
-                <div class="tecla-divisao teclas-ativadas"><a href="calculo.php?operador=divisao">÷</a></div>
-
-
-                <div class="tecla-resultado" id="resultado"><a href="calculo.php?operador=resultado">=</a></div>
+                <button value="=" name="operador" type="submit" class="tecla-resultado" id="resultado">=</a></button>
 
             </div>
+
         </div>
+
         <div class="painel_historio">
 
         </div>
 
-    </div>
+    </form>
 </body>
 
 </html>
