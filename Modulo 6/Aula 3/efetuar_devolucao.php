@@ -4,39 +4,83 @@ require_once __DIR__ . '/includes/auth.php';
 require_once 'ModuloLocacao/classe_locacao.php';
 require_once 'ModuloLivros/classe_livro.php';
 verificarLogin();
-/*efetuar_devolucao.php?id_locacao=69a8cdc3ee735&id_membro=10987654321&livros[0]=699dfc2503960&livros[1]=69a104646c396*/
 
 Locacao::Devolucao($_GET['id_locacao'], $_GET['id_membro']);
 
-$arquivo = fopen(__DIR__ . "/ModuloDados/livros.csv", 'r');
-$linhas = [];
-
-while (($linha = fgetcsv($arquivo)) !== false) {
-    $linhas[] = $linha;
+// 🔒 Validação do parâmetro
+if (!isset($_GET['livros']) || empty($_GET['livros'])) {
+    header("Location: livros.php");
+    exit();
 }
+
+
+$caminho = __DIR__ . "/ModuloDados/livros.csv";
+
+// 🔒 Verifica se o arquivo existe
+if (!file_exists($caminho)) {
+    echo "Erro: Arquivo de livros não encontrado.";
+    exit();
+}
+
+// 🔒 Abre o arquivo com trava (evita conflito)
+$arquivo = fopen($caminho, 'c+');
+
+if (!$arquivo) {
+    echo "Erro ao abrir o arquivo.";
+    exit();
+}
+
+flock($arquivo, LOCK_EX); // trava o arquivo
+
+$linhas = [];
+$livroEncontrado = false;
+
+// Lê todas as linhas
+while (($dados = fgetcsv($arquivo)) !== false) {
+
+    // Estrutura:
+    // [0] ID
+    // [1] Nome
+    // [2] Autor
+    // [3] Quantidade
+    // [4] Imagem (opcional)
+    for($i = 0; $i < count($_GET['livros']); $i++){
+        $idLivro = $_GET['livros'][$i];
+    }
+    
+
+    if ($dados[0] == $idLivro) {
+        $dados[3] = (int)$dados[3] + 1;
+        $dados[4] = "DISPONIVEL";
+        $livroEncontrado = true;
+    }
+
+    $linhas[] = $dados;
+}
+
+// 🔒 Volta pro início do arquivo
+rewind($arquivo);
+
+// 🔥 Limpa o arquivo antes de reescrever
+ftruncate($arquivo, 0);
+
+// 🔄 Reescreve tudo
+foreach ($linhas as $linha) {
+    fputcsv($arquivo, $linha);
+}
+
+// 🔓 Libera o arquivo
+flock($arquivo, LOCK_UN);
 fclose($arquivo);
 
-foreach ($_GET['livros'] as $livroId) {
-    foreach ($linhas as &$linha) {
-        if ($livroId == $linha[0]) {
-            $livro = new Livro(
-                $livroId,
-                $linha[1],
-                $linha[2],
-                $linha[3] + 1,
-                "DISPONIVEL",
-                $linha[5],
-                $linha[6],
-                $linha[7],
-                $linha[8]
-            );
-            $livro->Editar();
-        }
-    }
+// ⚠️ Caso não encontre o livro
+if (!$livroEncontrado) {
+    echo "Livro não encontrado.";
+    exit();
 }
 
 unset($_SESSION['dadosLocacao']);
 
-header('Location: index.php');
-
+// 🔁 Redireciona
+header("Location: index.php");
 exit();

@@ -180,8 +180,8 @@ class Locacao extends AbstractRepositorio
         $dadosLivros  = array_map('str_getcsv', file(__DIR__ . "/../ModuloDados/livros.csv"));
 
         foreach ($dadosLocacao as $linha) {
-            if ($linha[1] == $id_membro) {
-
+            if ($linha[1] == $id_membro && $linha[5] != "FINALIZADA") {
+                
                 $dados = [];
                 Locacao::DefinirStatusMulta($linha[4], $linha[3],$dados);
                 
