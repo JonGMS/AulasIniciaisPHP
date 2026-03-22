@@ -11,21 +11,30 @@
 
 <?php
 session_start();
-
-if (isset($_SESSION['operador'])) {
-    Calculo($_SESSION['operador']);
-}
-
-if (isset($_POST['operador'])) {
-    if (isset($operador)) {
+$aplicacao = 1;
+while ($aplicacao == 1) {
+    if (isset($_SESSION['segundo_numero'])) {
+        echo $_SESSION['segundo_numero'];
+        Calculo($_SESSION['operador']);
+        $aplicacao = 0;
+        continue;
     }
 
-    global $operador;
-    $_SESSION['conta'] = $_POST['text_panel'];
-    $_SESSION['segundoNumero'] = $_SESSION['conta'];
+    if (isset($_POST['operador'])) {
+        if (isset($operador)) {
+        }
+        $_SESSION['conta'] = $_POST['text_panel'];
+        $_SESSION['segundo_numero'] = $_SESSION['conta'];
 
-    $_SESSION['operador'] =  $_POST['operador'];
+        $_SESSION['operador'] =  $_POST['operador'];
+        unset($_POST['operador']);
+        echo "ENTROU NO DEFIÇÂO DE SEGUNDO NUMERO";
+    }
+    unset($_SESSION['operador']);
+    $aplicacao = 0;
 }
+
+
 
 function show_value()
 {
@@ -37,13 +46,14 @@ function show_value()
 function Calculo($operador)
 {
     if ($operador == "+") {
-        $_SESSION['conta'] = $_SESSION['primeiro_numero'] + $_SESSION['segundo_numero'];
+        $_SESSION['conta'] = (int)$_POST['text_panel'] + (int)$_SESSION['segundo_numero'];
+        echo $_SESSION['segundo_numero'];
     } else if ($operador == "-") {
-        $_SESSION['conta'] = $_SESSION['primeiro_numero'] - $_SESSION['segundo_numero'];
+        $_SESSION['conta'] = (int)$_POST['text_panel'] - (int)$_SESSION['segundo_numero'];
     } else if ($operador == "/") {
-        $_SESSION['conta'] = $_SESSION['segundo_numero'] == 0 ? "Erro: divisão por zero" : $_SESSION['primeiro_numero'] / $_SESSION['segundo_numero'];
+        $_SESSION['conta'] = $_SESSION['segundo_numero'] == 0 ? "Erro: divisão por zero" : (int)$_POST['text_panel'] / (int)$_SESSION['segundo_numero'];
     } else if ($operador == "x") {
-        $_SESSION['conta'] = $_SESSION['conta'] * $_SESSION[''];
+        $_SESSION['conta'] = (int)$_SESSION['conta'] * (int)$_SESSION[''];
     }
 }
 
