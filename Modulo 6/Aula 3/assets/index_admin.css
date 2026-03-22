@@ -121,3 +121,14 @@ margin: 10px 20px 0 0px;
 .margin_membro{
     margin-top: 8px;
 }
+.button_devolucao{
+    padding: 20px 40px 20px 40px;
+    padding-inline: 20px;
+    background-color: rgb(75, 75, 75);
+    border-radius: 10px;
+}
+.button a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
