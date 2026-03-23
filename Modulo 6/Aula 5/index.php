@@ -11,15 +11,19 @@
 
 <?php
 session_start();
-if (isset($_SESSION['segundo_numero'])) {
-    echo $_SESSION['segundo_numero'];
-    Calculo($_SESSION['operador']);
-    unset($_SESSION['segundo_numero']);
-} elseif (isset($_POST['operador'])) {
-    $_SESSION['conta'] = $_POST['text_panel'];
-    $_SESSION['segundo_numero'] = $_SESSION['conta'];
-    $_SESSION['operador'] = $_POST['operador'];
-    echo "ENTROU NA DEFINIÇÃO DE SEGUNDO NÚMERO";
+if (isset($_POST['operador'])) {
+    if ($_POST['operador'] == "=") {
+
+        Calculo($_SESSION['operador']);
+        unset($_SESSION['segundo_numero']);
+        // unset($_POST['text_panel']);
+        // unset($_POST['numero']);
+    } else {
+        
+        $_SESSION['conta'] = $_POST['text_panel'];
+        $_SESSION['segundo_numero'] = $_SESSION['conta'];
+        $_SESSION['operador'] = $_POST['operador'];
+    }
 }
 
 function show_value()
@@ -27,37 +31,36 @@ function show_value()
     if (isset($_POST['numero']) && !empty($_POST['numero'])) {
         return $_POST['text_panel'] . $_POST['numero'];
     }
-    return '';
+    return isset($_POST['text_panel']) ? $_POST['text_panel'] : '';
 }
 
 function Calculo($operador)
 {
     $primeiro = isset($_POST['text_panel']) ? (int)$_POST['text_panel'] : 0;
+    
     $segundo = isset($_SESSION['segundo_numero']) ? (int)$_SESSION['segundo_numero'] : 0;
 
     switch ($operador) {
+        
         case "+":
-            $_SESSION['conta'] = $primeiro + $segundo;
+            $_SESSION['conta'] = $segundo + $primeiro;
             break;
         case "-":
-            $_SESSION['conta'] = $primeiro - $segundo;
+            $_SESSION['conta'] = $segundo - $primeiro;
             break;
         case "/":
-            $_SESSION['conta'] = ($segundo == 0) ? "Erro: divisão por zero" : $primeiro / $segundo;
+            $_SESSION['conta'] = ($primeiro == 0) ? "Erro: divisão por zero" : $segundo / $primeiro;
             break;
         case "x":
-            $_SESSION['conta'] = $primeiro * $segundo;
+            $_SESSION['conta'] = $segundo * $primeiro;
             break;
         default:
             $_SESSION['conta'] = "Operador inválido";
             break;
     }
-
-    echo $_SESSION['conta'];
 }
-
-
 ?>
+
 
 <body>
     <form class="painel_calculadora" method="post">>
