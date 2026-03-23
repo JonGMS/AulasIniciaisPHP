@@ -11,30 +11,16 @@
 
 <?php
 session_start();
-$aplicacao = 1;
-while ($aplicacao == 1) {
-    if (isset($_SESSION['segundo_numero'])) {
-        echo $_SESSION['segundo_numero'];
-        Calculo($_SESSION['operador']);
-        $aplicacao = 0;
-        continue;
-    }
-
-    if (isset($_POST['operador'])) {
-        if (isset($operador)) {
-        }
-        $_SESSION['conta'] = $_POST['text_panel'];
-        $_SESSION['segundo_numero'] = $_SESSION['conta'];
-
-        $_SESSION['operador'] =  $_POST['operador'];
-        unset($_POST['operador']);
-        echo "ENTROU NO DEFIÇÂO DE SEGUNDO NUMERO";
-    }
-    unset($_SESSION['operador']);
-    $aplicacao = 0;
+if (isset($_SESSION['segundo_numero'])) {
+    echo $_SESSION['segundo_numero'];
+    Calculo($_SESSION['operador']);
+    unset($_SESSION['segundo_numero']);
+} elseif (isset($_POST['operador'])) {
+    $_SESSION['conta'] = $_POST['text_panel'];
+    $_SESSION['segundo_numero'] = $_SESSION['conta'];
+    $_SESSION['operador'] = $_POST['operador'];
+    echo "ENTROU NA DEFINIÇÃO DE SEGUNDO NÚMERO";
 }
-
-
 
 function show_value()
 {
@@ -43,19 +29,33 @@ function show_value()
     }
     return '';
 }
+
 function Calculo($operador)
 {
-    if ($operador == "+") {
-        $_SESSION['conta'] = (int)$_POST['text_panel'] + (int)$_SESSION['segundo_numero'];
-        echo $_SESSION['segundo_numero'];
-    } else if ($operador == "-") {
-        $_SESSION['conta'] = (int)$_POST['text_panel'] - (int)$_SESSION['segundo_numero'];
-    } else if ($operador == "/") {
-        $_SESSION['conta'] = $_SESSION['segundo_numero'] == 0 ? "Erro: divisão por zero" : (int)$_POST['text_panel'] / (int)$_SESSION['segundo_numero'];
-    } else if ($operador == "x") {
-        $_SESSION['conta'] = (int)$_SESSION['conta'] * (int)$_SESSION[''];
+    $primeiro = isset($_POST['text_panel']) ? (int)$_POST['text_panel'] : 0;
+    $segundo = isset($_SESSION['segundo_numero']) ? (int)$_SESSION['segundo_numero'] : 0;
+
+    switch ($operador) {
+        case "+":
+            $_SESSION['conta'] = $primeiro + $segundo;
+            break;
+        case "-":
+            $_SESSION['conta'] = $primeiro - $segundo;
+            break;
+        case "/":
+            $_SESSION['conta'] = ($segundo == 0) ? "Erro: divisão por zero" : $primeiro / $segundo;
+            break;
+        case "x":
+            $_SESSION['conta'] = $primeiro * $segundo;
+            break;
+        default:
+            $_SESSION['conta'] = "Operador inválido";
+            break;
     }
+
+    echo $_SESSION['conta'];
 }
+
 
 ?>
 
