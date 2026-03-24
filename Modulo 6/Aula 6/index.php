@@ -16,7 +16,7 @@ $estado = $ligacao->getAttribute(PDO::ATTR_CONNECTION_STATUS);
 echo $estado;
 }
 catch(PDOException $err){
-    echo 'ERRO: '.$err->getMessage();
+    echo 'ERRO: '.$err->getMessage(); 
 }
 
 $resultados = $ligacao->query("SELECT * FROM produtos");//->fetchAll(); //fetch() mostra só o primeiro dado
@@ -31,4 +31,6 @@ echo('</pre>');
 while($linha = $resultados->fetch()){
     echo 'Produto: '.$linha['nome']."<br>";
 }
-$ligacao = null;
+
+
+$resultado = $ligacao->query("SELECT * FROM produtos")->fetchAll(PDO::FETCH_NUM);
